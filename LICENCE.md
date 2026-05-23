@@ -16,7 +16,7 @@ The website code, page templates, browser-only builders and public planning patt
 
 These permissions are subject to the following boundaries:
 
-- Do not sell this codebase, templates or public infrastructure as a standalone product.
+- Do not sell this codebase, templates or public infrastructure.
 - Do not repackage the site identity, generated hero images, source catalogue, creative writing or narrative materials for sale.
 - Keep clear provenance where practical.
 - Share useful fixes, notes or improvements back to the public commons where reasonable.
