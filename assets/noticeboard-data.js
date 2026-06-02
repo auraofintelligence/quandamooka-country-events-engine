@@ -202,7 +202,27 @@ window.NOTICEBOARD_DATA = {
           "name": "Point Lookout Surf Life Saving Club",
           "type": "Coastal safety and community hub",
           "place": "Point Lookout",
-          "share": "patrol status, beach safety, events, volunteer training"
+          "status": "public source found",
+          "share": "patrol status, beach safety, events, volunteer training",
+          "profile": {
+            "business_profile_id": "point-lookout-surf-life-saving-club",
+            "public_name": "Point Lookout Surf Life Saving Club",
+            "public_status": "active public club / source check current patrol and venue details before publishing",
+            "address": "24 Kennedy Drive, Point Lookout QLD 4183",
+            "postal_address": "PO Box 122, Cleveland QLD 4163",
+            "website": "https://pointlookoutslsc.com.au/",
+            "places_map": "places.html?place=point-lookout-surf-life-saving-club#place-catalogue",
+            "source_notes": [
+              "Official club homepage lists 24 Kennedy Drive, Point Lookout QLD 4183 and PO Box 122, Cleveland QLD 4163.",
+              "Official contact page includes a map point for 24 Kennedy Drive at latitude -27.4365757 and longitude 153.5430054.",
+              "Stradbroke Island visitor listing describes the club as located on Main Beach and founded in 1947."
+            ],
+            "sources": [
+              "https://pointlookoutslsc.com.au/",
+              "https://pointlookoutslsc.com.au/contact/",
+              "https://stradbrokeisland.com/point-lookout-surf-life/"
+            ]
+          }
         },
         {
           "name": "Volunteer Marine Rescue North Stradbroke",
@@ -369,7 +389,8 @@ window.NOTICEBOARD_DATA = {
             "hours_public_note": "Public directory listings commonly show 6:30am-6:00pm, seven days; confirm before publishing.",
             "source_notes": [
               "Stradbroke Island listing describes groceries, fuel, bait, tackle, newspapers, hot food, drinks and camping supplies.",
-              "Yellow Pages listing gives ABN and regular hours."
+              "Yellow Pages listing gives ABN and regular hours.",
+              "Local review clarified this is Ballow Street, Amity Point, not the unrelated 9 Ballow Road / 9A Ballow Road, Dunwich site."
             ],
             "sources": [
               "https://stradbrokeisland.com/amity-point-general-dealers/",
@@ -393,7 +414,8 @@ window.NOTICEBOARD_DATA = {
             "hours_public_note": "Third-party post-office directories list weekday trading and weekend closure; confirm against AusPost before publishing.",
             "source_notes": [
               "Business Recycling includes an AusPost locate URL for Amity Point LPO at 9A Ballow Street.",
-              "Post office directories list parcel, PO box, Bank@Post and identity/document services, but current service availability should be verified."
+              "Post office directories list parcel, PO box, Bank@Post and identity/document services, but current service availability should be verified.",
+              "Local review clarified this is Ballow Street, Amity Point, not the unrelated 9 Ballow Road / 9A Ballow Road, Dunwich site."
             ],
             "sources": [
               "https://businessrecycling.com.au/business/7897",

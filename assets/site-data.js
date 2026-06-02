@@ -629,11 +629,13 @@ window.QCEE_DATA = {
       name: "Point Lookout Surf Life Saving Club",
       area: "Mulumba / Point Lookout",
       category: "Beach and safety",
+      address: "24 Kennedy Drive, Point Lookout QLD 4183",
       lat: -27.4365757,
       lng: 153.5430054,
+      mapZoom: 18,
       role: "Coastal safety hub, club functions, sport, beach event coordination",
       checks: "Surf conditions, patrol needs, emergency access, parking, food and alcohol rules.",
-      source: "Point Lookout SLSC contact map",
+      source: "Point Lookout SLSC official contact map",
       url: "https://www.pointlookoutslsc.com.au/contact/"
     },
     {

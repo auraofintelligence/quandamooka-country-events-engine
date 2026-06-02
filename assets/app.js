@@ -1,6 +1,9 @@
 (function () {
   const DATA = window.QCEE_DATA;
   const NOTICEBOARD = window.NOTICEBOARD_DATA || {};
+  if (Array.isArray(window.QCEE_EXTRA_PLACES)) {
+    DATA.places = [...(DATA.places || []), ...window.QCEE_EXTRA_PLACES];
+  }
   const pageId = document.body.dataset.page || "home";
   if (redirectLegacyBuilderUrl(pageId)) return;
   const page = DATA.pages[pageId] || DATA.pages.home;
@@ -26,6 +29,44 @@
       .replace(/&/g, "and")
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "") || "item";
+  }
+
+  const PLACE_LOCALES = [
+    { id: "all", label: "All locations", center: [-27.48, 153.47], zoom: 11 },
+    { id: "goompi-dunwich", label: "Goompi / Dunwich", center: [-27.5003, 153.405], zoom: 16 },
+    { id: "mulumba-point-lookout", label: "Mulumba / Point Lookout", center: [-27.4282, 153.5258], zoom: 15 },
+    { id: "pulan-amity", label: "Pulan / Amity Point", center: [-27.3998, 153.4398], zoom: 16 },
+    { id: "north-coast", label: "North coast", center: [-27.4202, 153.493], zoom: 14 },
+    { id: "inland-parks", label: "Inland parks", center: [-27.497, 153.455], zoom: 13 }
+  ];
+
+  function placeKey(place) {
+    return slug(place && (place.id || place.name));
+  }
+
+  function placeLocaleId(place) {
+    const text = [place && place.area, place && place.name, place && place.category].filter(Boolean).join(" ").toLowerCase();
+    if (/flinders|north coast/.test(text)) return "north-coast";
+    if (/bummiera|brown lake|karboora|blue lake|inland|naree|national park/.test(text)) return "inland-parks";
+    if (/pulan|amity/.test(text)) return "pulan-amity";
+    if (/mulumba|point lookout|cylinder|adder rock|home beach|main beach/.test(text)) return "mulumba-point-lookout";
+    if (/goompi|dunwich|bradbury/.test(text)) return "goompi-dunwich";
+    return "all";
+  }
+
+  function mapPinKind(category) {
+    const text = String(category || "").toLowerCase();
+    if (/food|drink|grocery|hospitality/.test(text)) return "food";
+    if (/retail|suppl/.test(text)) return "retail";
+    if (/creative|culture|heritage|gallery|artist/.test(text)) return "creative";
+    if (/camp/.test(text)) return "camping";
+    if (/beach|surf|coast/.test(text)) return "beach";
+    if (/toilet|bbq|amenity|picnic/.test(text)) return "amenity";
+    if (/sport|oval|club|golf|pool|bowls/.test(text)) return "sport";
+    if (/transport|ferry|post|mail|boat|jetty|ramp/.test(text)) return "transport";
+    if (/park|protected|lake|nature/.test(text)) return "nature";
+    if (/hall|civic|venue|property|service/.test(text)) return "civic";
+    return "default";
   }
 
   function builderRouteForId(id) {
@@ -346,10 +387,17 @@
   function renderPlaces() {
     const categories = [...new Set(DATA.places.map((place) => place.category).filter(Boolean))].sort();
     const options = categories.map((category) => `<option value="${esc(slug(category))}">${esc(category)}</option>`).join("");
+    const localeOptions = PLACE_LOCALES
+      .filter((locale) => locale.id !== "all")
+      .map((locale) => `<option value="${esc(locale.id)}">${esc(locale.label)}</option>`)
+      .join("");
+    const localeButtons = PLACE_LOCALES.map((locale) => `
+      <button class="map-shortcut-button" type="button" data-map-shortcut="${esc(locale.id)}">${esc(locale.label)}</button>
+    `).join("");
     const cards = DATA.places.map((place, index) => {
-      const text = [place.name, place.area, place.category, place.role, place.checks, place.source].filter(Boolean).join(" ").toLowerCase();
+      const text = [place.name, place.area, place.category, place.address, place.role, place.checks, place.source].filter(Boolean).join(" ").toLowerCase();
       return `
-        <article class="place-card" data-place-card="${index}" data-place-category="${esc(slug(place.category))}" data-place-text="${esc(text)}" tabindex="0">
+        <article class="place-card" data-place-card="${index}" data-place-slug="${esc(placeKey(place))}" data-place-locale="${esc(placeLocaleId(place))}" data-place-category="${esc(slug(place.category))}" data-place-text="${esc(text)}" tabindex="0">
           <div>
             <span class="tag">${index + 1}</span>
             <span class="tag">${esc(place.category)}</span>
@@ -367,7 +415,12 @@
           <option value="all">All place types</option>
           ${options}
         </select>
+        <select class="select-input" data-place-locale-filter aria-label="Filter places by location">
+          <option value="all">All locations</option>
+          ${localeOptions}
+        </select>
       </div>
+      <div class="map-shortcuts" aria-label="Map zoom shortcuts">${localeButtons}</div>
       <div class="place-map-shell">
         <div class="real-place-map" data-place-map aria-label="Interactive map of Minjerribah event places"></div>
         <aside class="place-detail" data-place-detail aria-live="polite"></aside>
@@ -719,6 +772,8 @@
   function setupPlaceMap() {
     const search = document.querySelector("[data-place-search]");
     const filter = document.querySelector("[data-place-filter]");
+    const localeFilter = document.querySelector("[data-place-locale-filter]");
+    const shortcutButtons = [...document.querySelectorAll("[data-map-shortcut]")];
     const cards = [...document.querySelectorAll("[data-place-card]")];
     const mapEl = document.querySelector("[data-place-map]");
     const empty = document.querySelector("[data-place-empty]");
@@ -749,13 +804,17 @@
       mapEl.innerHTML = '<p class="map-fallback">Map unavailable. Use the place list below.</p>';
     }
 
-    const markerIcon = (index, active) => Leaflet.divIcon({
-      className: "map-pin-shell",
-      html: `<span class="map-pin ${active ? "is-active" : ""}">${index + 1}</span>`,
-      iconSize: [34, 34],
-      iconAnchor: [17, 17],
-      popupAnchor: [0, -15]
-    });
+    const markerIcon = (index, active) => {
+      const place = DATA.places[index] || {};
+      const label = place.pinLabel || index + 1;
+      return Leaflet.divIcon({
+        className: "map-pin-shell",
+        html: `<span class="map-pin map-pin--${esc(mapPinKind(place.category))} ${active ? "is-active" : ""}"><span class="map-pin-label">${esc(label)}</span></span>`,
+        iconSize: [36, 44],
+        iconAnchor: [18, 42],
+        popupAnchor: [0, -38]
+      });
+    };
 
     const mapMarkers = map
       ? DATA.places.map((place, index) => {
@@ -769,15 +828,16 @@
           ${esc(place.area)}<br>
           <span>${esc(place.category)}</span>
         `);
-        marker.on("click", () => selectPlace(index, { fromMap: true, focusMap: true }));
+        marker.on("click", () => selectPlace(index, { fromMap: true, focusMap: true, updateUrl: true }));
         return marker;
       })
       : [];
 
-    const placeVisible = (el, query, category) => {
+    const placeVisible = (el, query, category, locale) => {
       const categoryOk = category === "all" || el.dataset.placeCategory === category;
+      const localeOk = locale === "all" || el.dataset.placeLocale === locale;
       const textOk = !query || (el.dataset.placeText || "").includes(query);
-      return categoryOk && textOk;
+      return categoryOk && localeOk && textOk;
     };
 
     const renderDetail = (index) => {
@@ -788,6 +848,7 @@
         <p class="eyebrow">Selected place</p>
         <h3>${esc(place.name)}</h3>
         <p class="meta">${esc(place.area)} / ${esc(place.category)}</p>
+        ${place.address ? `<p class="meta"><strong>Address:</strong> ${esc(place.address)}</p>` : ""}
         <p>${esc(place.role)}</p>
         <div class="detail-divider"></div>
         <p><strong>Check first:</strong> ${esc(place.checks)}</p>
@@ -798,12 +859,19 @@
     const selectPlace = (index, options = {}) => {
       selectedIndex = index;
       const place = DATA.places[index];
+      if (!place) return;
       cards.forEach((card) => card.classList.toggle("is-active", Number(card.dataset.placeCard) === index));
       mapMarkers.forEach((marker, markerIndex) => {
         if (!marker) return;
         marker.setIcon(markerIcon(markerIndex, markerIndex === index));
       });
       renderDetail(index);
+      if (options.updateUrl) {
+        const next = new URL(window.location.href);
+        next.searchParams.set("place", placeKey(place));
+        next.hash = "place-catalogue";
+        window.history.replaceState(null, "", next);
+      }
       if (map && place && hasCoords(place)) {
         const target = [Number(place.lat), Number(place.lng)];
         if (options.focusMap) {
@@ -812,19 +880,20 @@
         } else if (!options.skipPan) {
           map.panTo(target, { animate: true });
         }
-        if (options.fromMap && mapMarkers[index]) mapMarkers[index].openPopup();
+        if ((options.fromMap || options.openPopup) && mapMarkers[index]) mapMarkers[index].openPopup();
       }
     };
 
-    const sync = () => {
+    const sync = (options = {}) => {
       const query = (search && search.value || "").trim().toLowerCase();
       const category = filter && filter.value || "all";
+      const locale = localeFilter && localeFilter.value || "all";
       let firstVisible = -1;
       const visibleIndexes = [];
 
       cards.forEach((card) => {
         const index = Number(card.dataset.placeCard);
-        const visible = placeVisible(card, query, category);
+        const visible = placeVisible(card, query, category, locale);
         card.hidden = !visible;
         if (visible && firstVisible === -1) firstVisible = index;
         if (visible) visibleIndexes.push(index);
@@ -843,32 +912,55 @@
       if (firstVisible !== -1 && (!cards[selectedIndex] || cards[selectedIndex].hidden)) {
         selectPlace(firstVisible, { skipPan: true });
       }
-      if (map && visibleIndexes.length) {
+      shortcutButtons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.mapShortcut === locale);
+      });
+      if (map && visibleIndexes.length && options.fit !== false) {
         const bounds = Leaflet.latLngBounds(
           visibleIndexes
             .map((index) => DATA.places[index])
             .filter(hasCoords)
             .map((place) => [Number(place.lat), Number(place.lng)])
         );
-        if (bounds.isValid()) map.fitBounds(bounds.pad(0.16), { maxZoom: 12 });
+        const maxZoom = locale === "all" && category === "all" ? 12 : 16;
+        if (bounds.isValid()) map.fitBounds(bounds.pad(0.16), { maxZoom });
       }
     };
 
     cards.forEach((card) => {
       const index = Number(card.dataset.placeCard);
-      card.addEventListener("click", () => selectPlace(index, { focusMap: true }));
+      card.addEventListener("click", () => selectPlace(index, { focusMap: true, updateUrl: true }));
       card.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          selectPlace(index, { focusMap: true });
+          selectPlace(index, { focusMap: true, updateUrl: true });
         }
       });
     });
 
     if (search) search.addEventListener("input", sync);
     if (filter) filter.addEventListener("change", sync);
-    selectPlace(0, { skipPan: true });
+    if (localeFilter) localeFilter.addEventListener("change", sync);
+    shortcutButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const locale = button.dataset.mapShortcut || "all";
+        if (localeFilter) localeFilter.value = locale;
+        sync();
+        const target = PLACE_LOCALES.find((item) => item.id === locale);
+        if (map && target) map.setView(target.center, target.zoom, { animate: true });
+      });
+    });
     sync();
+    const requestedPlace = new URLSearchParams(window.location.search).get("place");
+    const requestedIndex = requestedPlace
+      ? DATA.places.findIndex((place) => placeKey(place) === requestedPlace)
+      : -1;
+    if (requestedIndex !== -1) {
+      selectPlace(requestedIndex, { focusMap: true, openPopup: true });
+      requestAnimationFrame(() => document.querySelector("#place-catalogue")?.scrollIntoView({ block: "start" }));
+    } else {
+      selectPlace(0, { skipPan: true });
+    }
   }
 
   function yamlScalar(value) {

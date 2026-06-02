@@ -276,7 +276,7 @@ textarea {
 
 .hero-copy {
   margin: 0 auto;
-  max-width: 680px;
+  max-width: var(--max);
   position: relative;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.54);
   width: min(var(--max), 100%);
@@ -701,26 +701,79 @@ p {
 
 .map-pin {
   align-items: center;
-  background: var(--gold);
+  --pin-bg: var(--gold);
+  background: var(--pin-bg);
   border: 2px solid rgba(7, 13, 18, 0.78);
-  border-radius: 999px;
+  border-radius: 50% 50% 50% 0;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
   color: #071112;
   display: inline-flex;
   font-family: var(--heading);
   font-size: 0.76rem;
   font-weight: 900;
-  height: 2rem;
+  height: 2.12rem;
   justify-content: center;
+  transform: rotate(-45deg);
+  transform-origin: center;
   transition: background 140ms ease, transform 140ms ease, box-shadow 140ms ease;
-  width: 2rem;
+  width: 2.12rem;
+}
+
+.map-pin-label {
+  display: inline-block;
+  line-height: 1;
+  transform: rotate(45deg);
+}
+
+.map-pin--food {
+  --pin-bg: #ffb85c;
+}
+
+.map-pin--retail {
+  --pin-bg: #9ad7ff;
+}
+
+.map-pin--creative {
+  --pin-bg: #ff84c2;
+}
+
+.map-pin--camping {
+  --pin-bg: #89d96b;
+}
+
+.map-pin--beach {
+  --pin-bg: #66d4ff;
+}
+
+.map-pin--amenity {
+  --pin-bg: #f0e08a;
+}
+
+.map-pin--sport {
+  --pin-bg: #85e0ae;
+}
+
+.map-pin--transport {
+  --pin-bg: #f7cb5c;
+}
+
+.map-pin--nature {
+  --pin-bg: #77c66e;
+}
+
+.map-pin--civic {
+  --pin-bg: #ff9d76;
+}
+
+.map-pin--default {
+  --pin-bg: var(--gold);
 }
 
 .map-pin:hover,
 .map-pin.is-active {
   background: var(--aqua);
   box-shadow: 0 10px 26px rgba(103, 234, 212, 0.25);
-  transform: scale(1.12);
+  transform: rotate(-45deg) scale(1.12);
 }
 
 .map-fallback {
@@ -787,6 +840,33 @@ p {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 1.2rem;
+}
+
+.map-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: -0.35rem 0 1rem;
+}
+
+.map-shortcut-button {
+  background: rgba(7, 13, 18, 0.72);
+  border: 1px solid rgba(203, 224, 218, 0.18);
+  border-radius: 8px;
+  color: var(--soft);
+  cursor: pointer;
+  font-family: var(--heading);
+  font-weight: 850;
+  min-height: 2.6rem;
+  padding: 0.58rem 0.78rem;
+}
+
+.map-shortcut-button:hover,
+.map-shortcut-button:focus,
+.map-shortcut-button.is-active {
+  background: rgba(103, 234, 212, 0.12);
+  border-color: rgba(103, 234, 212, 0.58);
+  color: var(--text);
 }
 
 .calendar-controls {
