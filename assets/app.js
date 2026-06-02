@@ -227,15 +227,34 @@
 
   function renderCalendar() {
     const statusOrder = ["confirmed", "tbc", "recurring", "past", "historical"];
-    const statusFilters = ["all", ...statusOrder.filter((status) => DATA.events.some((event) => event.status === status))];
+    const automation = DATA.eventAutomation || {};
+    const brisbaneTodayKey = () => {
+      const parts = new Intl.DateTimeFormat("en-AU", {
+        timeZone: "Australia/Brisbane",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).formatToParts(new Date());
+      const getPart = (type) => parts.find((part) => part.type === type)?.value || "";
+      return `${getPart("year")}-${getPart("month")}-${getPart("day")}`;
+    };
+    const sortAnchorDate = automation.sortAnchorDate || brisbaneTodayKey();
+    const eventEndSort = (event) => event.dateEndSort || event.dateSort || "";
+    const effectiveStatus = (event) => {
+      const endDate = eventEndSort(event);
+      if (event.status === "confirmed" && endDate && endDate < sortAnchorDate) return "past";
+      return event.status;
+    };
+    const statusFilters = ["all", ...statusOrder.filter((status) => DATA.events.some((event) => effectiveStatus(event) === status))];
     const sectors = [...new Set(DATA.events.map((event) => event.sector).filter(Boolean))].sort();
     const loadTags = [...new Set(DATA.events.flatMap((event) => event.loadTags || []))].sort();
-    const statusCount = (status) => DATA.events.filter((event) => event.status === status).length;
+    const statusCount = (status) => DATA.events.filter((event) => effectiveStatus(event) === status).length;
     const sourceState = (event) => {
-      if (event.status === "confirmed") return `Date source checked ${DATA.project.lastPublicSearch}`;
-      if (event.status === "past") return "Past record kept for event memory";
-      if (event.status === "recurring") return "Recurring pattern needs organiser confirmation";
-      if (event.status === "tbc") return "Date to confirm before public promotion";
+      const status = effectiveStatus(event);
+      if (status === "confirmed") return `Date source checked ${DATA.project.lastPublicSearch}`;
+      if (status === "past") return "Past record kept for event memory";
+      if (status === "recurring") return "Recurring pattern needs organiser confirmation";
+      if (status === "tbc") return "Date to confirm before public promotion";
       return "Source status needs review";
     };
     const eventText = (event) => [
@@ -250,13 +269,13 @@
       ...(event.loadTags || []),
       ...Object.values(event.simulation || {})
     ].filter(Boolean).join(" ").toLowerCase();
-    const checkedDate = "2026-05-22";
     const calendarRank = (event) => {
-      if (event.status === "confirmed" && String(event.dateSort || "") >= checkedDate) return 0;
-      if (event.status === "tbc") return 1;
-      if (event.status === "recurring") return 2;
-      if (event.status === "confirmed") return 3;
-      if (event.status === "past") return 4;
+      const status = effectiveStatus(event);
+      if (status === "confirmed") return 0;
+      if (status === "tbc") return 1;
+      if (status === "recurring") return 2;
+      if (status === "past") return 3;
+      if (status === "historical") return 4;
       return 5;
     };
     const eventCards = DATA.events
@@ -264,21 +283,22 @@
       .sort((a, b) => {
         const rankDiff = calendarRank(a) - calendarRank(b);
         if (rankDiff) return rankDiff;
-        if (calendarRank(a) === 4) return String(b.dateSort || "").localeCompare(String(a.dateSort || ""));
+        if (calendarRank(a) >= 3) return String(eventEndSort(b)).localeCompare(String(eventEndSort(a)));
         return String(a.dateSort || "").localeCompare(String(b.dateSort || ""));
       })
       .map((event) => {
+        const status = effectiveStatus(event);
         const simulation = event.simulation || {};
         const href = event.sourceUrl || "#";
         const external = href.startsWith("http");
         return `
           <article class="event-card event-atlas-card"
-            data-event-status="${esc(event.status)}"
+            data-event-status="${esc(status)}"
             data-event-sector="${esc(slug(event.sector))}"
             data-event-tags="${esc((event.loadTags || []).map(slug).join(" "))}"
             data-event-text="${esc(eventText(event))}">
             <div class="event-card-top">
-              <span class="status-pill ${esc(event.status)}">${esc(DATA.eventStatusLabels[event.status] || event.status)}</span>
+              <span class="status-pill ${esc(status)}">${esc(DATA.eventStatusLabels[status] || status)}</span>
               <span class="source-status">${esc(sourceState(event))}</span>
             </div>
             <h3>${esc(event.name)}</h3>
@@ -302,7 +322,6 @@
           </article>
         `;
       }).join("");
-    const automation = DATA.eventAutomation || {};
     const automationSources = (automation.sources || []).map((source) => `<span class="tag">${esc(source)}</span>`).join("");
     return [
       section({ eyebrow: "Event atlas", heading: "Search the event records.", id: "event-atlas" }, "", `

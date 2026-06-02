@@ -241,6 +241,7 @@ window.QCEE_DATA = {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10, Brisbane / AEST.",
     lastRunLabel: "2 June 2026, 3:03pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-06-02",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
