@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "22 May 2026",
+    lastPublicSearch: "2 June 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -236,6 +236,22 @@ window.QCEE_DATA = {
     tbc: "Date to confirm",
     recurring: "Recurring pattern",
     historical: "Historical pattern"
+  },
+  eventAutomation: {
+    label: "Automated source watch",
+    schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10, Brisbane / AEST.",
+    lastRunLabel: "2 June 2026, 3:03pm GMT+10 Brisbane / AEST.",
+    interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
+    sources: [
+      "Redland City Council What's On",
+      "Visit Redlands Coast",
+      "SeaLink North Stradbroke Island events",
+      "stradbrokeisland.com",
+      "Humanitix and Eventbrite",
+      "indexed Facebook and Instagram event pages",
+      "venue and club pages including Straddie Brewing, Little Ship Club, Amity Point Community Club, Point Lookout Bowls Club and local museums",
+      "festival, arts, markets, sporting club and workshop sources"
+    ]
   },
   events: [
     {
@@ -566,6 +582,138 @@ window.QCEE_DATA = {
         permissions: "Venue hire, First Nations cultural insight, image/teaching permissions and transfer timing.",
         aftercare: "Teacher feedback, curriculum outputs, workshop evidence and future camp demand.",
         ancestor: "Strong education-to-memory bridge for teaching place and cultural context."
+      }
+    },
+    {
+      id: "arthur-mobsby-seafood-spectacular-2026",
+      name: "Arthur Mobsby Seafood Spectacular",
+      dateLabel: "17 January 2026",
+      dateSort: "2026-01-17",
+      status: "past",
+      season: "Summer",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Seafood and community fundraising",
+      scale: "waterfront club event",
+      source: "Stradbroke Island visitor listing and Little Ship Club",
+      sourceUrl: "https://stradbrokeisland.com/arthur-mobsby-seafood-spectacular/",
+      concise: "Waterfront seafood day with mud crab races, live music and a strong local-family turnout.",
+      loadTags: ["seafood", "live music", "fundraiser", "waterfront", "family"],
+      simulation: {
+        movement: "Midday visitor flow into Dunwich waterfront parking, ferry arrivals and club lawn seating.",
+        permissions: "Club operations, food safety, liquor service, waterfront safety and live-music settings.",
+        aftercare: "Seafood waste handling, volunteer load, fundraiser results and transport timing feedback.",
+        ancestor: "Useful local calendar marker because it mixes island seafood culture, club memory and public gathering."
+      }
+    },
+    {
+      id: "clean-up-straddie-2026",
+      name: "Clean Up Straddie",
+      dateLabel: "1 March 2026",
+      dateSort: "2026-03-01",
+      status: "past",
+      season: "Late summer",
+      place: "Island-wide registration points in Point Lookout, Amity and Dunwich",
+      village: "Island-wide",
+      sector: "Environment and community care",
+      scale: "distributed volunteer day",
+      source: "Straddie Brewing Co",
+      sourceUrl: "https://straddiebrewing.com.au/news/beach-cleanup/",
+      concise: "Community clean-up day with township registration points and volunteer support across Minjerribah.",
+      loadTags: ["cleanup", "volunteers", "beaches", "waste", "community"],
+      simulation: {
+        movement: "Small volunteer groups disperse across beaches and townships, with staggered registration and return flow.",
+        permissions: "Volunteer briefing, waste collection points, road and beach safety, and sponsor/public messaging care.",
+        aftercare: "Rubbish volume, volunteer numbers, beach hotspots and repeat clean-up priorities.",
+        ancestor: "Strong care-for-Country pattern because the public action is practical, distributed and place-protective."
+      }
+    },
+    {
+      id: "little-ship-game-classic-2026",
+      name: "Little Ship Club Garmin Game Classic & Reef Rumble",
+      dateLabel: "27-29 March 2026",
+      dateSort: "2026-03-27",
+      status: "past",
+      season: "Autumn shoulder",
+      place: "Little Ship Club and Moreton Bay offshore grounds",
+      village: "Goompi / Dunwich",
+      sector: "Boating and sport fishing",
+      scale: "multi-day tournament",
+      source: "Little Ship Club Game Fishing Club",
+      sourceUrl: "https://littleshipclub.com.au/on-the-water/game-fishing/",
+      concise: "Annual family-friendly game fishing and reef event linked to the Little Ship Club waterfront base.",
+      loadTags: ["boating", "fishing", "offshore", "family", "club event"],
+      simulation: {
+        movement: "Boat launches, pontoon traffic, marina-style coordination and return-to-club social flow.",
+        permissions: "Marine safety, club operations, weigh-in procedures, weather monitoring and on-water communications.",
+        aftercare: "Catch records, safety notes, fuel and pontoon pressure, and club hospitality outcomes.",
+        ancestor: "Adds a water-based event pattern that matters for ferry, bay, pontoon and boating logistics."
+      }
+    },
+    {
+      id: "stitching-stories-pattern",
+      name: "Stitching Stories",
+      dateLabel: "Every second Saturday of the month, 10am-1pm",
+      dateSort: "2026-01-10",
+      status: "recurring",
+      season: "Year-round",
+      place: "North Stradbroke Island Museum on Minjerribah verandah",
+      village: "Goompi / Dunwich",
+      sector: "Museum and community making",
+      scale: "small recurring workshop",
+      source: "North Stradbroke Island Museum on Minjerribah",
+      sourceUrl: "https://www.stradbrokemuseum.com.au/",
+      concise: "Free community slow-clothing and making session hosted at the museum every second Saturday.",
+      loadTags: ["museum", "community making", "slow clothing", "free", "recurring"],
+      simulation: {
+        movement: "Low-volume local and visitor attendance around museum opening hours and verandah seating.",
+        permissions: "Museum host approval, workshop accessibility, public wording accuracy and weather backup.",
+        aftercare: "Attendance rhythm, repeat participation, volunteer capacity and links into wider museum programming.",
+        ancestor: "Good small-scale memory pattern because it ties making, museum life and regular community return."
+      }
+    },
+    {
+      id: "reef-and-beef-open-2026",
+      name: "Reef & Beef 2026 Open Competition",
+      dateLabel: "6-7 June 2026",
+      dateSort: "2026-06-06",
+      status: "confirmed",
+      season: "Winter",
+      place: "Point Lookout Bowls Club",
+      village: "Point Lookout",
+      sector: "Sport and club competition",
+      scale: "weekend bowls tournament",
+      source: "Point Lookout Bowls Club",
+      sourceUrl: "https://www.pointlookoutbowlsclub.com.au/whats-on",
+      concise: "Weekend open competition on the greens with teams of three and a public club-weekend atmosphere.",
+      loadTags: ["bowls", "club competition", "weekend", "spectators", "Point Lookout"],
+      simulation: {
+        movement: "Steady daytime foot traffic into the club with player arrivals, meal service and spectator overlap.",
+        permissions: "Club operations, green bookings, team registration, hospitality flow and parking management.",
+        aftercare: "Team turnout, club takings, visitor spillover and timing lessons for future winter weekends.",
+        ancestor: "Useful recurring club-sport pattern for modelling smaller but still structured visitor load."
+      }
+    },
+    {
+      id: "australian-eagles-live-2026",
+      name: "The Australian Eagles Show",
+      dateLabel: "6 June 2026",
+      dateSort: "2026-06-06",
+      status: "confirmed",
+      season: "Winter",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Live music",
+      scale: "ticketed waterfront concert",
+      source: "Little Ship Club social calendar",
+      sourceUrl: "https://littleshipclub.com.au/whats-on/social-calendar/",
+      concise: "Waterfront live music afternoon with reserved seating, buffet packages and limited remaining tickets.",
+      loadTags: ["live music", "ticketed", "waterfront", "buffet", "Dunwich"],
+      simulation: {
+        movement: "Pre-booked arrivals concentrate before noon, with afternoon dwell time and ferry-linked return waves.",
+        permissions: "Ticketing, seating layout, food service, live-sound controls and waterfront crowd management.",
+        aftercare: "Attendance against capacity, food service timing, ferry fit and neighbour/noise feedback.",
+        ancestor: "Adds a clear small-concert pattern for Dunwich waterfront activation."
       }
     }
   ],

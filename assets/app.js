@@ -302,6 +302,8 @@
           </article>
         `;
       }).join("");
+    const automation = DATA.eventAutomation || {};
+    const automationSources = (automation.sources || []).map((source) => `<span class="tag">${esc(source)}</span>`).join("");
     return [
       section({ eyebrow: "Event atlas", heading: "Search the event records.", id: "event-atlas" }, "", `
         <div class="calendar-summary" aria-label="Calendar summary">
@@ -327,6 +329,19 @@
         </div>
         <p class="empty-note" data-event-empty hidden>No matching event records yet. Clear a filter or search another term.</p>
         <div class="grid two" data-event-grid>${eventCards}</div>
+      `),
+      section({ eyebrow: automation.label || "Automated source watch", heading: "Where the event scan looks.", id: "event-source-watch" }, automation.interimNote || "", `
+        <div class="grid two">
+          <article class="panel">
+            <h3>Scan rhythm</h3>
+            <p><strong>Schedule:</strong> ${esc(automation.schedule || "Twice weekly in Brisbane time.")}</p>
+            <p><strong>Last source pass:</strong> ${esc(automation.lastRunLabel || DATA.project.lastPublicSearch)}</p>
+          </article>
+          <article class="panel">
+            <h3>Search lanes</h3>
+            <div class="tag-row">${automationSources}</div>
+          </article>
+        </div>
       `),
       section({ eyebrow: "Source links", heading: "Check the public source.", id: "calendar-sources" }, "", `<div class="grid three">${DATA.externalSources.map(sourceCard).join("")}</div>`)
     ].join("");
