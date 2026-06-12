@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "9 June 2026",
+    lastPublicSearch: "12 June 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -240,8 +240,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10, Brisbane / AEST.",
-    lastRunLabel: "9 June 2026, 1:31pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-06-09",
+    lastRunLabel: "12 June 2026, 10:59am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-06-12",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -299,6 +299,50 @@ window.QCEE_DATA = {
         permissions: "Gallery opening hours, exhibition care, image permissions and public listing accuracy.",
         aftercare: "Visitor numbers, artwork sales, tourism crossover and evidence of island-mainland creative spillover.",
         ancestor: "Useful ecosystem marker because it shows how Straddie-adjacent creative brands extend into the mainland harbour circuit."
+      }
+    },
+    {
+      id: "amity-community-day-2026",
+      name: "Amity Point Community Day",
+      dateLabel: "13 June 2026",
+      dateSort: "2026-06-13",
+      status: "confirmed",
+      season: "Early winter",
+      place: "Amity Point Community Club",
+      village: "Pulan / Amity",
+      sector: "Community and family gathering",
+      scale: "free local club activation",
+      source: "Amity Point Community Club",
+      sourceUrl: "https://amitypointcommunityclub.com.au/whats-on/",
+      concise: "Free community afternoon with kids activities, a sausage sizzle and live music from Pippi Lips at the club.",
+      loadTags: ["free entry", "community day", "family", "live music", "Amity"],
+      simulation: {
+        movement: "Short local and visitor arrivals build across late morning, with family dwell time spread between food, music and kids activities.",
+        permissions: "Club host approval, family-safe activity setup, music staging, food service and clear wet-weather messaging.",
+        aftercare: "Turnout, kitchen and bar pressure, family feedback and whether the day strengthens repeat community use of the club.",
+        ancestor: "Useful village-scale marker because it tracks simple community activation in Amity rather than only larger island events."
+      }
+    },
+    {
+      id: "north-stradbroke-emergencyredi-2026",
+      name: "North Stradbroke Island Australian Red Cross EmergencyRedi Workshop",
+      dateLabel: "17 June 2026",
+      dateSort: "2026-06-17",
+      status: "confirmed",
+      season: "Early winter",
+      place: "Dunwich Community Hall",
+      village: "Goompi / Dunwich",
+      sector: "Preparedness and community resilience",
+      scale: "free workshop",
+      source: "Eventbrite and Australian Red Cross",
+      sourceUrl: "https://www.eventbrite.com.au/e/north-stradbroke-island-australian-red-cross-emergencyreditm-workshop-tickets-1989199949597",
+      concise: "Free preparedness workshop focused on local risks, practical planning and disaster-readiness for island residents and community groups.",
+      loadTags: ["free entry", "workshop", "preparedness", "Dunwich", "community resilience"],
+      simulation: {
+        movement: "Small daytime hall attendance with mostly local arrivals and low transport pressure compared with festival or sport events.",
+        permissions: "Hall booking, facilitator setup, accessibility, registration handling and accurate emergency-preparedness wording.",
+        aftercare: "Attendance, follow-up resource use, community readiness signals and whether more practical resilience sessions are requested.",
+        ancestor: "Important civic-care marker because it models preparedness learning before weather, ferry or service disruption events."
       }
     },
     {
