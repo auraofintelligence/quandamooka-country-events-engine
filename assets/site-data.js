@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "12 June 2026",
+    lastPublicSearch: "17 June 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -240,8 +240,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10, Brisbane / AEST.",
-    lastRunLabel: "12 June 2026, 10:59am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-06-12",
+    lastRunLabel: "17 June 2026, 8:55am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-06-17",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -255,29 +255,6 @@ window.QCEE_DATA = {
     ]
   },
   events: [
-    {
-      id: "many-hands-making-reflection-zone-2026",
-      name: "Many Hands, Making and Reflection Zone",
-      dateLabel: "28 April-9 June 2026",
-      dateSort: "2026-04-28",
-      dateEndSort: "2026-06-09",
-      status: "confirmed",
-      season: "Autumn to early winter",
-      place: "Redland Art Gallery",
-      village: "Cleveland",
-      sector: "Art and cultural participation",
-      scale: "regional gallery activation",
-      source: "Visit Redlands Coast",
-      sourceUrl: "https://www.visitredlandscoast.com.au/whats-on/markets/event/7347-drop-in-activity-many-hands-making-and-reflection-zone",
-      concise: "Free drop-in making zone linked to Dean Bingkin Tyson's exhibition, inviting slow creative participation shaped by land and sea patterns.",
-      loadTags: ["gallery", "free entry", "drop-in", "Quandamooka connections", "Cleveland"],
-      simulation: {
-        movement: "Low-to-steady gallery visitation with flexible dwell time rather than a single arrival spike.",
-        permissions: "Gallery host approvals, exhibition care, accessibility, family-safe materials and public wording accuracy.",
-        aftercare: "Visitor participation levels, gallery staff feedback, material use and crossover into other Redlands cultural visits.",
-        ancestor: "Useful mainland culture link because it carries Quandamooka-connected making practice into the wider Redlands public realm."
-      }
-    },
     {
       id: "straddievarious-philip-farley-exhibition-2026",
       name: "Straddievarious Gallery: Philip Farley Earth, Sea and Sky Exhibition",
@@ -302,28 +279,6 @@ window.QCEE_DATA = {
       }
     },
     {
-      id: "amity-community-day-2026",
-      name: "Amity Point Community Day",
-      dateLabel: "13 June 2026",
-      dateSort: "2026-06-13",
-      status: "confirmed",
-      season: "Early winter",
-      place: "Amity Point Community Club",
-      village: "Pulan / Amity",
-      sector: "Community and family gathering",
-      scale: "free local club activation",
-      source: "Amity Point Community Club",
-      sourceUrl: "https://amitypointcommunityclub.com.au/whats-on/",
-      concise: "Free community afternoon with kids activities, a sausage sizzle and live music from Pippi Lips at the club.",
-      loadTags: ["free entry", "community day", "family", "live music", "Amity"],
-      simulation: {
-        movement: "Short local and visitor arrivals build across late morning, with family dwell time spread between food, music and kids activities.",
-        permissions: "Club host approval, family-safe activity setup, music staging, food service and clear wet-weather messaging.",
-        aftercare: "Turnout, kitchen and bar pressure, family feedback and whether the day strengthens repeat community use of the club.",
-        ancestor: "Useful village-scale marker because it tracks simple community activation in Amity rather than only larger island events."
-      }
-    },
-    {
       id: "north-stradbroke-emergencyredi-2026",
       name: "North Stradbroke Island Australian Red Cross EmergencyRedi Workshop",
       dateLabel: "17 June 2026",
@@ -343,6 +298,52 @@ window.QCEE_DATA = {
         permissions: "Hall booking, facilitator setup, accessibility, registration handling and accurate emergency-preparedness wording.",
         aftercare: "Attendance, follow-up resource use, community readiness signals and whether more practical resilience sessions are requested.",
         ancestor: "Important civic-care marker because it models preparedness learning before weather, ferry or service disruption events."
+      }
+    },
+    {
+      id: "paula-boo-coil-workshop-winter-2026",
+      name: "Coil Workshop",
+      dateLabel: "30 June and 7 July 2026",
+      dateSort: "2026-06-30",
+      dateEndSort: "2026-07-07",
+      status: "confirmed",
+      season: "Winter school holidays",
+      place: "Paula Boo Studios",
+      village: "Point Lookout",
+      sector: "Workshops and making",
+      scale: "small guided creative workshop",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Coil-Workshop-Adventurefest-67e6260e64c9461c4042cb1a",
+      concise: "Two school-holiday basketry sessions using natural fibres and coiling techniques in a small Point Lookout studio setting.",
+      loadTags: ["workshop", "basketry", "Point Lookout", "small group", "winter holidays"],
+      simulation: {
+        movement: "Small booked arrivals with low transport pressure, afternoon dwell time and limited spillover beyond the studio site.",
+        permissions: "Host capacity, booking accuracy, age guidance, accessibility clarity and weather-safe access wording.",
+        aftercare: "Session fill rates, repeat bookings, visitor feedback and whether workshop demand grows into later holiday dates.",
+        ancestor: "Useful maker-economy marker because it shows how small studio workshops add steady creative activity outside the major festival peaks."
+      }
+    },
+    {
+      id: "paula-boo-twist-weave-workshop-winter-2026",
+      name: "Twist Weave Workshop",
+      dateLabel: "1 and 8 July 2026",
+      dateSort: "2026-07-01",
+      dateEndSort: "2026-07-08",
+      status: "confirmed",
+      season: "Winter school holidays",
+      place: "Paula Boo Studios",
+      village: "Point Lookout",
+      sector: "Workshops and making",
+      scale: "small guided fibre workshop",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Twist-Weave-Workshop-Adventurefest-67e62a9ee64d2e334074736d",
+      concise: "Two holiday weaving sessions focused on twined basket-making with locally gathered natural fibres and small-group teaching.",
+      loadTags: ["workshop", "weaving", "Point Lookout", "small group", "winter holidays"],
+      simulation: {
+        movement: "Small daytime studio attendance with low parking pressure and mostly pre-booked participant arrivals.",
+        permissions: "Host capacity, booking pathway, age guidance, access expectations and careful public wording around materials and session length.",
+        aftercare: "Participant turnout, repeat interest, material demand and whether related studio workshops should be added to later scans.",
+        ancestor: "Good creative-tourism marker because it links island making practice to repeatable holiday programming rather than a single one-off event."
       }
     },
     {
@@ -571,25 +572,25 @@ window.QCEE_DATA = {
       }
     },
     {
-      id: "open-studio-days-pattern",
-      name: "Open Studio Days",
-      dateLabel: "Dates to confirm / by appointment pattern",
-      dateSort: "2026-06-01",
+      id: "bowlsie-wednesday-trivia-pattern",
+      name: "Wednesday Nights @ The Bowlsie",
+      dateLabel: "Every Wednesday, with trivia from 7pm",
+      dateSort: "2026-01-07",
       status: "recurring",
-      season: "Holiday and appointment rhythm",
-      place: "Paula Boo Studios, Point Lookout",
+      season: "Year-round midweek rhythm",
+      place: "Point Lookout Bowls Club",
       village: "Point Lookout",
-      sector: "Artists and studios",
-      scale: "open studio",
-      source: "Official North Stradbroke Island visitor listing",
-      sourceUrl: "https://stradbrokeisland.com/open-studio-days/",
-      concise: "Local fibre art, visual art, silversmithing, biochrome, gyotaku and printmaking open-studio pattern.",
-      loadTags: ["open studio", "artists", "sales", "creative tourism"],
+      sector: "Community nights and club hospitality",
+      scale: "weekly local club gathering",
+      source: "Point Lookout Bowls Club",
+      sourceUrl: "https://www.pointlookoutbowlsclub.com.au/whats-on/billys-world-famous-trivia-24sep25-cyl6d-efwcl-rl48c-ygx28-6h9nw-br7cp-jxf78-6cj5m-a4xhm-87sld-wba7f-jdcnx-zzcgs-9kmtm-f3zfw-jrsam-g92tw-mywj6",
+      concise: "Weekly Bowlsie midweek gathering with roast specials, Billy's trivia and a steady locals-and-visitors social mix.",
+      loadTags: ["weekly", "trivia", "club night", "Point Lookout", "midweek"],
       simulation: {
-        movement: "Low visitor movement, strongest around holidays and arts trail moments.",
-        permissions: "Artist consent, open hours, stock/media permissions and public listing accuracy.",
-        aftercare: "Visitor numbers, sales, workshop requests and artist contact updates.",
-        ancestor: "Maps living artist lineages and studios."
+        movement: "Low-to-moderate evening arrivals centred on dinner and trivia, with little ferry pressure compared with weekend events.",
+        permissions: "Club operations, bookings, food service flow, responsible service and clear recurring-listing wording.",
+        aftercare: "Table demand, repeat local attendance, kitchen pressure and whether the weekly pattern stays stable across seasons.",
+        ancestor: "Useful everyday-social marker because it captures repeat community gathering, not just festival spikes."
       }
     },
     {
@@ -612,6 +613,73 @@ window.QCEE_DATA = {
         permissions: "Museum host approval, workshop accessibility, public wording accuracy and weather backup.",
         aftercare: "Attendance rhythm, repeat participation, volunteer capacity and links into wider museum programming.",
         ancestor: "Good small-scale memory pattern because it ties making, museum life and regular community return."
+      }
+    },
+    {
+      id: "open-studio-days-pattern",
+      name: "Open Studio Days",
+      dateLabel: "Dates to confirm / by appointment pattern",
+      dateSort: "2026-06-01",
+      status: "recurring",
+      season: "Holiday and appointment rhythm",
+      place: "Paula Boo Studios, Point Lookout",
+      village: "Point Lookout",
+      sector: "Artists and studios",
+      scale: "open studio",
+      source: "Official North Stradbroke Island visitor listing",
+      sourceUrl: "https://stradbrokeisland.com/open-studio-days/",
+      concise: "Local fibre art, visual art, silversmithing, biochrome, gyotaku and printmaking open-studio pattern.",
+      loadTags: ["open studio", "artists", "sales", "creative tourism"],
+      simulation: {
+        movement: "Low visitor movement, strongest around holidays and arts trail moments.",
+        permissions: "Artist consent, open hours, stock/media permissions and public listing accuracy.",
+        aftercare: "Visitor numbers, sales, workshop requests and artist contact updates.",
+        ancestor: "Maps living artist lineages and studios."
+      }
+    },
+    {
+      id: "amity-community-day-2026",
+      name: "Amity Point Community Day",
+      dateLabel: "13 June 2026",
+      dateSort: "2026-06-13",
+      status: "past",
+      season: "Early winter",
+      place: "Amity Point Community Club",
+      village: "Pulan / Amity",
+      sector: "Community and family gathering",
+      scale: "free local club activation",
+      source: "Amity Point Community Club",
+      sourceUrl: "https://amitypointcommunityclub.com.au/whats-on/",
+      concise: "Free community afternoon with kids activities, a sausage sizzle and live music from Pippi Lips at the club.",
+      loadTags: ["free entry", "community day", "family", "live music", "Amity"],
+      simulation: {
+        movement: "Short local and visitor arrivals build across late morning, with family dwell time spread between food, music and kids activities.",
+        permissions: "Club host approval, family-safe activity setup, music staging, food service and clear wet-weather messaging.",
+        aftercare: "Turnout, kitchen and bar pressure, family feedback and whether the day strengthens repeat community use of the club.",
+        ancestor: "Useful village-scale marker because it tracks simple community activation in Amity rather than only larger island events."
+      }
+    },
+    {
+      id: "many-hands-making-reflection-zone-2026",
+      name: "Many Hands, Making and Reflection Zone",
+      dateLabel: "28 April-9 June 2026",
+      dateSort: "2026-04-28",
+      dateEndSort: "2026-06-09",
+      status: "past",
+      season: "Autumn to early winter",
+      place: "Redland Art Gallery",
+      village: "Cleveland",
+      sector: "Art and cultural participation",
+      scale: "regional gallery activation",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.visitredlandscoast.com.au/whats-on/markets/event/7347-drop-in-activity-many-hands-making-and-reflection-zone",
+      concise: "Free drop-in making zone linked to Dean Bingkin Tyson's exhibition, inviting slow creative participation shaped by land and sea patterns.",
+      loadTags: ["gallery", "free entry", "drop-in", "Quandamooka connections", "Cleveland"],
+      simulation: {
+        movement: "Low-to-steady gallery visitation with flexible dwell time rather than a single arrival spike.",
+        permissions: "Gallery host approvals, exhibition care, accessibility, family-safe materials and public wording accuracy.",
+        aftercare: "Visitor participation levels, gallery staff feedback, material use and crossover into other Redlands cultural visits.",
+        ancestor: "Useful mainland culture link because it carries Quandamooka-connected making practice into the wider Redlands public realm."
       }
     },
     {
