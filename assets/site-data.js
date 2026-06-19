@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "17 June 2026",
+    lastPublicSearch: "19 June 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -239,9 +239,9 @@ window.QCEE_DATA = {
   },
   eventAutomation: {
     label: "Automated source watch",
-    schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10, Brisbane / AEST.",
-    lastRunLabel: "17 June 2026, 8:55am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-06-17",
+    schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
+    lastRunLabel: "19 June 2026, 11:05am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-06-19",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -279,25 +279,25 @@ window.QCEE_DATA = {
       }
     },
     {
-      id: "north-stradbroke-emergencyredi-2026",
-      name: "North Stradbroke Island Australian Red Cross EmergencyRedi Workshop",
-      dateLabel: "17 June 2026",
-      dateSort: "2026-06-17",
+      id: "tones-and-tides-dunwich-2026",
+      name: "Tones and Tides: Dunwich",
+      dateLabel: "28 June 2026",
+      dateSort: "2026-06-28",
       status: "confirmed",
-      season: "Early winter",
+      season: "Winter",
       place: "Dunwich Community Hall",
       village: "Goompi / Dunwich",
-      sector: "Preparedness and community resilience",
-      scale: "free workshop",
-      source: "Eventbrite and Australian Red Cross",
-      sourceUrl: "https://www.eventbrite.com.au/e/north-stradbroke-island-australian-red-cross-emergencyreditm-workshop-tickets-1989199949597",
-      concise: "Free preparedness workshop focused on local risks, practical planning and disaster-readiness for island residents and community groups.",
-      loadTags: ["free entry", "workshop", "preparedness", "Dunwich", "community resilience"],
+      sector: "Music and community arts",
+      scale: "small ticketed concert",
+      source: "Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Tones-and-Tides-Dunwich-6a1682a0894ff201458e34f0",
+      concise: "Intimate afternoon opera concert in Dunwich with free pre-concert kids workshops and post-show chats with the musicians.",
+      loadTags: ["opera", "concert", "Dunwich", "kids workshop", "winter culture"],
       simulation: {
-        movement: "Small daytime hall attendance with mostly local arrivals and low transport pressure compared with festival or sport events.",
-        permissions: "Hall booking, facilitator setup, accessibility, registration handling and accurate emergency-preparedness wording.",
-        aftercare: "Attendance, follow-up resource use, community readiness signals and whether more practical resilience sessions are requested.",
-        ancestor: "Important civic-care marker because it models preparedness learning before weather, ferry or service disruption events."
+        movement: "Small afternoon hall attendance with light ferry-linked visitor movement and low pressure on surrounding streets.",
+        permissions: "Hall booking, ticketing clarity, accessibility, musician setup and careful public wording around workshop times.",
+        aftercare: "Attendance, workshop uptake, visitor origin and whether similar small-format concerts should be tracked across the island series.",
+        ancestor: "Useful cultural-series marker because it brings touring classical performance into a local island hall rather than a major festival setting."
       }
     },
     {
@@ -344,6 +344,28 @@ window.QCEE_DATA = {
         permissions: "Host capacity, booking pathway, age guidance, access expectations and careful public wording around materials and session length.",
         aftercare: "Participant turnout, repeat interest, material demand and whether related studio workshops should be added to later scans.",
         ancestor: "Good creative-tourism marker because it links island making practice to repeatable holiday programming rather than a single one-off event."
+      }
+    },
+    {
+      id: "tones-and-tides-point-lookout-2026",
+      name: "Tones and Tides: Point Lookout",
+      dateLabel: "4 July 2026",
+      dateSort: "2026-07-04",
+      status: "confirmed",
+      season: "Winter school holidays",
+      place: "Point Lookout Community Hall",
+      village: "Point Lookout",
+      sector: "Music and community arts",
+      scale: "small ticketed concert",
+      source: "Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Tones-and-Tides-Point-Lookout-6a2053a2483de0291224b3e5",
+      concise: "Afternoon Point Lookout concert in the Tones and Tides series, pairing touring opera with free kids music workshops before the show.",
+      loadTags: ["opera", "concert", "Point Lookout", "kids workshop", "winter culture"],
+      simulation: {
+        movement: "Small afternoon hall audience with pre-show family arrivals and manageable ferry, bus and parking overlap.",
+        permissions: "Hall hire, ticketing, accessibility, family workshop safety and accurate timing across concert and workshop notices.",
+        aftercare: "Attendance, family participation, visitor feedback and whether the island hall format supports repeat classical programming.",
+        ancestor: "Useful cultural-series marker because it shows Point Lookout hosting intimate touring performance outside the larger annual festival peaks."
       }
     },
     {
@@ -635,6 +657,28 @@ window.QCEE_DATA = {
         permissions: "Artist consent, open hours, stock/media permissions and public listing accuracy.",
         aftercare: "Visitor numbers, sales, workshop requests and artist contact updates.",
         ancestor: "Maps living artist lineages and studios."
+      }
+    },
+    {
+      id: "north-stradbroke-emergencyredi-2026",
+      name: "North Stradbroke Island Australian Red Cross EmergencyRedi Workshop",
+      dateLabel: "17 June 2026",
+      dateSort: "2026-06-17",
+      status: "past",
+      season: "Early winter",
+      place: "Dunwich Community Hall",
+      village: "Goompi / Dunwich",
+      sector: "Preparedness and community resilience",
+      scale: "free workshop",
+      source: "Eventbrite and Australian Red Cross",
+      sourceUrl: "https://www.eventbrite.com.au/e/north-stradbroke-island-australian-red-cross-emergencyreditm-workshop-tickets-1989199949597",
+      concise: "Free preparedness workshop focused on local risks, practical planning and disaster-readiness for island residents and community groups.",
+      loadTags: ["free entry", "workshop", "preparedness", "Dunwich", "community resilience"],
+      simulation: {
+        movement: "Small daytime hall attendance with mostly local arrivals and low transport pressure compared with festival or sport events.",
+        permissions: "Hall booking, facilitator setup, accessibility, registration handling and accurate emergency-preparedness wording.",
+        aftercare: "Attendance, follow-up resource use, community readiness signals and whether more practical resilience sessions are requested.",
+        ancestor: "Important civic-care marker because it models preparedness learning before weather, ferry or service disruption events."
       }
     },
     {
