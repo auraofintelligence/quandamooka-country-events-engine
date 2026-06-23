@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "19 June 2026",
+    lastPublicSearch: "23 June 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -240,8 +240,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "19 June 2026, 11:05am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-06-19",
+    lastRunLabel: "23 June 2026, 10:05am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-06-23",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -660,6 +660,28 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "grass-roots-live-music-pattern",
+      name: "Grass Roots Live Music",
+      dateLabel: "First Sunday of every month, 2pm-5pm",
+      dateSort: "2026-06-07",
+      status: "recurring",
+      season: "Year-round Sunday music rhythm",
+      place: "Straddie Brewing Co rooftop deck",
+      village: "Goompi / Dunwich",
+      sector: "Live music and hospitality",
+      scale: "regular local live-music session",
+      source: "Stradbroke Island visitor listing and Straddie Brewing Co",
+      sourceUrl: "https://stradbrokeisland.com/straddie-brewing-co-2/",
+      concise: "Monthly rooftop live-music session at the brewery with local acts, Sunday food trade and an easy afternoon social crowd.",
+      loadTags: ["live music", "monthly", "brewery", "Dunwich", "Sunday session"],
+      simulation: {
+        movement: "Low-to-moderate Sunday arrivals centred on lunch, drinks and a relaxed rooftop dwell pattern rather than a single peak.",
+        permissions: "Venue operations, live-sound settings, table bookings, responsible service and clear recurring-listing wording.",
+        aftercare: "Table demand, artist rotation, visitor mix and whether the monthly pattern stays stable through holiday peaks.",
+        ancestor: "Useful everyday culture marker because it tracks a repeat local music rhythm rather than only one-off ticketed shows."
+      }
+    },
+    {
       id: "north-stradbroke-emergencyredi-2026",
       name: "North Stradbroke Island Australian Red Cross EmergencyRedi Workshop",
       dateLabel: "17 June 2026",
@@ -838,6 +860,28 @@ window.QCEE_DATA = {
         permissions: "QYAC, council, NX, traffic, surf safety, first aid, course marking, insurance and volunteer rosters.",
         aftercare: "Race numbers, incidents, volunteer grants, course condition, transport pressure and local spend.",
         ancestor: "Important annual sport load model; launched in 2008 and now a multi-day festival."
+      }
+    },
+    {
+      id: "caxton-classic-golf-tournament-2026",
+      name: "Caxton Classic Golf Tournament",
+      dateLabel: "16 May 2026",
+      dateSort: "2026-05-16",
+      status: "past",
+      season: "Autumn",
+      place: "North Stradbroke Island Golf Course and Straddie Brewing Co",
+      village: "Goompi / Dunwich",
+      sector: "Golf, hospitality and fundraising",
+      scale: "small invitational tournament",
+      source: "Stradbroke Island visitor listing and Straddie Brewing Co",
+      sourceUrl: "https://stradbrokeisland.com/caxton-classic-golf-tournament/",
+      concise: "All-inclusive island golf day with sporting guests, ferry transfers, brewery after-party and Wildlife Rescue Minjerribah support.",
+      loadTags: ["golf", "fundraiser", "brewery", "ferry transfers", "small tournament"],
+      simulation: {
+        movement: "Team arrivals move through ferry transfer, golf-course start windows and a later return pulse toward the brewery rooftop after-party.",
+        permissions: "Golf-course access, buggy logistics, ferry-transfer timing, hospitality service and fundraiser public wording.",
+        aftercare: "Team turnout, transfer timing, course pressure, sponsor follow-through and whether the event returns as a repeat fixture.",
+        ancestor: "Useful crossover marker because sport, hospitality and local fundraising meet in one compact island day."
       }
     },
     {
