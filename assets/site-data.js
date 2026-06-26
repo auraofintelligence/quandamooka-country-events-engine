@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "23 June 2026",
+    lastPublicSearch: "26 June 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -240,8 +240,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "23 June 2026, 10:05am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-06-23",
+    lastRunLabel: "26 June 2026, 12:32pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-06-26",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -276,6 +276,28 @@ window.QCEE_DATA = {
         permissions: "Gallery opening hours, exhibition care, image permissions and public listing accuracy.",
         aftercare: "Visitor numbers, artwork sales, tourism crossover and evidence of island-mainland creative spillover.",
         ancestor: "Useful ecosystem marker because it shows how Straddie-adjacent creative brands extend into the mainland harbour circuit."
+      }
+    },
+    {
+      id: "pig-day-out-stradbroke-2026",
+      name: "Pig Day Out Stradbroke Island",
+      dateLabel: "27 June 2026",
+      dateSort: "2026-06-27",
+      status: "confirmed",
+      season: "Winter",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Family fun and waterfront hospitality",
+      scale: "daytime club event",
+      source: "Visit Redlands Coast and Little Ship Club",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Pig-Day-Out-Stradbroke-Island-6a28cf22cba85783776e1725",
+      concise: "Full-day Little Ship Club event with live pig races, family activities, food stalls and a busy waterfront social crowd in Dunwich.",
+      loadTags: ["family", "Little Ship Club", "pig races", "Dunwich", "winter weekend"],
+      simulation: {
+        movement: "Day-trip and local arrivals build from the late morning, with ferry-linked visitor pulses, family dwell time and a broad afternoon spread across the waterfront venue.",
+        permissions: "Club host approval, ticketing clarity, family-safe activity setup, food service, ferry travel messaging and clear venue rules including the no-dogs condition.",
+        aftercare: "Attendance, queue pressure, ferry timing feedback, food-and-bar demand and whether the club repeats the winter pig-race format.",
+        ancestor: "Useful waterfront-activation marker because it shows how a Dunwich club event can pull families and day-trippers into a single daytime social anchor."
       }
     },
     {
@@ -344,6 +366,29 @@ window.QCEE_DATA = {
         permissions: "Host capacity, booking pathway, age guidance, access expectations and careful public wording around materials and session length.",
         aftercare: "Participant turnout, repeat interest, material demand and whether related studio workshops should be added to later scans.",
         ancestor: "Good creative-tourism marker because it links island making practice to repeatable holiday programming rather than a single one-off event."
+      }
+    },
+    {
+      id: "paula-boo-alternate-weave-workshop-winter-2026",
+      name: "Alternate Weave Workshop",
+      dateLabel: "2 and 9 July 2026",
+      dateSort: "2026-07-02",
+      dateEndSort: "2026-07-09",
+      status: "confirmed",
+      season: "Winter school holidays",
+      place: "Paula Boo Studios",
+      village: "Point Lookout",
+      sector: "Workshops and making",
+      scale: "small guided fibre workshop",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Alternate-Weave-Workshop-Adventurefest-69325cb7605e275d5c8766b9",
+      concise: "Two school-holiday fibre workshops where participants make small woven sea creatures from coccus palm and raffia in a Point Lookout studio setting.",
+      loadTags: ["workshop", "weaving", "Point Lookout", "small group", "winter holidays"],
+      simulation: {
+        movement: "Small booked afternoon arrivals with low transport pressure, short studio dwell time and limited spillover beyond the host site.",
+        permissions: "Host capacity, booking accuracy, minimum-age guidance, accessibility wording and careful public framing around materials and session length.",
+        aftercare: "Session fill rates, family uptake, repeat workshop interest and whether playful fibre sessions should stay on the holiday scan list.",
+        ancestor: "Useful maker-economy marker because it shows Paula Boo Studios extending the holiday workshop rhythm beyond the basketry sessions already in the atlas."
       }
     },
     {
