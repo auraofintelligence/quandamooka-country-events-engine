@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "26 June 2026",
+    lastPublicSearch: "3 July 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -240,8 +240,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "26 June 2026, 12:32pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-06-26",
+    lastRunLabel: "3 July 2026, 9:03am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-07-03",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -255,73 +255,6 @@ window.QCEE_DATA = {
     ]
   },
   events: [
-    {
-      id: "straddievarious-philip-farley-exhibition-2026",
-      name: "Straddievarious Gallery: Philip Farley Earth, Sea and Sky Exhibition",
-      dateLabel: "16 May-28 June 2026",
-      dateSort: "2026-05-16",
-      dateEndSort: "2026-06-28",
-      status: "confirmed",
-      season: "Autumn to winter",
-      place: "Straddievarious Gallery",
-      village: "Cleveland",
-      sector: "Gallery and coastal arts",
-      scale: "regional exhibition",
-      source: "Visit Redlands Coast",
-      sourceUrl: "https://www.visitredlandscoast.com.au/whats-on/markets/event/7345-straddievarious-gallery-philip-farley-earth-sea-and-sky-exhibition",
-      concise: "Extended gallery exhibition of coastal and bayside painting with a Straddie-linked creative identity in the Cleveland harbour precinct.",
-      loadTags: ["gallery", "exhibition", "coastal art", "Cleveland", "winter culture"],
-      simulation: {
-        movement: "Steady small-scale gallery traffic that can combine with harbour dining, shopping and ferry-day itineraries.",
-        permissions: "Gallery opening hours, exhibition care, image permissions and public listing accuracy.",
-        aftercare: "Visitor numbers, artwork sales, tourism crossover and evidence of island-mainland creative spillover.",
-        ancestor: "Useful ecosystem marker because it shows how Straddie-adjacent creative brands extend into the mainland harbour circuit."
-      }
-    },
-    {
-      id: "pig-day-out-stradbroke-2026",
-      name: "Pig Day Out Stradbroke Island",
-      dateLabel: "27 June 2026",
-      dateSort: "2026-06-27",
-      status: "confirmed",
-      season: "Winter",
-      place: "Little Ship Club",
-      village: "Goompi / Dunwich",
-      sector: "Family fun and waterfront hospitality",
-      scale: "daytime club event",
-      source: "Visit Redlands Coast and Little Ship Club",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Pig-Day-Out-Stradbroke-Island-6a28cf22cba85783776e1725",
-      concise: "Full-day Little Ship Club event with live pig races, family activities, food stalls and a busy waterfront social crowd in Dunwich.",
-      loadTags: ["family", "Little Ship Club", "pig races", "Dunwich", "winter weekend"],
-      simulation: {
-        movement: "Day-trip and local arrivals build from the late morning, with ferry-linked visitor pulses, family dwell time and a broad afternoon spread across the waterfront venue.",
-        permissions: "Club host approval, ticketing clarity, family-safe activity setup, food service, ferry travel messaging and clear venue rules including the no-dogs condition.",
-        aftercare: "Attendance, queue pressure, ferry timing feedback, food-and-bar demand and whether the club repeats the winter pig-race format.",
-        ancestor: "Useful waterfront-activation marker because it shows how a Dunwich club event can pull families and day-trippers into a single daytime social anchor."
-      }
-    },
-    {
-      id: "tones-and-tides-dunwich-2026",
-      name: "Tones and Tides: Dunwich",
-      dateLabel: "28 June 2026",
-      dateSort: "2026-06-28",
-      status: "confirmed",
-      season: "Winter",
-      place: "Dunwich Community Hall",
-      village: "Goompi / Dunwich",
-      sector: "Music and community arts",
-      scale: "small ticketed concert",
-      source: "Redlands Coast",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Tones-and-Tides-Dunwich-6a1682a0894ff201458e34f0",
-      concise: "Intimate afternoon opera concert in Dunwich with free pre-concert kids workshops and post-show chats with the musicians.",
-      loadTags: ["opera", "concert", "Dunwich", "kids workshop", "winter culture"],
-      simulation: {
-        movement: "Small afternoon hall attendance with light ferry-linked visitor movement and low pressure on surrounding streets.",
-        permissions: "Hall booking, ticketing clarity, accessibility, musician setup and careful public wording around workshop times.",
-        aftercare: "Attendance, workshop uptake, visitor origin and whether similar small-format concerts should be tracked across the island series.",
-        ancestor: "Useful cultural-series marker because it brings touring classical performance into a local island hall rather than a major festival setting."
-      }
-    },
     {
       id: "paula-boo-coil-workshop-winter-2026",
       name: "Coil Workshop",
@@ -478,6 +411,73 @@ window.QCEE_DATA = {
         permissions: "Oval booking, sport operations, cultural ceremony approvals, traffic flow, food service and emergency access.",
         aftercare: "Crowd counts, transport pressure, oval condition, community feedback and sponsor follow-through.",
         ancestor: "Strong sport-and-culture marker because elite competition and community gathering sit together on Country."
+      }
+    },
+    {
+      id: "queensland-young-people-quandamooka-country-2026",
+      name: "Queensland Young people: Join us on Quandamooka Country!",
+      dateLabel: "18-19 July 2026",
+      dateSort: "2026-07-18",
+      dateEndSort: "2026-07-19",
+      status: "confirmed",
+      season: "Winter",
+      place: "Minjerribah Camping Ground",
+      village: "Pulan / Amity",
+      sector: "Youth gathering and climate justice",
+      scale: "small multi-day gathering",
+      source: "Humanitix",
+      sourceUrl: "https://events.humanitix.com/queensland-young-climate-warriors-join-us-on-quandamooka-country",
+      concise: "Free overnight gathering for young First Nations and Pacific people focused on culture, connection and climate action on Country.",
+      loadTags: ["youth", "camping", "free entry", "Amity", "multi-day"],
+      simulation: {
+        movement: "Small group arrivals build through Saturday morning, with ferry transfers, cabin check-in and shared-program movement centred on the camping ground.",
+        permissions: "Host registration, camping-ground coordination, youth duty of care, cultural safety and clear travel messaging for participants.",
+        aftercare: "Attendance, travel support demand, participant feedback and whether similar youth gatherings return to the island calendar.",
+        ancestor: "Useful civic-futures marker because it links island place, youth leadership and public-facing climate gathering practice."
+      }
+    },
+    {
+      id: "travla-hoedown-party-cruise-2026",
+      name: "Party Cruise - Journey to the travla Hoedown at The Straddie Hotel",
+      dateLabel: "25 July 2026",
+      dateSort: "2026-07-25",
+      status: "confirmed",
+      season: "Winter",
+      place: "SeaLink Ferry to The Straddie Hotel",
+      village: "Cleveland to Goompi / Dunwich",
+      sector: "Travel-linked live music and hospitality",
+      scale: "ticketed ferry-and-hotel social event",
+      source: "SeaLink North Stradbroke Island",
+      sourceUrl: "https://www.sealink.com.au/north-stradbroke-island/events/party-cruise-journey-to-the-travla-hoedown-at-the-straddie-hotel/",
+      concise: "Ticketed pre-party ferry cruise with live music, line dancing and transfers into a larger hoedown afternoon at The Straddie Hotel.",
+      loadTags: ["SeaLink", "live music", "line dancing", "ferry", "Straddie Hotel"],
+      simulation: {
+        movement: "Boarding compresses around the Cleveland departure window, then shifts into bus transfers and a broader afternoon hotel crowd in Dunwich.",
+        permissions: "Ferry operations, ticketing, responsible service, transfer coordination, hotel host settings and accurate final-return messaging.",
+        aftercare: "Boarding flow, transfer timing, bar demand, ferry return pressure and whether transport-bundled events become a repeat winter pattern.",
+        ancestor: "Useful transport-and-hospitality marker because it combines the ferry leg, island venue activation and mainland visitor pipeline in one public listing."
+      }
+    },
+    {
+      id: "goompi-naidoc-community-film-celebration-2026",
+      name: "Goompi NAIDOC 2026 - Community Film Celebration",
+      dateLabel: "31 July 2026",
+      dateSort: "2026-07-31",
+      status: "confirmed",
+      season: "NAIDOC Week",
+      place: "Dunwich State School Oval",
+      village: "Goompi / Dunwich",
+      sector: "Culture and community storytelling",
+      scale: "free community evening",
+      source: "Redlands Coast and MMEIC",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Goompi-NAIDOC-2026-Community-Film-Celebration-6a3e137dfc002204294282df",
+      concise: "Free evening gathering on Minjerribah centred on community film, dinner and NAIDOC-week storytelling in Goompi.",
+      loadTags: ["NAIDOC", "free entry", "film", "Dunwich", "community dinner"],
+      simulation: {
+        movement: "Late-afternoon arrivals build into an early-evening oval gathering, with family groups, seated viewing and a shared meal rhythm.",
+        permissions: "School-oval use, cultural-program approval, accessibility, food coordination and careful public wording around event timing.",
+        aftercare: "Turnout, meal demand, community feedback and whether the celebration strengthens future NAIDOC public-program planning on the island.",
+        ancestor: "Useful culture-memory marker because film, dinner and local storytelling sit together in a visible community-led NAIDOC setting."
       }
     },
     {
@@ -724,6 +724,73 @@ window.QCEE_DATA = {
         permissions: "Venue operations, live-sound settings, table bookings, responsible service and clear recurring-listing wording.",
         aftercare: "Table demand, artist rotation, visitor mix and whether the monthly pattern stays stable through holiday peaks.",
         ancestor: "Useful everyday culture marker because it tracks a repeat local music rhythm rather than only one-off ticketed shows."
+      }
+    },
+    {
+      id: "straddievarious-philip-farley-exhibition-2026",
+      name: "Straddievarious Gallery: Philip Farley Earth, Sea and Sky Exhibition",
+      dateLabel: "16 May-28 June 2026",
+      dateSort: "2026-05-16",
+      dateEndSort: "2026-06-28",
+      status: "past",
+      season: "Autumn to winter",
+      place: "Straddievarious Gallery",
+      village: "Cleveland",
+      sector: "Gallery and coastal arts",
+      scale: "regional exhibition",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.visitredlandscoast.com.au/whats-on/markets/event/7345-straddievarious-gallery-philip-farley-earth-sea-and-sky-exhibition",
+      concise: "Extended gallery exhibition of coastal and bayside painting with a Straddie-linked creative identity in the Cleveland harbour precinct.",
+      loadTags: ["gallery", "exhibition", "coastal art", "Cleveland", "winter culture"],
+      simulation: {
+        movement: "Steady small-scale gallery traffic that can combine with harbour dining, shopping and ferry-day itineraries.",
+        permissions: "Gallery opening hours, exhibition care, image permissions and public listing accuracy.",
+        aftercare: "Visitor numbers, artwork sales, tourism crossover and evidence of island-mainland creative spillover.",
+        ancestor: "Useful ecosystem marker because it shows how Straddie-adjacent creative brands extend into the mainland harbour circuit."
+      }
+    },
+    {
+      id: "tones-and-tides-dunwich-2026",
+      name: "Tones and Tides: Dunwich",
+      dateLabel: "28 June 2026",
+      dateSort: "2026-06-28",
+      status: "past",
+      season: "Winter",
+      place: "Dunwich Community Hall",
+      village: "Goompi / Dunwich",
+      sector: "Music and community arts",
+      scale: "small ticketed concert",
+      source: "Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Tones-and-Tides-Dunwich-6a1682a0894ff201458e34f0",
+      concise: "Intimate afternoon opera concert in Dunwich with free pre-concert kids workshops and post-show chats with the musicians.",
+      loadTags: ["opera", "concert", "Dunwich", "kids workshop", "winter culture"],
+      simulation: {
+        movement: "Small afternoon hall attendance with light ferry-linked visitor movement and low pressure on surrounding streets.",
+        permissions: "Hall booking, ticketing clarity, accessibility, musician setup and careful public wording around workshop times.",
+        aftercare: "Attendance, workshop uptake, visitor origin and whether similar small-format concerts should be tracked across the island series.",
+        ancestor: "Useful cultural-series marker because it brings touring classical performance into a local island hall rather than a major festival setting."
+      }
+    },
+    {
+      id: "pig-day-out-stradbroke-2026",
+      name: "Pig Day Out Stradbroke Island",
+      dateLabel: "27 June 2026",
+      dateSort: "2026-06-27",
+      status: "past",
+      season: "Winter",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Family fun and waterfront hospitality",
+      scale: "daytime club event",
+      source: "Visit Redlands Coast and Little Ship Club",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Pig-Day-Out-Stradbroke-Island-6a28cf22cba85783776e1725",
+      concise: "Full-day Little Ship Club event with live pig races, family activities, food stalls and a busy waterfront social crowd in Dunwich.",
+      loadTags: ["family", "Little Ship Club", "pig races", "Dunwich", "winter weekend"],
+      simulation: {
+        movement: "Day-trip and local arrivals build from the late morning, with ferry-linked visitor pulses, family dwell time and a broad afternoon spread across the waterfront venue.",
+        permissions: "Club host approval, ticketing clarity, family-safe activity setup, food service, ferry travel messaging and clear venue rules including the no-dogs condition.",
+        aftercare: "Attendance, queue pressure, ferry timing feedback, food-and-bar demand and whether the club repeats the winter pig-race format.",
+        ancestor: "Useful waterfront-activation marker because it shows how a Dunwich club event can pull families and day-trippers into a single daytime social anchor."
       }
     },
     {
