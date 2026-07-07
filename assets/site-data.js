@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "3 July 2026",
+    lastPublicSearch: "7 July 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -240,8 +240,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "3 July 2026, 9:03am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-07-03",
+    lastRunLabel: "7 July 2026, 2:24pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-07-07",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -369,6 +369,52 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "world-cup-by-the-bay-2026",
+      name: "World Cup by the Bay",
+      dateLabel: "19 June-20 July 2026",
+      dateSort: "2026-06-19",
+      dateEndSort: "2026-07-20",
+      status: "confirmed",
+      season: "Winter",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Sport viewing and hospitality",
+      scale: "recurring live-screening series",
+      source: "Visit Redlands Coast and Little Ship Club",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/World-Cup-by-the-Bay-6a33492e7778574d2cc70614",
+      concise: "Selected World Cup screenings by the bay with lunch service, bar trade and waterfront club viewing at Little Ship Club.",
+      loadTags: ["World Cup", "live screening", "Little Ship Club", "free entry", "winter"],
+      simulation: {
+        movement: "Club arrivals pulse around selected match windows, with lunch trade, seated viewing and lighter ferry pressure than a one-day headline event.",
+        permissions: "Venue operations, screening schedule accuracy, responsible service, courtesy-bus messaging and clear public updates as match times change.",
+        aftercare: "Screening turnout, food-and-bar demand, repeat attendance and whether tournament viewing stays viable as an island winter hospitality pattern.",
+        ancestor: "Useful everyday-major-event marker because a global tournament gets translated into small local gathering rhythms on the waterfront."
+      }
+    },
+    {
+      id: "open-studio-days-pattern",
+      name: "Open Studio Days",
+      dateLabel: "8-10 July and 14-16 August 2026",
+      dateSort: "2026-07-08",
+      dateEndSort: "2026-08-16",
+      status: "confirmed",
+      season: "Winter and early spring",
+      place: "Paula Boo Studios, Point Lookout",
+      village: "Point Lookout",
+      sector: "Artists and studios",
+      scale: "open studio",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Open-Studio-Days-68620e3918385d5b3d24aafa",
+      concise: "Paula Boo Studios opens across two 2026 date windows for local fibre art, printmaking, silversmithing, biochrome work and studio visits.",
+      loadTags: ["open studio", "artists", "Point Lookout", "free entry", "creative tourism"],
+      simulation: {
+        movement: "Low-to-moderate studio visits spread across holiday and arts-trail windows, with short dwell times and small bursts around midday.",
+        permissions: "Artist consent, opening hours, sales handling, image use, accessibility wording and accurate public date windows.",
+        aftercare: "Visitor numbers, sales, workshop follow-ups and whether later studio dates should be split into their own records in future scans.",
+        ancestor: "Maps living artist lineages and studios."
+      }
+    },
+    {
       id: "stradbroke-chamber-music-2026",
       name: "Stradbroke Chamber Music Festival",
       dateLabel: "17-19 July 2026",
@@ -459,6 +505,28 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "brisbane-open-house-stradbroke-edition-2026",
+      name: "Brisbane Open House: Stradbroke Edition",
+      dateLabel: "25 July 2026",
+      dateSort: "2026-07-25",
+      status: "confirmed",
+      season: "Winter",
+      place: "QUAMPI Quandamooka Arts Centre and Point Lookout residences",
+      village: "Point Lookout",
+      sector: "Architecture and design",
+      scale: "ticketed guided tour day",
+      source: "Humanitix",
+      sourceUrl: "https://events.humanitix.com/brisbane-open-house-stradbroke-edition",
+      concise: "Ticketed architecture day starting at QUAMPI before guided tours through four Point Lookout homes shaped by island landscape and climate.",
+      loadTags: ["architecture", "guided tour", "Point Lookout", "ticketed", "design"],
+      simulation: {
+        movement: "Small guided groups move between QUAMPI and multiple house stops, with private-address handling, timed transfers and long dwell windows.",
+        permissions: "Host and resident approval, ticketing limits, private-property access rules, photography guidance and clear wayfinding between tour stops.",
+        aftercare: "Attendance, transport smoothness, resident feedback and whether design-led tours become a repeat cultural-program pattern on Minjerribah.",
+        ancestor: "Useful built-environment marker because it adds architecture, climate response and house-tour culture to the island's public events mix."
+      }
+    },
+    {
       id: "goompi-naidoc-community-film-celebration-2026",
       name: "Goompi NAIDOC 2026 - Community Film Celebration",
       dateLabel: "31 July 2026",
@@ -529,17 +597,17 @@ window.QCEE_DATA = {
     {
       id: "quandamooka-festival-2026",
       name: "Quandamooka Festival",
-      dateLabel: "29-30 August 2026",
-      dateSort: "2026-08-29",
-      dateEndSort: "2026-08-30",
+      dateLabel: "12-13 September 2026",
+      dateSort: "2026-09-12",
+      dateEndSort: "2026-09-13",
       status: "confirmed",
       season: "Yalingbila / winter-spring transition",
       place: "QUAMPI Arts and Culture Centre",
       village: "Goompi / Dunwich",
       sector: "Quandamooka culture",
       scale: "major cultural anchor",
-      source: "SeaLink and official visitor listing",
-      sourceUrl: "https://www.sealink.com.au/north-stradbroke-island/events/quandamooka-festival-2/",
+      source: "Visit Redlands Coast and SeaLink",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Quandamooka-Festival-2026-68bfac3e4a35d00b1f6817eb",
       concise: "Free multi-artform cultural festival with Kunjiel, music, food, weaving, arts, crafts, markets, workshops and panels.",
       loadTags: ["culture", "markets", "workshops", "free entry", "QUAMPI"],
       simulation: {
@@ -680,28 +748,6 @@ window.QCEE_DATA = {
         permissions: "Museum host approval, workshop accessibility, public wording accuracy and weather backup.",
         aftercare: "Attendance rhythm, repeat participation, volunteer capacity and links into wider museum programming.",
         ancestor: "Good small-scale memory pattern because it ties making, museum life and regular community return."
-      }
-    },
-    {
-      id: "open-studio-days-pattern",
-      name: "Open Studio Days",
-      dateLabel: "Dates to confirm / by appointment pattern",
-      dateSort: "2026-06-01",
-      status: "recurring",
-      season: "Holiday and appointment rhythm",
-      place: "Paula Boo Studios, Point Lookout",
-      village: "Point Lookout",
-      sector: "Artists and studios",
-      scale: "open studio",
-      source: "Official North Stradbroke Island visitor listing",
-      sourceUrl: "https://stradbrokeisland.com/open-studio-days/",
-      concise: "Local fibre art, visual art, silversmithing, biochrome, gyotaku and printmaking open-studio pattern.",
-      loadTags: ["open studio", "artists", "sales", "creative tourism"],
-      simulation: {
-        movement: "Low visitor movement, strongest around holidays and arts trail moments.",
-        permissions: "Artist consent, open hours, stock/media permissions and public listing accuracy.",
-        aftercare: "Visitor numbers, sales, workshop requests and artist contact updates.",
-        ancestor: "Maps living artist lineages and studios."
       }
     },
     {
