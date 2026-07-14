@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "7 July 2026",
+    lastPublicSearch: "14 July 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -240,8 +240,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "7 July 2026, 2:24pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-07-07",
+    lastRunLabel: "14 July 2026, 1:10pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-07-14",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -527,6 +527,28 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "ambrose-nicholls-skene-little-ship-club-2026",
+      name: "Live Music at Little Ship Club with Ambrose Nicholls-Skene",
+      dateLabel: "25 July 2026",
+      dateSort: "2026-07-25",
+      status: "confirmed",
+      season: "Winter",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Live music and waterfront hospitality",
+      scale: "free club afternoon session",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Live-Music-at-Little-Ship-Club-with-Ambrose-Nicholls-Skene-6a4ee5113f67a82036e8cd40",
+      concise: "Free Saturday waterfront session at Little Ship Club with Ambrose Nicholls-Skene playing acoustic covers, classics and easy-listening favourites.",
+      loadTags: ["live music", "free entry", "Little Ship Club", "Dunwich", "waterfront"],
+      simulation: {
+        movement: "Lunch traffic rolls into a longer bayfront afternoon, with seated hospitality trade building around the music window rather than a single peak arrival.",
+        permissions: "Performer booking, club trading settings, responsible service, weather fallback and clear public timing for visitors arriving off ferry connections.",
+        aftercare: "Table demand, meal service pressure, performer turnout and whether weekend live sets become a stronger winter shoulder-season drawcard.",
+        ancestor: "Useful hospitality marker because it shows how small free music sessions can activate the Dunwich waterfront without needing a major festival footprint."
+      }
+    },
+    {
       id: "goompi-naidoc-community-film-celebration-2026",
       name: "Goompi NAIDOC 2026 - Community Film Celebration",
       dateLabel: "31 July 2026",
@@ -546,6 +568,28 @@ window.QCEE_DATA = {
         permissions: "School-oval use, cultural-program approval, accessibility, food coordination and careful public wording around event timing.",
         aftercare: "Turnout, meal demand, community feedback and whether the celebration strengthens future NAIDOC public-program planning on the island.",
         ancestor: "Useful culture-memory marker because film, dinner and local storytelling sit together in a visible community-led NAIDOC setting."
+      }
+    },
+    {
+      id: "members-day-little-ship-club-2026",
+      name: "Members Day Little Ship Club",
+      dateLabel: "1 August 2026",
+      dateSort: "2026-08-01",
+      status: "confirmed",
+      season: "Winter",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Club social and live music",
+      scale: "free afternoon club gathering",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Members-Day-Little-Ship-Club-6a4f0a67ca2fed007f6ff7a9",
+      concise: "Free Little Ship Club members afternoon with a visiting solo artist bringing soulful tunes, country roots and a relaxed waterfront set.",
+      loadTags: ["club social", "live music", "Little Ship Club", "free entry", "Dunwich"],
+      simulation: {
+        movement: "A local-heavy midday gathering clusters around lunch and music, with softer arrival waves than a ticketed evening event.",
+        permissions: "Club host settings, performer booking, visitor/member messaging, responsible service and accurate public wording if access rules change.",
+        aftercare: "Member turnout, casual visitor demand, lunch trade and whether member-day programming starts appearing more regularly in public listings.",
+        ancestor: "Useful club-life marker because it captures a smaller social rhythm that still shapes Dunwich hospitality activity and public calendar texture."
       }
     },
     {
