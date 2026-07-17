@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "14 July 2026",
+    lastPublicSearch: "17 July 2026",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -240,8 +240,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "14 July 2026, 1:10pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-07-14",
+    lastRunLabel: "17 July 2026, 11:26am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-07-17",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -389,6 +389,29 @@ window.QCEE_DATA = {
         permissions: "Venue operations, screening schedule accuracy, responsible service, courtesy-bus messaging and clear public updates as match times change.",
         aftercare: "Screening turnout, food-and-bar demand, repeat attendance and whether tournament viewing stays viable as an island winter hospitality pattern.",
         ancestor: "Useful everyday-major-event marker because a global tournament gets translated into small local gathering rhythms on the waterfront."
+      }
+    },
+    {
+      id: "minjerribah-photography-awards-2026",
+      name: "NSI Golf Club Minjerribah Photography Awards",
+      dateLabel: "1 July to 4 October 2026",
+      dateSort: "2026-07-01",
+      dateEndSort: "2026-10-04",
+      status: "confirmed",
+      season: "Winter to spring",
+      place: "North Stradbroke Island Golf Club",
+      village: "Point Lookout",
+      sector: "Photography and community arts",
+      scale: "open-entry island photo awards",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents",
+      concise: "Annual Minjerribah photography awards inviting entries that celebrate the island's natural beauty and Indigenous cultural heritage.",
+      loadTags: ["photography", "competition", "Point Lookout", "artists", "wildlife"],
+      simulation: {
+        movement: "Steady trickle of entrants, viewers and local word-of-mouth around Point Lookout through the winter-to-spring window.",
+        permissions: "Prize terms, entry categories, image rights, judging process and public display details need to stay source-backed.",
+        aftercare: "Entry numbers, finalist visibility, community reach and whether exhibition dates surface in later scans.",
+        ancestor: "Useful creative-memory marker because the awards gather changing island views into a recurring public archive."
       }
     },
     {
@@ -613,6 +636,28 @@ window.QCEE_DATA = {
         permissions: "Venue booking, food, host duty of care, outdoor visit permissions and weather backup.",
         aftercare: "Participant feedback, artwork records, wellbeing notes and local spend.",
         ancestor: "Useful small-scale model for intimate place-memory and creative restoration."
+      }
+    },
+    {
+      id: "subdivision-film-night-2026",
+      name: "Film Night: Subdivision Screening and Filmmaker Conversation",
+      dateLabel: "13 August 2026",
+      dateSort: "2026-08-13",
+      status: "confirmed",
+      season: "Winter",
+      place: "Straddie Brewing Co",
+      village: "Goompi / Dunwich",
+      sector: "Film and arts",
+      scale: "ticketed arts-trail evening event",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/opening-event-2026",
+      concise: "Arts-trail film night with Subdivision, a filmmaker conversation, pizza and a drink at Straddie Brewing Co.",
+      loadTags: ["film", "Straddie Arts Trail", "ticketed", "Straddie Brewing", "evening"],
+      simulation: {
+        movement: "Early-evening clustering around Dunwich hospitality, with visitors likely flowing from the trail opening into one venue.",
+        permissions: "Film screening rights, venue capacity, ticketing, hospitality service and accessibility wording need to remain clear.",
+        aftercare: "Ticket uptake, venue load, discussion interest and whether similar arts-trail evening sessions recur next year.",
+        ancestor: "Links contemporary storytelling, place change and local hospitality into one shared public memory moment."
       }
     },
     {
