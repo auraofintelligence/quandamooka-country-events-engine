@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "21 July 2026",
+    lastPublicSearch: "23 July 2026",
     lastUpdated: "23 July 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "21 July 2026, 6:53pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-07-21",
+    lastRunLabel: "23 July 2026, 11:15pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-07-23",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -580,6 +580,29 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "straddie-brewing-rooftop-live-music-2026",
+      name: "Straddie Brewing Rooftop Live Music",
+      dateLabel: "26 July, 1 August, 30 August, 5 September, 19 September, 27 September, 3 October, 4 October, 24 October, 7 November, 29 November, 5 December and 20 December 2026",
+      dateSort: "2026-07-26",
+      dateEndSort: "2026-12-20",
+      status: "confirmed",
+      season: "Winter to summer",
+      place: "Straddie Brewing Co rooftop deck",
+      village: "Goompi / Dunwich",
+      sector: "Live music and hospitality",
+      scale: "multi-date rooftop music series",
+      source: "Straddie Brewing Co",
+      sourceUrl: "https://straddiebrewing.com.au/news/live-music-saturday-sunday/",
+      concise: "Weekend rooftop music series adding Sunday sessions, with Vibe Train, Lee Griffin, Kyle Bryant, Chris Palmer, Bentley and Gavin Roche across late 2026.",
+      loadTags: ["live music", "Straddie Brewing", "Dunwich", "Sunday sessions", "rooftop"],
+      simulation: {
+        movement: "Small-to-moderate hospitality arrivals build around lunch, afternoon drinks and ferry-linked day trips rather than one sharp event peak.",
+        permissions: "Venue operations, performer scheduling, live-sound settings, responsible service and accurate date-by-date public updates need to stay aligned.",
+        aftercare: "Table demand, walk-in pressure, performer turnout and whether the expanded Sunday-session pattern continues into 2027.",
+        ancestor: "Useful hospitality-rhythm marker because it turns a named late-2026 lineup into a repeat public gathering pattern on the Dunwich rooftop."
+      }
+    },
+    {
       id: "goompi-naidoc-community-film-celebration-2026",
       name: "Goompi NAIDOC 2026 - Community Film Celebration",
       dateLabel: "31 July 2026",
@@ -621,6 +644,29 @@ window.QCEE_DATA = {
         permissions: "Club host settings, performer booking, visitor/member messaging, responsible service and accurate public wording if access rules change.",
         aftercare: "Member turnout, casual visitor demand, lunch trade and whether member-day programming starts appearing more regularly in public listings.",
         ancestor: "Useful club-life marker because it captures a smaller social rhythm that still shapes Dunwich hospitality activity and public calendar texture."
+      }
+    },
+    {
+      id: "island-colours-soul-lodge-program-2026",
+      name: "Island Colours at Soul Lodge",
+      dateLabel: "9 and 16 August 2026",
+      dateSort: "2026-08-09",
+      dateEndSort: "2026-08-16",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail lead-in",
+      place: "Soul Lodge Gallery and Studio",
+      village: "Pulan / Amity",
+      sector: "Visual arts and community gathering",
+      scale: "small public art program",
+      source: "Humanitix",
+      sourceUrl: "https://events.humanitix.com/nature-art-retreat-2026/tickets",
+      concise: "Free Soul Lodge public program with the Island Colours exhibition launch and silent auction, then a Robyn Olsen artist talk and auction finale a week later.",
+      loadTags: ["art exhibition", "artist talk", "Amity", "free entry", "silent auction"],
+      simulation: {
+        movement: "Small destination visits gather around two morning windows, with arts-trail crossover, local cars and light spillover beyond the Soul Lodge site.",
+        permissions: "Host approval, exhibition access, auction wording, visitor capacity and clear public timing need to remain source-backed.",
+        aftercare: "Attendance, auction interest, arts-trail crossover and whether Soul Lodge keeps surfacing as a public exhibition venue.",
+        ancestor: "Useful small-venue arts marker because it makes a local exhibition opening and artist talk visible within the island's wider August creative circuit."
       }
     },
     {
@@ -690,6 +736,29 @@ window.QCEE_DATA = {
         permissions: "Artist approval, studio opening times, public profiles, image use, sales and wayfinding.",
         aftercare: "Studio visits, sales, workshop uptake, artist feedback and trail gaps.",
         ancestor: "Useful for mapping living artists, studios, creative lineages and place-based practice."
+      }
+    },
+    {
+      id: "makers-table-straddie-brewing-2026",
+      name: "The Makers' Table Degustation Series",
+      dateLabel: "22 August, 26 September and 10 October 2026",
+      dateSort: "2026-08-22",
+      dateEndSort: "2026-10-10",
+      status: "confirmed",
+      season: "Late winter to spring",
+      place: "Straddie Brewing Co rooftop deck",
+      village: "Goompi / Dunwich",
+      sector: "Food, drink and hosted conversations",
+      scale: "small ticketed degustation series",
+      source: "Straddie Brewing Co",
+      sourceUrl: "https://straddiebrewing.com.au/news/the-makers-table-degustation-series/",
+      concise: "Three rooftop degustation evenings pairing Straddie Brewing beers with Sirromet, Tom Foolery and Witches Falls wines in a hosted four-course format.",
+      loadTags: ["degustation", "Straddie Brewing", "ticketed", "winemakers", "sunset dining"],
+      simulation: {
+        movement: "Booked guests arrive in a tight late-afternoon window, with ferry-linked day visitors transitioning into a longer seated rooftop evening.",
+        permissions: "Ticketing, responsible service, dietary handling, rooftop capacity and accurate host-date wording are the critical public controls.",
+        aftercare: "Ticket uptake, ferry use, food-and-drink demand and whether the series returns as a stronger shoulder-season drawcard.",
+        ancestor: "Useful food-tourism marker because it links island brewing, visiting winemakers and timed ferry access into one source-backed hospitality format."
       }
     },
     {
