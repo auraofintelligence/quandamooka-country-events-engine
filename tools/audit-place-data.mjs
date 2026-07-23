@@ -21,10 +21,16 @@ places.forEach((place, index) => {
 
 function assessment(place, index) {
   if (place.id === "public-bradbury-s-beach") {
-    return ["Corrected", "Moved from the contradictory inland geocoder candidate to a documented representative foreshore point; retain as a shoreline marker rather than an entrance."];
+    return ["Withheld", "Local evidence disputes the stored beach position. Keep it off the public map until a defensible shoreline or access point is recorded."];
+  }
+  if (place.id === "public-cylinder-beach-park-public-restroom") {
+    return ["Corrected", "Moved from the shared street-geocoder point near the hotel to the independently corroborated toilet-building centroid at Cylinder Beach campground."];
   }
   const shared = groups.get(coordKey(place)) || [];
   const precision = String(place.coordinatePrecision || "");
+  if (place.coordinateConfidence === "withheld") {
+    return ["Withheld", precision || "Coordinate is disputed and is not published as a pin."];
+  }
   if (shared.length > 1) {
     const checkedTogether = shared.every((other) => places[other].coordinateChecked && places[other].coordinatePointType);
     if (checkedTogether) {
@@ -61,7 +67,7 @@ const summary = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([status,
 
 const report = `# Place and coordinate audit
 
-Audit date: 21 July 2026
+Audit date: 23 July 2026
 
 ## What this list establishes
 
@@ -70,6 +76,7 @@ This is a record-by-record data-quality audit of the ${places.length} mapped pla
 The statuses are deliberately conservative:
 
 - **Wrong** means current evidence contradicts the stored position.
+- **Withheld** means the record remains in the audit catalogue but is not published as a map pin.
 - **Shared / unresolved** means multiple records use exactly the same coordinate and require individual checking.
 - **Approximate** means the coordinate was derived from a street rather than the named site.
 - **Low confidence** means the match was postal-level or otherwise weak.
@@ -86,12 +93,19 @@ ${summary}
 ## Removed from the active map during this audit
 
 - **Noreen's Seaside Shop**, formerly at Shop 1, Anchorage on Straddie, 112 Dickson Way: Luke reported the recent closure, and a public January 2026 closing announcement says the shop was ending after 31 years. Removed 21 July 2026. The replacement holiday-rental management business has not been added because its current public name and source have not yet been confirmed.
+- **Polka Point picnic BBQ**: removed from the active catalogue on 23 July 2026 after a local report that the listed facility does not exist or has been removed. The older visitor listing is not treated as proof that the asset remains in place.
 
-## Corrected error: Bradbury's Beach
+## Withheld: Bradbury's Beach and campground
 
-The extra beach record was at **-27.4998052, 153.4044787**, the inland Dunwich geocoder candidate near the shops rather than a defensible beach point. It was moved on 21 July 2026 to a representative foreshore point at **-27.49471, 153.40235**. Independent public listings place Bradbury's Beach Camping Ground around **-27.4951, 153.4022**, near Flinders Avenue and the foreshore. The separate campground record at **-27.4959391, 153.4020046** remains nearby, but the beach and campground records intentionally represent different things.
+The beach record was previously moved from an obviously inland geocoder candidate to **-27.49471, 153.40235**, while the campground record remained at **-27.4959391, 153.4020046**. A local report on 23 July 2026 says both public positions are still wrong. Online campground and OpenStreetMap listings repeat similar coordinates, but repetition is not sufficient evidence when it conflicts with direct local knowledge.
 
-Current treatment: retain the campground as a campground record pending its own provenance update; use the corrected beach marker only as a representative shoreline point, not an entrance or surveyed boundary.
+Current treatment: retain both records only as audit candidates and publish neither as a map pin until an on-site observation or authoritative asset point resolves the conflict.
+
+## Corrected error: Cylinder Beach Park public restroom
+
+The restroom record inherited the shared Cylinder Beach Park street-geocoder point at **-27.4272887, 153.5303391**, placing it near the main road by the hotel rather than at the toilet block. A local correction identified the error. The marker was moved on 23 July 2026 to the toilet-building centroid at **-27.4267603, 153.5329046**. The mapped Cylinder Beach Public Toilets listing and OpenStreetMap amenity-building footprint independently agree within about two metres, while Minjerribah Camping confirms toilets at the Cylinder Beach campground address, 300 Dickson Way.
+
+Current treatment: use the corrected building point as source-backed and high confidence, but do not describe it as field-surveyed until an on-site GPS observation is recorded.
 
 ## Spot-by-spot list
 

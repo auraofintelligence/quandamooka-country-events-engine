@@ -83,9 +83,9 @@ window.QCEE_DATA = {
     },
     places: {
       title: "Places",
-      eyebrow: "Living place map",
-      heading: "Find the place. Check the pin.",
-      deck: "Explore venues, parks, beaches and practical amenities, then confirm the written address and responsible source before relying on a map point.",
+      eyebrow: "Verified map layer",
+      heading: "Trust the evidence, not the pin count.",
+      deck: "The map now publishes only source-backed facility positions. Guessed, disputed or stale records stay in the audit directory without a public pin until they are properly verified.",
       image: "assets/images/hero-ecosystem.webp",
       alt: "Island map with venue and landscape planning cards.",
       actions: [
@@ -1557,7 +1557,10 @@ window.QCEE_DATA = {
       role: "Arrival-side camping, family gatherings and ferry-linked accommodation load.",
       checks: "Camping permits, ferry arrivals, parking, beach access, waste, toilets and quiet hours.",
       source: "Minjerribah Camping public information",
-      url: "https://minjerribahcamping.com.au/"
+      url: "https://minjerribahcamping.com.au/camp-grounds/bradburys-beach/",
+      coordinatePrecision: "Pin withheld 23 July 2026 after a local report that the stored campground position is wrong. Retained only as an audit candidate pending an on-site or authoritative asset point.",
+      coordinateConfidence: "withheld",
+      coordinateChecked: "2026-07-23"
     },
     {
       name: "Dunwich ferry gateway",

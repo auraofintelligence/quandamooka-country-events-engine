@@ -44,6 +44,15 @@
     return slug(place && (place.id || place.name));
   }
 
+  function placeHasPublishedPin(place) {
+    return Boolean(place) && place.coordinateConfidence === "high" && place.mapStatus !== "withheld";
+  }
+
+  function placeMapStatusLabel(place) {
+    if (place && place.fieldSurveyed === true) return "Field surveyed";
+    return placeHasPublishedPin(place) ? "Source-backed pin" : "Pin withheld";
+  }
+
   function placeLocaleId(place) {
     const text = [place && place.area, place && place.name, place && place.category].filter(Boolean).join(" ").toLowerCase();
     if (/flinders|north coast/.test(text)) return "north-coast";
@@ -473,6 +482,8 @@
   }
 
   function renderPlaces() {
+    const publishedPinCount = DATA.places.filter(placeHasPublishedPin).length;
+    const withheldPinCount = DATA.places.length - publishedPinCount;
     const categories = [...new Set(DATA.places.map((place) => place.category).filter(Boolean))].sort();
     const options = categories.map((category) => `<option value="${esc(slug(category))}">${esc(category)}</option>`).join("");
     const localeOptions = PLACE_LOCALES
@@ -489,6 +500,7 @@
           <div>
             <span class="tag">${index + 1}</span>
             <span class="tag">${esc(place.category)}</span>
+            <span class="tag ${placeHasPublishedPin(place) ? "tag--verified" : "tag--withheld"}">${esc(placeMapStatusLabel(place))}</span>
           </div>
           <h3>${esc(place.name)}</h3>
           <p class="meta">${esc(place.area)}</p>
@@ -496,11 +508,11 @@
         </article>
       `;
     }).join("");
-    return section({ eyebrow: "Living place map", heading: "Explore first. Verify before relying.", id: "place-catalogue" }, "Pins are desk-researched starting points. No field survey has been completed yet, so written addresses and responsible sources remain the authority.", `
+    return section({ eyebrow: "Controlled map layer", heading: "Publish verified points. Withhold the guesses.", id: "place-catalogue" }, "Only independently located, high-confidence facilities appear on the map. The wider catalogue remains visible for auditing, but disputed, stale and geocoder-only records do not get public pins.", `
       <div class="map-truth-band" role="note">
-        <span><strong>${DATA.places.length}</strong> catalogue records</span>
+        <span><strong>${publishedPinCount}</strong> source-backed map pins</span>
+        <span><strong>${withheldPinCount}</strong> records withheld from map</span>
         <span><strong>0</strong> field-surveyed points</span>
-        <span><strong>Address first</strong> when a pin and source disagree</span>
       </div>
       <div class="control-bar place-controls">
         <input class="search-input" type="search" placeholder="Search places, checks, roles or sources" data-place-search>
@@ -515,7 +527,7 @@
       </div>
       <div class="map-shortcuts" aria-label="Map zoom shortcuts">${localeButtons}</div>
       <div class="place-map-shell">
-        <div class="real-place-map" data-place-map aria-label="Interactive map of Minjerribah event places"></div>
+        <div class="real-place-map" data-place-map aria-label="Interactive map of source-backed Minjerribah facilities"></div>
         <aside class="place-detail" data-place-detail aria-live="polite"></aside>
       </div>
       <p class="empty-note" data-place-empty hidden>No matching places yet. Clear a filter or search another term.</p>
@@ -925,7 +937,7 @@
     const detail = document.querySelector("[data-place-detail]");
     if (!cards.length || !detail) return;
 
-    let selectedIndex = 0;
+    let selectedIndex = Math.max(0, DATA.places.findIndex(placeHasPublishedPin));
     const Leaflet = window.L;
     const hasCoords = (place) => Number.isFinite(Number(place.lat)) && Number.isFinite(Number(place.lng));
     const selectionZoom = (place) => {
@@ -964,7 +976,7 @@
 
     const coordinateKey = (place) => `${Number(place.lat).toFixed(6)},${Number(place.lng).toFixed(6)}`;
     const coordinateGroups = DATA.places.reduce((groups, place, index) => {
-      if (!hasCoords(place)) return groups;
+      if (!hasCoords(place) || !placeHasPublishedPin(place)) return groups;
       const key = coordinateKey(place);
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key).push(index);
@@ -987,7 +999,7 @@
 
     const mapMarkers = map
       ? DATA.places.map((place, index) => {
-        if (!hasCoords(place)) return null;
+        if (!hasCoords(place) || !placeHasPublishedPin(place)) return null;
         const sharedIndexes = coordinateGroups.get(coordinateKey(place)) || [index];
         const marker = Leaflet.circleMarker([Number(place.lat), Number(place.lng)], markerStyle(index, false)).addTo(map);
         marker.bindTooltip(`${mapPinGlyph(place.category)} ${place.name}`, { direction: "top", offset: [0, -8] });
@@ -1008,8 +1020,12 @@
       const place = DATA.places[index];
       if (!place) return;
       const external = String(place.url || "").startsWith("http");
-      const sharedCount = hasCoords(place) ? (coordinateGroups.get(coordinateKey(place)) || []).length : 0;
-      const positionNote = sharedCount > 1
+      const sharedCount = hasCoords(place) && placeHasPublishedPin(place) ? (coordinateGroups.get(coordinateKey(place)) || []).length : 0;
+      const positionNote = !placeHasPublishedPin(place)
+        ? "Pin withheld. This record remains in the audit queue and is not presented as a location."
+        : place.coordinateConfidence === "high"
+        ? "Source-backed facility position; confirm the accessible entrance and current opening conditions on arrival."
+        : sharedCount > 1
         ? `Approximate shared point for ${sharedCount} nearby records. Check the written address before relying on the pin.`
         : isApproximate(place)
           ? "Approximate position. Check the written address before relying on the pin."
@@ -1045,7 +1061,7 @@
         next.hash = "place-catalogue";
         window.history.replaceState(null, "", next);
       }
-      if (map && place && hasCoords(place)) {
+      if (map && place && hasCoords(place) && placeHasPublishedPin(place)) {
         const target = [Number(place.lat), Number(place.lng)];
         if (options.focusMap) {
           const targetZoom = Math.max(Math.min(map.getZoom(), 17), selectionZoom(place));
@@ -1096,7 +1112,7 @@
         const bounds = Leaflet.latLngBounds(
           visibleIndexes
             .map((index) => DATA.places[index])
-            .filter(hasCoords)
+            .filter((place) => hasCoords(place) && placeHasPublishedPin(place))
             .map((place) => [Number(place.lat), Number(place.lng)])
         );
         const maxZoom = locale === "all" && category === "all" ? 12 : 16;
@@ -1129,7 +1145,7 @@
     });
     const controls = document.createElement("div");
     controls.className = "map-action-controls";
-    controls.innerHTML = `<button type="button" data-map-home aria-label="Return to island overview">Island</button><button type="button" data-map-gps aria-label="Show my location">My GPS</button><button type="button" data-map-add aria-label="Record a private field observation">Field note</button><button type="button" data-map-info aria-label="Map information and colour key" aria-expanded="false">Key</button><div class="map-source-panel" data-map-source hidden><strong>Colour key</strong><div class="map-symbol-key"><span>🏖️ Beach</span><span>🔥 BBQ</span><span>🚻 Toilet</span><span>🌿 Park</span><span>⛺ Camp</span><span>⚓ Boat ramp</span><span>⛴️ Ferry</span><span>🍴 Food</span><span>🛍️ Shop</span><span>🎨 Culture</span><span>⚽ Sport</span><span>🏛️ Civic/service</span></div><small>Small coloured points reduce overlap. Gold rings mark shared coordinates; dashed rings mean approximate. No field survey has been completed. Online aerial imagery © State of Queensland; © Planet Labs Netherlands B.V., Planet and Geoplex.</small></div><p class="map-location-status" data-map-location-status aria-live="polite"></p>`;
+    controls.innerHTML = `<button type="button" data-map-home aria-label="Return to island overview">Island</button><button type="button" data-map-gps aria-label="Show my location">My GPS</button><button type="button" data-map-add aria-label="Record a private field observation">Field note</button><button type="button" data-map-info aria-label="Map information and colour key" aria-expanded="false">Key</button><div class="map-source-panel" data-map-source hidden><strong>Published pin layer</strong><div class="map-symbol-key"><span>🚻 Toilet</span><span>⚓ Boat ramp</span><span>⚽ Sport</span></div><small>Only independently located, high-confidence facilities are published as pins. Geocoder-only, disputed and stale records are withheld. No field survey has been completed. Online aerial imagery © State of Queensland; © Planet Labs Netherlands B.V., Planet and Geoplex.</small></div><p class="map-location-status" data-map-location-status aria-live="polite"></p>`;
     mapEl.appendChild(controls);
     Leaflet.DomEvent.disableClickPropagation(controls);
     Leaflet.DomEvent.disableScrollPropagation(controls);

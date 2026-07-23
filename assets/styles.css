@@ -1778,7 +1778,18 @@ body::before {
 .map-shortcuts::-webkit-scrollbar { display: none; }
 .map-shortcut-button { border-radius: 999px; flex: 0 0 auto; }
 
+.tag--verified {
+  border-color: rgba(101, 241, 206, 0.55);
+  color: var(--mint);
+}
+
+.tag--withheld {
+  border-color: rgba(244, 219, 129, 0.36);
+  color: var(--gold);
+}
+
 .place-map-shell {
+  --place-map-height: clamp(34rem, 70vh, 50rem);
   background: rgba(4, 12, 14, 0.72);
   border: 1px solid rgba(173, 232, 212, 0.19);
   border-radius: 22px;
@@ -1789,12 +1800,13 @@ body::before {
 .real-place-map {
   border: 0;
   border-radius: 0;
-  height: clamp(34rem, 70vh, 50rem);
+  height: var(--place-map-height);
 }
 .place-detail {
   border: 0;
   border-left: 1px solid var(--line);
   border-radius: 0;
+  height: var(--place-map-height);
   overflow-y: auto;
   padding: 1.25rem;
 }
@@ -1891,7 +1903,7 @@ body::before {
   .hero--home { min-height: min(48rem, 82svh); }
   .hero--places { min-height: 23rem; }
   .map-truth-band { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .place-detail { border-left: 0; border-top: 1px solid var(--line); max-height: none; }
+  .place-detail { border-left: 0; border-top: 1px solid var(--line); height: auto; max-height: none; }
   .site-footer { grid-template-columns: 1fr; }
   .footer-links { justify-content: flex-start; }
 }
