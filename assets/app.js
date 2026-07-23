@@ -56,17 +56,33 @@
 
   function mapPinKind(category) {
     const text = String(category || "").toLowerCase();
+    if (/toilet/.test(text)) return "toilet";
+    if (/bbq/.test(text)) return "bbq";
+    if (/boat|jetty|ramp/.test(text)) return "boat";
+    if (/accommodation/.test(text)) return "stay";
+    if (/post|essential/.test(text)) return "essential";
+    if (/tour|visitor/.test(text)) return "visitor";
     if (/food|drink|grocery|hospitality/.test(text)) return "food";
     if (/retail|suppl/.test(text)) return "retail";
     if (/creative|culture|heritage|gallery|artist/.test(text)) return "creative";
     if (/camp/.test(text)) return "camping";
     if (/beach|surf|coast/.test(text)) return "beach";
-    if (/toilet|bbq|amenity|picnic/.test(text)) return "amenity";
+    if (/amenity|picnic/.test(text)) return "amenity";
     if (/sport|oval|club|golf|pool|bowls/.test(text)) return "sport";
-    if (/transport|ferry|post|mail|boat|jetty|ramp/.test(text)) return "transport";
+    if (/transport|ferry|mail/.test(text)) return "transport";
     if (/park|protected|lake|nature/.test(text)) return "nature";
     if (/hall|civic|venue|property|service/.test(text)) return "civic";
     return "default";
+  }
+
+  function mapPinGlyph(category) {
+    const glyphs = {
+      food: "🍴", retail: "🛍️", creative: "🎨", camping: "⛺", beach: "🏖️",
+      toilet: "🚻", bbq: "🔥", amenity: "🧺", sport: "⚽", boat: "⚓",
+      transport: "⛴️", nature: "🌿", civic: "🏛️", stay: "🛏️",
+      essential: "✚", visitor: "🧭", default: "📍"
+    };
+    return glyphs[mapPinKind(category)] || glyphs.default;
   }
 
   function builderRouteForId(id) {
@@ -819,49 +835,78 @@
     const hasCoords = (place) => Number.isFinite(Number(place.lat)) && Number.isFinite(Number(place.lng));
     const selectionZoom = (place) => {
       const explicitZoom = Number(place.mapZoom);
-      if (Number.isFinite(explicitZoom)) return explicitZoom;
+      if (Number.isFinite(explicitZoom)) return Math.min(explicitZoom, 17);
       if (place.name === "Naree Budjong Djara National Park") return 13;
       if (place.category === "Parks and protected areas") return 15;
-      return 18;
+      return 16;
     };
+    const islandBounds = Leaflet ? Leaflet.latLngBounds([[-27.72, 153.32], [-27.30, 153.62]]) : null;
     const map = mapEl && Leaflet
-      ? Leaflet.map(mapEl, { scrollWheelZoom: false }).setView([-27.48, 153.47], 11)
+      ? Leaflet.map(mapEl, {
+          attributionControl: false,
+          maxBounds: islandBounds,
+          maxBoundsViscosity: 0.9,
+          zoomControl: false,
+          preferCanvas: true,
+          scrollWheelZoom: false,
+          tap: true
+        }).setView([-27.48, 153.47], 11)
       : null;
 
     if (map) {
       mapEl.placeMap = map;
-      Leaflet.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      Leaflet.tileLayer("https://spatial-img.information.qld.gov.au/arcgis/rest/services/Basemaps/LatestStateProgram_AllUsers/ImageServer/tile/{z}/{y}/{x}", {
+        bounds: islandBounds,
+        maxNativeZoom: 20,
+        maxZoom: 20,
+        minZoom: 10,
+        updateWhenIdle: true,
+        keepBuffer: 3
       }).addTo(map);
     } else if (mapEl) {
       mapEl.innerHTML = '<p class="map-fallback">Map unavailable. Use the place list below.</p>';
     }
 
+    const coordinateKey = (place) => `${Number(place.lat).toFixed(6)},${Number(place.lng).toFixed(6)}`;
+    const coordinateGroups = DATA.places.reduce((groups, place, index) => {
+      if (!hasCoords(place)) return groups;
+      const key = coordinateKey(place);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(index);
+      return groups;
+    }, new Map());
+    const isApproximate = (place) => /streetname|verify exact|multiple|precinct|park|national park/i.test(String(place.coordinatePrecision || ""));
     const markerIcon = (index, active) => {
       const place = DATA.places[index] || {};
-      const label = place.pinLabel || index + 1;
+      const shared = (coordinateGroups.get(coordinateKey(place)) || []).length > 1;
+      const classes = [
+        "map-symbol-pin",
+        `map-symbol-pin--${mapPinKind(place.category)}`,
+        active ? "is-active" : "",
+        shared ? "is-shared" : "",
+        isApproximate(place) ? "is-approximate" : ""
+      ].filter(Boolean).join(" ");
       return Leaflet.divIcon({
-        className: "map-pin-shell",
-        html: `<span class="map-pin map-pin--${esc(mapPinKind(place.category))} ${active ? "is-active" : ""}"><span class="map-pin-label">${esc(label)}</span></span>`,
-        iconSize: [36, 44],
-        iconAnchor: [18, 42],
-        popupAnchor: [0, -38]
+        className: "map-symbol-icon",
+        html: `<span class="${classes}" aria-hidden="true"><span class="map-symbol-glyph">${mapPinGlyph(place.category)}</span></span>`,
+        iconSize: active ? [48, 48] : [44, 44],
+        iconAnchor: active ? [24, 45] : [22, 41],
+        popupAnchor: [0, active ? -44 : -40],
+        tooltipAnchor: [0, active ? -42 : -38]
       });
     };
 
     const mapMarkers = map
       ? DATA.places.map((place, index) => {
         if (!hasCoords(place)) return null;
+        const sharedIndexes = coordinateGroups.get(coordinateKey(place)) || [index];
         const marker = Leaflet.marker([Number(place.lat), Number(place.lng)], {
           icon: markerIcon(index, false),
-          title: place.name
+          keyboard: true,
+          title: `${place.name} — ${place.category}`
         }).addTo(map);
-        marker.bindPopup(`
-          <strong>${esc(place.name)}</strong><br>
-          ${esc(place.area)}<br>
-          <span>${esc(place.category)}</span>
-        `);
+        marker.bindTooltip(place.name, { direction: "top", offset: [0, -8] });
+        marker.bindPopup(`<strong>${esc(place.name)}</strong><br>${esc(place.area)}<br><span>${esc(place.category)}</span>${sharedIndexes.length > 1 ? `<br><small>Approximate shared point · ${sharedIndexes.length} nearby records</small>` : isApproximate(place) ? "<br><small>Approximate position · check the address</small>" : ""}`);
         marker.on("click", () => selectPlace(index, { fromMap: true, focusMap: true, updateUrl: true }));
         return marker;
       })
@@ -878,12 +923,19 @@
       const place = DATA.places[index];
       if (!place) return;
       const external = String(place.url || "").startsWith("http");
+      const sharedCount = hasCoords(place) ? (coordinateGroups.get(coordinateKey(place)) || []).length : 0;
+      const positionNote = sharedCount > 1
+        ? `Approximate shared point for ${sharedCount} nearby records. Check the written address before relying on the pin.`
+        : isApproximate(place)
+          ? "Approximate position. Check the written address before relying on the pin."
+          : "Venue position; confirm access and entrance details with the source.";
       detail.innerHTML = `
         <p class="eyebrow">Selected place</p>
         <h3>${esc(place.name)}</h3>
         <p class="meta">${esc(place.area)} / ${esc(place.category)}</p>
         ${place.address ? `<p class="meta"><strong>Address:</strong> ${esc(place.address)}</p>` : ""}
         <p>${esc(place.role)}</p>
+        <p class="map-position-note"><strong>Map position:</strong> ${esc(positionNote)}</p>
         <div class="detail-divider"></div>
         <p><strong>Check first:</strong> ${esc(place.checks)}</p>
         <a class="button ghost" href="${esc(place.url)}" ${external ? 'target="_blank" rel="noopener noreferrer"' : ""}>${esc(place.source)} ${icons.arrowRight}</a>
@@ -909,8 +961,8 @@
       if (map && place && hasCoords(place)) {
         const target = [Number(place.lat), Number(place.lng)];
         if (options.focusMap) {
-          const targetZoom = Math.max(map.getZoom(), selectionZoom(place));
-          map.setView(target, targetZoom, { animate: true });
+          const targetZoom = Math.max(Math.min(map.getZoom(), 17), selectionZoom(place));
+          map.flyTo(target, targetZoom, { animate: true, duration: 0.55 });
         } else if (!options.skipPan) {
           map.panTo(target, { animate: true });
         }
@@ -981,9 +1033,222 @@
         if (localeFilter) localeFilter.value = locale;
         sync();
         const target = PLACE_LOCALES.find((item) => item.id === locale);
-        if (map && target) map.setView(target.center, target.zoom, { animate: true });
+        if (map && target) map.flyTo(target.center, target.zoom, { animate: true, duration: 0.55 });
       });
     });
+    const controls = document.createElement("div");
+    controls.className = "map-action-controls";
+    controls.innerHTML = `<button type="button" data-map-home aria-label="Return to island overview">Island</button><button type="button" data-map-gps aria-label="Show my location">My GPS</button><button type="button" data-map-add aria-label="Add a field observation">Add pin</button><button type="button" data-map-info aria-label="Map information and icon key" aria-expanded="false">Key</button><div class="map-source-panel" data-map-source hidden><strong>Pin key</strong><div class="map-symbol-key"><span>🏖️ Beach</span><span>🔥 BBQ</span><span>🚻 Toilet</span><span>🌿 Park</span><span>⛺ Camp</span><span>⚓ Boat ramp</span><span>⛴️ Ferry</span><span>🍴 Food</span><span>🛍️ Shop</span><span>🎨 Culture</span><span>⚽ Sport</span><span>🏛️ Civic/service</span></div><small>Coordinate confidence is stated in each place card. Online aerial imagery © State of Queensland; © Planet Labs Netherlands B.V., Planet and Geoplex.</small></div><p class="map-location-status" data-map-location-status aria-live="polite"></p>`;
+    mapEl.appendChild(controls);
+    Leaflet.DomEvent.disableClickPropagation(controls);
+    Leaflet.DomEvent.disableScrollPropagation(controls);
+    controls.querySelector("[data-map-home]")?.addEventListener("click", () => map.flyTo([-27.48, 153.47], 11, { duration: 0.55 }));
+    const infoButton = controls.querySelector("[data-map-info]");
+    const sourcePanel = controls.querySelector("[data-map-source]");
+    infoButton?.addEventListener("click", () => {
+      const open = sourcePanel.hidden;
+      sourcePanel.hidden = !open;
+      infoButton.setAttribute("aria-expanded", String(open));
+    });
+    let locationMarker = null;
+    let accuracyCircle = null;
+    controls.querySelector("[data-map-gps]")?.addEventListener("click", () => {
+      const status = controls.querySelector("[data-map-location-status]");
+      if (!navigator.geolocation) {
+        status.textContent = "GPS is not available in this browser.";
+        return;
+      }
+      status.textContent = "Finding your position…";
+      navigator.geolocation.getCurrentPosition((position) => {
+        const point = [position.coords.latitude, position.coords.longitude];
+        if (locationMarker) locationMarker.setLatLng(point);
+        else locationMarker = Leaflet.circleMarker(point, { radius: 8, color: "#fff", weight: 3, fillColor: "#1677ff", fillOpacity: 1 }).addTo(map);
+        if (accuracyCircle) accuracyCircle.setLatLng(point).setRadius(position.coords.accuracy);
+        else accuracyCircle = Leaflet.circle(point, { radius: position.coords.accuracy, color: "#7fc8ff", weight: 1, fillOpacity: 0.15 }).addTo(map);
+        const accuracy = Math.round(position.coords.accuracy);
+        status.textContent = accuracy <= 50 ? `Location found · about ${accuracy} m accuracy` : `Location is approximate · about ${accuracy} m accuracy`;
+        map.flyTo(point, accuracy <= 50 ? 16 : 14, { duration: 0.65 });
+      }, () => {
+        status.textContent = "Location was not shared. The map still works without it.";
+      }, { enableHighAccuracy: true, maximumAge: 10000, timeout: 15000 });
+    });
+    setupFieldCapture();
+
+    function setupFieldCapture() {
+      const storageKey = "qcee-field-observations-v1";
+      let observations = [];
+      try {
+        observations = JSON.parse(localStorage.getItem(storageKey) || "[]");
+        if (!Array.isArray(observations)) observations = [];
+      } catch (_) {
+        observations = [];
+      }
+      let draftPosition = null;
+      let draftMarker = null;
+      const observationMarkers = [];
+      const dialog = document.createElement("dialog");
+      dialog.className = "field-pin-dialog";
+      dialog.innerHTML = `
+        <form method="dialog" class="field-pin-sheet" data-field-form>
+          <div class="field-pin-heading">
+            <div><p class="eyebrow">Private field notes</p><h3>Add or correct a map pin</h3></div>
+            <button type="button" class="field-pin-close" data-field-close aria-label="Close">×</button>
+          </div>
+          <p class="field-pin-privacy">Saved only on this phone until you export. Photos are compressed for a smaller hand-off file.</p>
+          <div class="field-pin-position" data-field-position>No position yet. Use GPS here, or tap the map.</div>
+          <div class="field-pin-actions">
+            <button type="button" class="button secondary" data-field-gps>Use GPS here</button>
+            <button type="button" class="button ghost" data-field-map>Tap map instead</button>
+          </div>
+          <label>Name or asset<input class="field" name="name" required placeholder="e.g. Cabarita Park BBQ"></label>
+          <div class="field-pin-grid">
+            <label>Type<select class="select-input" name="category"><option>Business</option><option>Beach</option><option>Park</option><option>BBQ</option><option>Public toilet</option><option>Playground</option><option>Sport</option><option>Campground</option><option>Transport</option><option>Other</option></select></label>
+            <label>Observation<select class="select-input" name="observationType"><option value="correction">Correct an existing pin</option><option value="confirmed">Confirm an existing pin</option><option value="new">Add a missing place</option><option value="changed">Business or asset changed</option><option value="closed">Closed or removed</option></select></label>
+          </div>
+          <label>What did you see?<textarea name="notes" rows="3" placeholder="Entrance, equipment, condition, new business name, useful landmark…"></textarea></label>
+          <label>Photo<input class="field" name="photo" type="file" accept="image/*" capture="environment"></label>
+          <div class="field-pin-actions">
+            <button class="button primary" type="submit" data-field-save>Save observation</button>
+            <button class="button secondary" type="button" data-field-export>Export <span data-field-count>${observations.length}</span></button>
+          </div>
+          <button class="field-pin-clear" type="button" data-field-clear ${observations.length ? "" : "disabled"}>Clear saved field notes</button>
+          <p class="status-line" data-field-status aria-live="polite"></p>
+        </form>`;
+      document.body.appendChild(dialog);
+      const form = dialog.querySelector("[data-field-form]");
+      const status = dialog.querySelector("[data-field-status]");
+      const positionText = dialog.querySelector("[data-field-position]");
+      const countText = dialog.querySelector("[data-field-count]");
+      const clearButton = dialog.querySelector("[data-field-clear]");
+
+      const renderObservationMarkers = () => {
+        observationMarkers.splice(0).forEach((marker) => marker.remove());
+        observations.forEach((item) => {
+          const marker = Leaflet.circleMarker([item.latitude, item.longitude], { radius: 8, color: "#fff", weight: 3, fillColor: "#8b5cf6", fillOpacity: 1 }).addTo(map);
+          marker.bindTooltip(`Field note: ${item.name}`, { direction: "top" });
+          observationMarkers.push(marker);
+        });
+      };
+      const syncCount = () => {
+        countText.textContent = String(observations.length);
+        clearButton.disabled = observations.length === 0;
+      };
+      const setDraftPosition = (latitude, longitude, accuracy, source) => {
+        draftPosition = { latitude, longitude, accuracy: Math.round(accuracy || 0), source };
+        positionText.textContent = `${latitude.toFixed(6)}, ${longitude.toFixed(6)}${accuracy ? ` · about ${Math.round(accuracy)} m accuracy` : " · map-selected point"}`;
+        if (draftMarker) draftMarker.setLatLng([latitude, longitude]);
+        else draftMarker = Leaflet.circleMarker([latitude, longitude], { radius: 9, color: "#fff", weight: 3, fillColor: "#ec4899", fillOpacity: 1 }).addTo(map);
+        map.flyTo([latitude, longitude], Math.max(map.getZoom(), 17), { duration: 0.5 });
+      };
+      const openDialog = () => {
+        status.textContent = "";
+        dialog.showModal();
+      };
+      controls.querySelector("[data-map-add]")?.addEventListener("click", openDialog);
+      dialog.querySelector("[data-field-close]")?.addEventListener("click", () => dialog.close());
+      dialog.querySelector("[data-field-map]")?.addEventListener("click", () => {
+        status.textContent = "Tap the place on the map. The form will reopen with that position.";
+        dialog.close();
+        mapEl.classList.add("is-dropping-field-pin");
+      });
+      map.on("click", (event) => {
+        if (!mapEl.classList.contains("is-dropping-field-pin")) return;
+        mapEl.classList.remove("is-dropping-field-pin");
+        setDraftPosition(event.latlng.lat, event.latlng.lng, 0, "map tap");
+        openDialog();
+      });
+      dialog.querySelector("[data-field-gps]")?.addEventListener("click", () => {
+        if (!navigator.geolocation) {
+          status.textContent = "GPS is not available in this browser.";
+          return;
+        }
+        status.textContent = "Finding GPS, then checking accuracy…";
+        navigator.geolocation.getCurrentPosition((position) => {
+          setDraftPosition(position.coords.latitude, position.coords.longitude, position.coords.accuracy, "phone GPS");
+          status.textContent = position.coords.accuracy <= 30 ? "Good GPS fix." : "GPS is approximate; add a landmark or use the aerial map to refine it.";
+        }, () => {
+          status.textContent = "Location was not shared. You can still tap the aerial map.";
+        }, { enableHighAccuracy: true, maximumAge: 0, timeout: 15000 });
+      });
+
+      const compressedPhoto = async (file) => {
+        if (!file) return null;
+        const source = await createImageBitmap(file);
+        const scale = Math.min(1, 1280 / Math.max(source.width, source.height));
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.round(source.width * scale);
+        canvas.height = Math.round(source.height * scale);
+        canvas.getContext("2d").drawImage(source, 0, 0, canvas.width, canvas.height);
+        source.close();
+        return { name: file.name, type: "image/jpeg", dataUrl: canvas.toDataURL("image/jpeg", 0.72) };
+      };
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!draftPosition) {
+          status.textContent = "Add a GPS or map position first.";
+          return;
+        }
+        const fields = new FormData(form);
+        const name = String(fields.get("name") || "").trim();
+        if (!name) return;
+        status.textContent = "Saving…";
+        const photoFile = form.elements.photo.files[0];
+        const item = {
+          id: `field-${Date.now()}`,
+          recordedAt: new Date().toISOString(),
+          name,
+          category: String(fields.get("category") || "Other"),
+          observationType: String(fields.get("observationType") || "correction"),
+          notes: String(fields.get("notes") || "").trim(),
+          latitude: draftPosition.latitude,
+          longitude: draftPosition.longitude,
+          accuracyMetres: draftPosition.accuracy,
+          locationSource: draftPosition.source,
+          photo: await compressedPhoto(photoFile)
+        };
+        observations.push(item);
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(observations));
+        } catch (_) {
+          item.photo = null;
+          localStorage.setItem(storageKey, JSON.stringify(observations));
+          status.textContent = "Saved without the photo because phone storage was full. Export before adding more.";
+        }
+        renderObservationMarkers();
+        syncCount();
+        form.reset();
+        draftPosition = null;
+        if (draftMarker) draftMarker.remove();
+        draftMarker = null;
+        positionText.textContent = "No position yet. Use GPS here, or tap the map.";
+        if (!status.textContent.includes("without")) status.textContent = "Saved on this phone. Export when your field check is finished.";
+      });
+      dialog.querySelector("[data-field-export]")?.addEventListener("click", () => {
+        if (!observations.length) {
+          status.textContent = "No saved field observations yet.";
+          return;
+        }
+        const bundle = { schema: "qcee-field-observations-v1", exportedAt: new Date().toISOString(), observations };
+        const blob = new Blob([JSON.stringify(bundle, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `quandamooka-map-field-notes-${new Date().toISOString().slice(0, 10)}.json`;
+        link.click();
+        window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+        status.textContent = "Export created. Send that JSON file to Codex when convenient.";
+      });
+      clearButton.addEventListener("click", () => {
+        if (!window.confirm("Clear every saved field observation from this phone? Export first if you need them.")) return;
+        observations = [];
+        localStorage.removeItem(storageKey);
+        renderObservationMarkers();
+        syncCount();
+        status.textContent = "Saved field observations cleared.";
+      });
+      renderObservationMarkers();
+      syncCount();
+    }
     sync();
     const requestedPlace = new URLSearchParams(window.location.search).get("place");
     const requestedIndex = requestedPlace
