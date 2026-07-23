@@ -85,6 +85,17 @@
     return glyphs[mapPinKind(category)] || glyphs.default;
   }
 
+  function mapPinColour(category) {
+    const colours = {
+      food: "#ffb55f", retail: "#8fd5ff", creative: "#c5a2ff", camping: "#f1cf72",
+      beach: "#5de4dc", toilet: "#eef8f5", bbq: "#ff7d66", amenity: "#f0dca2",
+      sport: "#a2f3a8", boat: "#75bfff", transport: "#9fd9ff", nature: "#73e59a",
+      civic: "#d7c4ff", stay: "#ffb6d9", essential: "#ffdd66", visitor: "#79ead2",
+      default: "#b7ccc7"
+    };
+    return colours[mapPinKind(category)] || colours.default;
+  }
+
   function builderRouteForId(id) {
     if (!id) return null;
     if ((DATA.builderDefinitions || []).some((def) => def.id === id)) return "builder-events.html";
@@ -166,7 +177,13 @@
     if (!mount) return;
     mount.innerHTML = `
       <nav class="nav" aria-label="Main navigation">
-        <a class="brand-mark" href="index.html" aria-label="${esc(DATA.project.name)} home"><span>Quandamooka</span><span>Events Engine</span></a>
+        <a class="brand-mark" href="index.html" aria-label="${esc(DATA.project.name)} home">
+          <svg class="brand-organism" viewBox="0 0 46 46" aria-hidden="true">
+            <path d="M7 34 17 24 11 15m6 9 10-13m-10 13 15 4m-5-17 11 7m-6 10 7 10"/>
+            <circle cx="7" cy="34" r="2"/><circle cx="11" cy="15" r="2"/><circle cx="27" cy="11" r="2.4"/><circle cx="38" cy="18" r="2"/><circle cx="32" cy="28" r="2.5"/><circle cx="39" cy="38" r="2"/>
+          </svg>
+          <span class="brand-words"><span>Quandamooka</span><span>Events Engine</span></span>
+        </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
         <div class="nav-links" id="nav-links">
           ${DATA.nav.map(navItem).join("")}
@@ -179,7 +196,15 @@
     const actions = page.actions || [];
     const actionHtml = actions.length ? `<div class="hero-actions">${actions.map(button).join("")}</div>` : "";
     return `
-      <section class="hero" aria-labelledby="page-title">
+      <section class="hero hero--${esc(pageId)}" aria-labelledby="page-title">
+        <svg class="hero-organism" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true">
+          <g class="organism-network">
+            <path d="M-40 610C130 520 142 390 295 392S490 545 612 410 725 134 911 190s178 176 340 74"/>
+            <path d="M150 520c75-70 38-164 128-220m-2 3c83-12 128-80 154-176m179 282c-20-90 42-146 120-195m-3 2c-20-94 45-154 128-188m52 166c79 30 122 100 147 193"/>
+            <path d="M424 130c55 56 117 73 186 58m294-58c-66 34-95 96-88 184M90 590c39 10 72 44 91 91"/>
+          </g>
+          <g class="organism-nodes"><circle cx="150" cy="520" r="5"/><circle cx="276" cy="303" r="7"/><circle cx="424" cy="130" r="5"/><circle cx="609" cy="409" r="8"/><circle cx="726" cy="216" r="6"/><circle cx="904" cy="130" r="5"/><circle cx="1033" cy="387" r="7"/></g>
+        </svg>
         <div class="hero-copy">
           <p class="eyebrow">${esc(page.eyebrow)}</p>
           <h1 id="page-title">${esc(page.heading)}</h1>
@@ -193,11 +218,23 @@
     `;
   }
 
+  function livingDivider() {
+    return `
+      <div class="living-divider" aria-hidden="true">
+        <svg viewBox="0 0 1200 96" preserveAspectRatio="none">
+          <path class="living-branch branch-a" pathLength="1" d="M0 55c112-2 141-34 231-24s114 48 204 36 145-54 234-39 111 45 199 29 118-45 184-20 89 17 148 5"/>
+          <path class="living-branch branch-b" pathLength="1" d="M228 31c29 3 43-14 55-29m151 65c36-2 55 12 72 28m160-66c12-19 27-27 53-29m148 57c31 1 47 20 62 37"/>
+          <g class="living-nodes"><circle cx="231" cy="31" r="4"/><circle cx="435" cy="67" r="5"/><circle cx="669" cy="28" r="4"/><circle cx="868" cy="57" r="5"/><circle cx="1052" cy="37" r="4"/></g>
+        </svg>
+      </div>`;
+  }
+
   function section(title, deck, body, className) {
     const idAttr = title.id ? ` id="${esc(title.id)}"` : "";
     const deckHtml = deck ? `<p>${esc(deck)}</p>` : "";
     return `
       <section class="section ${className || ""}"${idAttr}>
+        ${livingDivider()}
         <div class="site-shell">
           <div class="section-heading">
             <div>
@@ -224,10 +261,10 @@
 
   function renderHome() {
     const fastDoors = [
-      { title: "Calendar", body: "Confirmed, TBC, recurring and past event records.", href: "calendar.html" },
-      { title: "Ecosystem", body: "The local categories and entity catalogue.", href: "ecosystem.html" },
-      { title: "Places", body: "Venues, parks, beaches and gateways.", href: "places.html" },
-      { title: "Markdown builders", body: "Export event, resource, simulation and aftercare files.", href: "builders.html" }
+      { number: "01", title: "What's happening", body: "Confirmed dates, recurring patterns and source-linked event memory.", href: "calendar.html" },
+      { number: "02", title: "Explore the island", body: "A map-led catalogue of venues, parks, beaches and practical amenities.", href: "places.html" },
+      { number: "03", title: "Build an event", body: "Shape an idea, test its load and export a clean planning record.", href: "builder-events.html?builder=event" },
+      { number: "04", title: "Find the ecosystem", body: "People, services and organisations that make local events possible.", href: "ecosystem.html" }
     ];
     const boundary = [
       { title: "Public by default", body: "The hub is written for hosts, organisers, venues, artists, suppliers, visitors and reviewers." },
@@ -236,7 +273,7 @@
     ];
     return [
       section({ eyebrow: "How it works", heading: "Idea to aftercare lives here." }, "", `<div class="grid three">${DATA.process.map(tile).join("")}</div>`),
-      section({ eyebrow: "Fast doors", heading: "Choose the part of the system you need." }, "Start with the decision in front of you, then move into the deeper records only when they help.", `<div class="grid four">${fastDoors.map((item) => `<a class="tile link-card" href="${item.href}"><h3>${item.title}</h3><p>${item.body}</p></a>`).join("")}</div>`),
+      section({ eyebrow: "Enter the living system", heading: "Start where your attention already is." }, "The engine connects public events, island places and practical planning without pretending a database is the community.", `<div class="grid four portal-grid">${fastDoors.map((item) => `<a class="tile link-card portal-card" href="${item.href}"><span class="portal-number">${item.number}</span><h3>${item.title}</h3><p>${item.body}</p><span class="portal-arrow" aria-hidden="true">${icons.arrowRight}</span></a>`).join("")}</div>`),
       section({ eyebrow: "Public boundary", heading: "Useful without overclaiming." }, DATA.project.boundary, `<div class="grid three">${boundary.map(tile).join("")}</div>`)
     ].join("");
   }
@@ -266,6 +303,7 @@
     const loadTags = [...new Set(DATA.events.flatMap((event) => event.loadTags || []))].sort();
     const statusCount = (status) => DATA.events.filter((event) => effectiveStatus(event) === status).length;
     const sourceState = (event) => {
+      if (event.sourceStatus) return event.sourceStatus;
       const status = effectiveStatus(event);
       if (status === "confirmed") return `Date source checked ${DATA.project.lastPublicSearch}`;
       if (status === "past") return "Past record kept for event memory";
@@ -458,8 +496,13 @@
         </article>
       `;
     }).join("");
-    return section({ eyebrow: "Place catalogue", heading: "Find a place that fits the event.", id: "place-catalogue" }, "", `
-      <div class="control-bar">
+    return section({ eyebrow: "Living place map", heading: "Explore first. Verify before relying.", id: "place-catalogue" }, "Pins are desk-researched starting points. No field survey has been completed yet, so written addresses and responsible sources remain the authority.", `
+      <div class="map-truth-band" role="note">
+        <span><strong>${DATA.places.length}</strong> catalogue records</span>
+        <span><strong>0</strong> field-surveyed points</span>
+        <span><strong>Address first</strong> when a pin and source disagree</span>
+      </div>
+      <div class="control-bar place-controls">
         <input class="search-input" type="search" placeholder="Search places, checks, roles or sources" data-place-search>
         <select class="select-input" data-place-filter aria-label="Filter places by category">
           <option value="all">All place types</option>
@@ -476,8 +519,11 @@
         <aside class="place-detail" data-place-detail aria-live="polite"></aside>
       </div>
       <p class="empty-note" data-place-empty hidden>No matching places yet. Clear a filter or search another term.</p>
-      <div class="place-list" data-place-list>${cards}</div>
-    `);
+      <details class="place-directory" data-place-directory>
+        <summary>Browse the place list <span><strong data-place-count>${DATA.places.length}</strong> matching</span></summary>
+        <div class="place-list" data-place-list>${cards}</div>
+      </details>
+    `, "place-explorer");
   }
 
   function renderSupply() {
@@ -627,9 +673,13 @@
     const mount = document.querySelector("[data-site-footer]");
     if (!mount) return;
     mount.innerHTML = `
-      <div>
+      <div class="footer-intro">
         <strong>${esc(DATA.project.name)}</strong>
         <p>${esc(DATA.project.boundary)}</p>
+        <div class="footer-signature" aria-label="Site signature">
+          <span>Built by <strong>${esc(DATA.project.builtBy || "Luke Nathan Hayes")}</strong></span>
+          <span>Last updated <time datetime="2026-07-23">${esc(DATA.project.lastUpdated || DATA.project.lastPublicSearch)}</time></span>
+        </div>
       </div>
       <nav class="footer-links" aria-label="Footer links">
         <a href="LICENCE.md">Licence</a>
@@ -686,6 +736,51 @@
       approvals: renderApprovals
     };
     return renderHero() + (routes[pageId] || routes.home)() + `<div class="site-shell">${renderPageNav()}</div>`;
+  }
+
+  function setupLivingMotion() {
+    document.documentElement.classList.add("motion-ready");
+    const revealTargets = [...document.querySelectorAll(".hero-copy, .hero-media, .section-heading, .living-divider, .map-truth-band, .place-map-shell, .portal-card")];
+    const reveal = (element) => element.classList.add("is-grown");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          reveal(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -5%" });
+      revealTargets.forEach((element) => observer.observe(element));
+      window.setTimeout(() => revealTargets.filter((element) => element.getBoundingClientRect().top < window.innerHeight).forEach(reveal), 700);
+    } else {
+      revealTargets.forEach(reveal);
+    }
+
+    const hero = document.querySelector(".hero");
+    if (hero && window.matchMedia("(pointer: fine)").matches) {
+      hero.addEventListener("pointermove", (event) => {
+        const rect = hero.getBoundingClientRect();
+        hero.style.setProperty("--pointer-x", `${((event.clientX - rect.left) / rect.width - 0.5) * 2}`);
+        hero.style.setProperty("--pointer-y", `${((event.clientY - rect.top) / rect.height - 0.5) * 2}`);
+      });
+      hero.addEventListener("pointerleave", () => {
+        hero.style.setProperty("--pointer-x", "0");
+        hero.style.setProperty("--pointer-y", "0");
+      });
+    }
+
+    let ticking = false;
+    const updateScrollSignal = () => {
+      const max = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      document.documentElement.style.setProperty("--scroll-progress", `${Math.min(window.scrollY / max, 1) * 100}%`);
+      ticking = false;
+    };
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateScrollSignal);
+    }, { passive: true });
+    updateScrollSignal();
   }
 
   function setupNavigation() {
@@ -876,36 +971,26 @@
       return groups;
     }, new Map());
     const isApproximate = (place) => /streetname|verify exact|multiple|precinct|park|national park/i.test(String(place.coordinatePrecision || ""));
-    const markerIcon = (index, active) => {
+    const markerStyle = (index, active) => {
       const place = DATA.places[index] || {};
       const shared = (coordinateGroups.get(coordinateKey(place)) || []).length > 1;
-      const classes = [
-        "map-symbol-pin",
-        `map-symbol-pin--${mapPinKind(place.category)}`,
-        active ? "is-active" : "",
-        shared ? "is-shared" : "",
-        isApproximate(place) ? "is-approximate" : ""
-      ].filter(Boolean).join(" ");
-      return Leaflet.divIcon({
-        className: "map-symbol-icon",
-        html: `<span class="${classes}" aria-hidden="true"><span class="map-symbol-glyph">${mapPinGlyph(place.category)}</span></span>`,
-        iconSize: active ? [48, 48] : [44, 44],
-        iconAnchor: active ? [24, 45] : [22, 41],
-        popupAnchor: [0, active ? -44 : -40],
-        tooltipAnchor: [0, active ? -42 : -38]
-      });
+      return {
+        radius: active ? 11 : shared ? 8 : 6,
+        color: active ? "#fff7cb" : shared ? "#f4db81" : "#071112",
+        weight: active ? 4 : shared ? 3 : 2,
+        fillColor: mapPinColour(place.category),
+        fillOpacity: active ? 1 : 0.9,
+        opacity: 1,
+        dashArray: isApproximate(place) ? "3 3" : null
+      };
     };
 
     const mapMarkers = map
       ? DATA.places.map((place, index) => {
         if (!hasCoords(place)) return null;
         const sharedIndexes = coordinateGroups.get(coordinateKey(place)) || [index];
-        const marker = Leaflet.marker([Number(place.lat), Number(place.lng)], {
-          icon: markerIcon(index, false),
-          keyboard: true,
-          title: `${place.name} — ${place.category}`
-        }).addTo(map);
-        marker.bindTooltip(place.name, { direction: "top", offset: [0, -8] });
+        const marker = Leaflet.circleMarker([Number(place.lat), Number(place.lng)], markerStyle(index, false)).addTo(map);
+        marker.bindTooltip(`${mapPinGlyph(place.category)} ${place.name}`, { direction: "top", offset: [0, -8] });
         marker.bindPopup(`<strong>${esc(place.name)}</strong><br>${esc(place.area)}<br><span>${esc(place.category)}</span>${sharedIndexes.length > 1 ? `<br><small>Approximate shared point · ${sharedIndexes.length} nearby records</small>` : isApproximate(place) ? "<br><small>Approximate position · check the address</small>" : ""}`);
         marker.on("click", () => selectPlace(index, { fromMap: true, focusMap: true, updateUrl: true }));
         return marker;
@@ -949,7 +1034,9 @@
       cards.forEach((card) => card.classList.toggle("is-active", Number(card.dataset.placeCard) === index));
       mapMarkers.forEach((marker, markerIndex) => {
         if (!marker) return;
-        marker.setIcon(markerIcon(markerIndex, markerIndex === index));
+        const style = markerStyle(markerIndex, markerIndex === index);
+        marker.setStyle(style);
+        marker.setRadius(style.radius);
       });
       renderDetail(index);
       if (options.updateUrl) {
@@ -976,6 +1063,8 @@
       const locale = localeFilter && localeFilter.value || "all";
       let firstVisible = -1;
       const visibleIndexes = [];
+      const count = document.querySelector("[data-place-count]");
+      const directory = document.querySelector("[data-place-directory]");
 
       cards.forEach((card) => {
         const index = Number(card.dataset.placeCard);
@@ -995,6 +1084,8 @@
       }
 
       if (empty) empty.hidden = firstVisible !== -1;
+      if (count) count.textContent = String(visibleIndexes.length);
+      if (directory && (query || category !== "all" || locale !== "all")) directory.open = true;
       if (firstVisible !== -1 && (!cards[selectedIndex] || cards[selectedIndex].hidden)) {
         selectPlace(firstVisible, { skipPan: true });
       }
@@ -1038,7 +1129,7 @@
     });
     const controls = document.createElement("div");
     controls.className = "map-action-controls";
-    controls.innerHTML = `<button type="button" data-map-home aria-label="Return to island overview">Island</button><button type="button" data-map-gps aria-label="Show my location">My GPS</button><button type="button" data-map-add aria-label="Add a field observation">Add pin</button><button type="button" data-map-info aria-label="Map information and icon key" aria-expanded="false">Key</button><div class="map-source-panel" data-map-source hidden><strong>Pin key</strong><div class="map-symbol-key"><span>🏖️ Beach</span><span>🔥 BBQ</span><span>🚻 Toilet</span><span>🌿 Park</span><span>⛺ Camp</span><span>⚓ Boat ramp</span><span>⛴️ Ferry</span><span>🍴 Food</span><span>🛍️ Shop</span><span>🎨 Culture</span><span>⚽ Sport</span><span>🏛️ Civic/service</span></div><small>Coordinate confidence is stated in each place card. Online aerial imagery © State of Queensland; © Planet Labs Netherlands B.V., Planet and Geoplex.</small></div><p class="map-location-status" data-map-location-status aria-live="polite"></p>`;
+    controls.innerHTML = `<button type="button" data-map-home aria-label="Return to island overview">Island</button><button type="button" data-map-gps aria-label="Show my location">My GPS</button><button type="button" data-map-add aria-label="Record a private field observation">Field note</button><button type="button" data-map-info aria-label="Map information and colour key" aria-expanded="false">Key</button><div class="map-source-panel" data-map-source hidden><strong>Colour key</strong><div class="map-symbol-key"><span>🏖️ Beach</span><span>🔥 BBQ</span><span>🚻 Toilet</span><span>🌿 Park</span><span>⛺ Camp</span><span>⚓ Boat ramp</span><span>⛴️ Ferry</span><span>🍴 Food</span><span>🛍️ Shop</span><span>🎨 Culture</span><span>⚽ Sport</span><span>🏛️ Civic/service</span></div><small>Small coloured points reduce overlap. Gold rings mark shared coordinates; dashed rings mean approximate. No field survey has been completed. Online aerial imagery © State of Queensland; © Planet Labs Netherlands B.V., Planet and Geoplex.</small></div><p class="map-location-status" data-map-location-status aria-live="polite"></p>`;
     mapEl.appendChild(controls);
     Leaflet.DomEvent.disableClickPropagation(controls);
     Leaflet.DomEvent.disableScrollPropagation(controls);
@@ -1091,7 +1182,7 @@
       dialog.innerHTML = `
         <form method="dialog" class="field-pin-sheet" data-field-form>
           <div class="field-pin-heading">
-            <div><p class="eyebrow">Private field notes</p><h3>Add or correct a map pin</h3></div>
+            <div><p class="eyebrow">Private field notes</p><h3>Record a future field observation</h3></div>
             <button type="button" class="field-pin-close" data-field-close aria-label="Close">×</button>
           </div>
           <p class="field-pin-privacy">Saved only on this phone until you export. Photos are compressed for a smaller hand-off file.</p>
@@ -1484,4 +1575,5 @@
   setupPlaceMap();
   setupBuilders();
   setupHashScroll();
+  setupLivingMotion();
 })();

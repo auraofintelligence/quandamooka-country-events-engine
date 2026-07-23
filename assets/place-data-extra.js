@@ -200,7 +200,7 @@ window.QCEE_EXTRA_PLACES = [
     "role": "Retail supplies, local goods or event support that may affect stock, delivery and notices.",
     "checks": "Confirm trading hours, booking path, capacity, delivery limits, public contact details and current availability before building an event around this place.",
     "source": "Business and artist directory row",
-    "url": "https://stradbroke-island-butchery.business.site/",
+    "url": "https://stradbrokeisland.com/stradbroke-island-butchery/",
     "coordinatePrecision": "Existing workbook coordinate Existing score 100; verify exact entrance before relying on 1m precision."
   },
   {

@@ -4,6 +4,8 @@ window.QCEE_DATA = {
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
     lastPublicSearch: "21 July 2026",
+    lastUpdated: "23 July 2026",
+    builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
     repoUrl: "https://github.com/auraofintelligence/quandamooka-country-events-engine"
@@ -81,13 +83,13 @@ window.QCEE_DATA = {
     },
     places: {
       title: "Places",
-      eyebrow: "Venues, parks and beaches",
-      heading: "Every location needs a use case, carrying limit and permission trail.",
-      deck: "Browse venues, parks, beaches, halls, clubs, campsites, cafes, restaurants and transport gateways.",
+      eyebrow: "Living place map",
+      heading: "Find the place. Check the pin.",
+      deck: "Explore venues, parks, beaches and practical amenities, then confirm the written address and responsible source before relying on a map point.",
       image: "assets/images/hero-ecosystem.webp",
       alt: "Island map with venue and landscape planning cards.",
       actions: [
-        { label: "Review place checks", href: "#place-catalogue", style: "primary" },
+        { label: "Open the map", href: "#place-catalogue", style: "primary" },
         { label: "Open approvals", href: "approvals.html", style: "secondary" }
       ]
     },
@@ -268,7 +270,8 @@ window.QCEE_DATA = {
       sector: "Workshops and making",
       scale: "small guided creative workshop",
       source: "Visit Redlands Coast",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Coil-Workshop-Adventurefest-67e6260e64c9461c4042cb1a",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Two school-holiday basketry sessions using natural fibres and coiling techniques in a small Point Lookout studio setting.",
       loadTags: ["workshop", "basketry", "Point Lookout", "small group", "winter holidays"],
       simulation: {
@@ -291,7 +294,8 @@ window.QCEE_DATA = {
       sector: "Workshops and making",
       scale: "small guided fibre workshop",
       source: "Visit Redlands Coast",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Twist-Weave-Workshop-Adventurefest-67e62a9ee64d2e334074736d",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Two holiday weaving sessions focused on twined basket-making with locally gathered natural fibres and small-group teaching.",
       loadTags: ["workshop", "weaving", "Point Lookout", "small group", "winter holidays"],
       simulation: {
@@ -314,7 +318,8 @@ window.QCEE_DATA = {
       sector: "Workshops and making",
       scale: "small guided fibre workshop",
       source: "Visit Redlands Coast",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Alternate-Weave-Workshop-Adventurefest-69325cb7605e275d5c8766b9",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Two school-holiday fibre workshops where participants make small woven sea creatures from coccus palm and raffia in a Point Lookout studio setting.",
       loadTags: ["workshop", "weaving", "Point Lookout", "small group", "winter holidays"],
       simulation: {
@@ -336,7 +341,8 @@ window.QCEE_DATA = {
       sector: "Music and community arts",
       scale: "small ticketed concert",
       source: "Redlands Coast",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Tones-and-Tides-Point-Lookout-6a2053a2483de0291224b3e5",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Afternoon Point Lookout concert in the Tones and Tides series, pairing touring opera with free kids music workshops before the show.",
       loadTags: ["opera", "concert", "Point Lookout", "kids workshop", "winter culture"],
       simulation: {
@@ -358,7 +364,8 @@ window.QCEE_DATA = {
       sector: "Culture and community",
       scale: "regional public celebration",
       source: "Visit Redlands Coast and Redland City Council",
-      sourceUrl: "https://www.visitredlandscoast.com.au/whats-on/event/7335-redlands-coast-naidoc-cultural-celebration-2026",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Free NAIDOC Week launch event with First Nations performers, cultural demonstrations, weaving workshops and market stalls.",
       loadTags: ["NAIDOC", "market stalls", "weaving workshops", "family", "free entry"],
       simulation: {
@@ -381,7 +388,8 @@ window.QCEE_DATA = {
       sector: "Sport viewing and hospitality",
       scale: "recurring live-screening series",
       source: "Visit Redlands Coast and Little Ship Club",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/World-Cup-by-the-Bay-6a33492e7778574d2cc70614",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Selected World Cup screenings by the bay with lunch service, bar trade and waterfront club viewing at Little Ship Club.",
       loadTags: ["World Cup", "live screening", "Little Ship Club", "free entry", "winter"],
       simulation: {
@@ -673,7 +681,8 @@ window.QCEE_DATA = {
       sector: "Artists and creative hubs",
       scale: "distributed arts trail",
       source: "Visit Redlands Coast and iam Straddie",
-      sourceUrl: "https://www.visitredlandscoast.com.au/whats-on/event/7316-straddie-arts-trail",
+      sourceUrl: "https://iamstraddie.com.au/about",
+      sourceStatus: "Current 2026 details are linked from the organiser's site.",
       concise: "Self-guided island arts trail with open studios, pop-ups, workshops, talks, performances and market stalls.",
       loadTags: ["open studios", "island-wide", "artists", "workshops", "markets"],
       simulation: {
@@ -896,7 +905,8 @@ window.QCEE_DATA = {
       sector: "Gallery and coastal arts",
       scale: "regional exhibition",
       source: "Visit Redlands Coast",
-      sourceUrl: "https://www.visitredlandscoast.com.au/whats-on/markets/event/7345-straddievarious-gallery-philip-farley-earth-sea-and-sky-exhibition",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Extended gallery exhibition of coastal and bayside painting with a Straddie-linked creative identity in the Cleveland harbour precinct.",
       loadTags: ["gallery", "exhibition", "coastal art", "Cleveland", "winter culture"],
       simulation: {
@@ -918,7 +928,8 @@ window.QCEE_DATA = {
       sector: "Music and community arts",
       scale: "small ticketed concert",
       source: "Redlands Coast",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Tones-and-Tides-Dunwich-6a1682a0894ff201458e34f0",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Intimate afternoon opera concert in Dunwich with free pre-concert kids workshops and post-show chats with the musicians.",
       loadTags: ["opera", "concert", "Dunwich", "kids workshop", "winter culture"],
       simulation: {
@@ -940,7 +951,8 @@ window.QCEE_DATA = {
       sector: "Family fun and waterfront hospitality",
       scale: "daytime club event",
       source: "Visit Redlands Coast and Little Ship Club",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Pig-Day-Out-Stradbroke-Island-6a28cf22cba85783776e1725",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Full-day Little Ship Club event with live pig races, family activities, food stalls and a busy waterfront social crowd in Dunwich.",
       loadTags: ["family", "Little Ship Club", "pig races", "Dunwich", "winter weekend"],
       simulation: {
@@ -1007,7 +1019,8 @@ window.QCEE_DATA = {
       sector: "Art and cultural participation",
       scale: "regional gallery activation",
       source: "Visit Redlands Coast",
-      sourceUrl: "https://www.visitredlandscoast.com.au/whats-on/markets/event/7347-drop-in-activity-many-hands-making-and-reflection-zone",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Free drop-in making zone linked to Dean Bingkin Tyson's exhibition, inviting slow creative participation shaped by land and sea patterns.",
       loadTags: ["gallery", "free entry", "drop-in", "Quandamooka connections", "Cleveland"],
       simulation: {
@@ -1075,7 +1088,8 @@ window.QCEE_DATA = {
       sector: "Heritage and art",
       scale: "multi-venue",
       source: "Visit Redlands Coast",
-      sourceUrl: "https://www.visitredlandscoast.com.au/redlandscoastadventurefest/redlands-coast-gallery-and-museum-hop",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Events-and-whats-on/Whats-On-calendar",
+      sourceStatus: "Original event listing has expired; the official council calendar is linked instead.",
       concise: "Two-day gallery and museum trail with several Minjerribah venues in the network.",
       loadTags: ["heritage", "gallery trail", "cultural venues", "visitor dispersal"],
       simulation: {
@@ -1098,7 +1112,8 @@ window.QCEE_DATA = {
       sector: "Creative workshop",
       scale: "small workshop",
       source: "Humanitix and Visit Redlands Coast",
-      sourceUrl: "https://events.humanitix.com/straddie-stories-collage-workshop-may-22nd",
+      sourceUrl: "https://www.paulaboo.com/",
+      sourceStatus: "The expired ticket page has been replaced with the artist's current site.",
       concise: "Collage and paper-weaving workshops using island flora, fauna, coastal life and local imagery.",
       loadTags: ["workshop", "collage", "weaving", "studio", "local artists"],
       simulation: {
@@ -1655,7 +1670,7 @@ window.QCEE_DATA = {
     { label: "MMEIC governance", url: "https://mmeicac.com.au/index.php/governance/", note: "Minjerribah Moorgumpin Elders-in-Council governance and contact source." },
     { label: "MMEIC cultural work", url: "https://mmeicac.com.au/index.php/what-we-do/", note: "Elder-led cultural education, language, cultural talks, wellbeing and heritage focus." },
     { label: "Yulu-Burri-Ba contact", url: "https://www.ybb.com.au/contact", note: "Community health and wellbeing contact source, including Dunwich clinic details." },
-    { label: "Straddie Chamber of Commerce", url: "https://straddiechamber.org/contact/", note: "Local business and supplier network contact source." },
+    { label: "Straddie Chamber of Commerce", url: "https://straddiechamber.org/", note: "Local business and supplier network source." },
     { label: "Redlands Coast council approvals", url: "https://events.redland.qld.gov.au/council-approvals/", note: "Council event approval pathway for temporary entertainment events, markets and related forms." },
     { label: "Temporary access to a park or reserve", url: "https://www.redland.qld.gov.au/Parks-venues-and-sport/Parks-and-venues/Temporary-Access-to-a-Park-or-Reserve", note: "Council park/reserve access, temporary entertainment event trigger and documentation checklist." },
     { label: "Temporary commercial activity", url: "https://www.redland.qld.gov.au/Parks-venues-and-sport/Leasing-and-commercial-activities/Temporary-commercial-activity-in-a-park-or-public-open-space", note: "Commercial activity in selected parks and open spaces, including mobile food, hire and entertainment." },
