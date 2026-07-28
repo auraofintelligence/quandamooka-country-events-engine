@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "23 July 2026",
-    lastUpdated: "23 July 2026",
+    lastPublicSearch: "28 July 2026",
+    lastUpdated: "28 July 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "23 July 2026, 11:15pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-07-23",
+    lastRunLabel: "28 July 2026, 10:54am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-07-28",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -693,6 +693,28 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "straddie-arts-trail-opening-2026",
+      name: "Opening Event - Straddie Arts Trail 2026",
+      dateLabel: "13 August 2026",
+      dateSort: "2026-08-13",
+      status: "confirmed",
+      season: "Winter",
+      place: "QUAMPI Arts & Culture Centre",
+      village: "Goompi / Dunwich",
+      sector: "Visual arts and community gathering",
+      scale: "free arts-trail opening",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/opening-event-2026",
+      concise: "Free opening gathering for the 2026 Straddie Arts Trail with a local film screening, filmmaker discussion, speeches and a community reception at QUAMPI.",
+      loadTags: ["free entry", "Straddie Arts Trail", "QUAMPI", "film", "community reception"],
+      simulation: {
+        movement: "A compact late-afternoon gathering clusters around QUAMPI before some visitors roll into evening arts-trail programming in Dunwich.",
+        permissions: "Host approval, venue capacity, screening rights, accessibility details and clear handover between speeches, film and reception need to stay source-backed.",
+        aftercare: "Turnout, crossover into later arts-trail events, public feedback and whether the opening format becomes a repeat festival anchor.",
+        ancestor: "Useful arts-trail marker because it names the public opening moment that connects artists, filmmakers and community in one shared welcome."
+      }
+    },
+    {
       id: "subdivision-film-night-2026",
       name: "Film Night: Subdivision Screening and Filmmaker Conversation",
       dateLabel: "13 August 2026",
@@ -736,6 +758,51 @@ window.QCEE_DATA = {
         permissions: "Artist approval, studio opening times, public profiles, image use, sales and wayfinding.",
         aftercare: "Studio visits, sales, workshop uptake, artist feedback and trail gaps.",
         ancestor: "Useful for mapping living artists, studios, creative lineages and place-based practice."
+      }
+    },
+    {
+      id: "delvene-cockatoo-collins-exhibition-2026",
+      name: "Exhibition - Delvene Cockatoo-Collins",
+      dateLabel: "14-16 August 2026",
+      dateSort: "2026-08-14",
+      dateEndSort: "2026-08-16",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "North Stradbroke Island Museum on Minjerribah",
+      village: "Goompi / Dunwich",
+      sector: "Museum and visual arts",
+      scale: "small public exhibition",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents",
+      concise: "Resident artist exhibition of objects, screen-printed textiles and garments shaped by family-linked materials held in the island museum collection.",
+      loadTags: ["museum", "exhibition", "Straddie Arts Trail", "textiles", "Dunwich"],
+      simulation: {
+        movement: "Steady day-time museum visits layer onto arts-trail traffic, with short dwell times and light spillover into nearby Dunwich stops.",
+        permissions: "Museum hosting, object-display approvals, cultural context, photography settings and opening-hour accuracy need to remain clear in public notices.",
+        aftercare: "Visitor numbers, museum crossover, artist sales or enquiries, and whether museum-based exhibitions become a stronger recurring trail feature.",
+        ancestor: "Useful museum-memory marker because it connects family archive material, contemporary making and public exhibition inside a local collecting place."
+      }
+    },
+    {
+      id: "plein-air-painting-meet-up-2026",
+      name: "Plein Air Painting Meet Up on Minjerribah",
+      dateLabel: "14 August 2026",
+      dateSort: "2026-08-14",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Bradbury's Beach",
+      village: "Goompi / Dunwich",
+      sector: "Art, nature and community learning",
+      scale: "free outdoor art meet-up",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/plein-air-painting-on-minjerribah-stradbroke-island-with-clare-purser",
+      concise: "Free outdoor painting meet-up at Bradbury's Beach, pairing sketching and shared observation with shorebird habitat awareness.",
+      loadTags: ["free entry", "painting", "Bradbury's Beach", "shorebirds", "Straddie Arts Trail"],
+      simulation: {
+        movement: "Small morning arrivals gather on foot and by car near Bradbury's Beach, with low transport load and short outdoor dwell time.",
+        permissions: "Meeting-point wording, weather fallback, participant safety, habitat care and any organised-group expectations need to stay clear in the source trail.",
+        aftercare: "Turnout, habitat-awareness impact, participant feedback and whether art-and-ecology meet-ups recur in later trail programs.",
+        ancestor: "Useful art-and-Country marker because it ties creative practice to one of Minjerribah's ecologically sensitive shoreline places."
       }
     },
     {
