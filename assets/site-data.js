@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "28 July 2026",
-    lastUpdated: "28 July 2026",
+    lastPublicSearch: "31 July 2026",
+    lastUpdated: "31 July 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "28 July 2026, 10:54am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-07-28",
+    lastRunLabel: "31 July 2026, 1:51pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-07-31",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -693,6 +693,28 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "nature-art-morning-workshop-2026",
+      name: "Nature Art Morning Workshop",
+      dateLabel: "13 August 2026",
+      dateSort: "2026-08-13",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Soul Lodge Gallery & Studio",
+      village: "Pulan / Amity",
+      sector: "Creative workshop and shared meal",
+      scale: "small ticketed morning workshop",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/nature-art-morning-workshop-13aug",
+      concise: "Morning art-making session with Robyn Olsen, a shared meal and a nature visit at Soul Lodge in Amity.",
+      loadTags: ["Straddie Arts Trail", "workshop", "Amity", "shared meal", "small group"],
+      simulation: {
+        movement: "A small morning group concentrates around Soul Lodge, with light local car movement and likely crossover into later arts-trail stops.",
+        permissions: "Venue hosting, food handling, accessibility wording, weather backup for the nature visit and honest workshop-capacity messaging need to stay clear.",
+        aftercare: "Attendance, meal logistics, participant feedback and whether Soul Lodge morning workshops become a repeat arts-trail format.",
+        ancestor: "Useful small-group creative marker because it links making, conversation and place-based observation in one source-backed Amity session."
+      }
+    },
+    {
       id: "straddie-arts-trail-opening-2026",
       name: "Opening Event - Straddie Arts Trail 2026",
       dateLabel: "13 August 2026",
@@ -803,6 +825,73 @@ window.QCEE_DATA = {
         permissions: "Meeting-point wording, weather fallback, participant safety, habitat care and any organised-group expectations need to stay clear in the source trail.",
         aftercare: "Turnout, habitat-awareness impact, participant feedback and whether art-and-ecology meet-ups recur in later trail programs.",
         ancestor: "Useful art-and-Country marker because it ties creative practice to one of Minjerribah's ecologically sensitive shoreline places."
+      }
+    },
+    {
+      id: "live-painting-gabriel-dhage-craig-2026",
+      name: "Live Painting with Gabriel D'Hage-Craig",
+      dateLabel: "14-15 August 2026",
+      dateSort: "2026-08-14",
+      dateEndSort: "2026-08-15",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Second Sand Studio",
+      village: "Mooloomba / Point Lookout",
+      sector: "Visual arts and live demonstration",
+      scale: "free drop-in studio session",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/live-painting-with-gabriel-d-hage-craig",
+      concise: "Free drop-in live painting sessions at Second Sand Studio, showing Gabriel D'Hage-Craig's island-inspired practice across two trail days.",
+      loadTags: ["Straddie Arts Trail", "free entry", "live painting", "Point Lookout", "drop in"],
+      simulation: {
+        movement: "Casual drop-in foot traffic layers onto Point Lookout arts-trail movement, with short studio dwell times and flexible arrivals.",
+        permissions: "Studio hosting, upstairs access wording, public drop-in safety, photography expectations and time accuracy need to remain source-backed.",
+        aftercare: "Drop-in counts, artist enquiries, sales interest and whether live-demonstration formats lift studio visitation across the trail.",
+        ancestor: "Useful live-making marker because visitors can watch process in real time rather than only seeing finished works on display."
+      }
+    },
+    {
+      id: "introduction-to-photography-tim-van-vuuren-2026",
+      name: "Introduction to Photography with Tim Van Vuuren",
+      dateLabel: "15 August 2026",
+      dateSort: "2026-08-15",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Point Lookout Surf Club",
+      village: "Mooloomba / Point Lookout",
+      sector: "Creative learning and visual storytelling",
+      scale: "small ticketed talk",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/ad9fmemx1kj6a9sytbnr6d7v4ded2s",
+      concise: "Beginner-friendly photography session covering composition, exposure, lighting and storytelling at Point Lookout Surf Club.",
+      loadTags: ["Straddie Arts Trail", "photography", "Point Lookout", "beginner friendly", "ticketed"],
+      simulation: {
+        movement: "A compact one-hour gathering at the surf club creates low transport load and easy crossover with nearby arts-trail stops.",
+        permissions: "Venue hosting, booking availability, age guidance and clear public wording around what attendees need to bring should stay current.",
+        aftercare: "Ticket uptake, beginner demand, follow-up workshop interest and whether photography sessions become a regular trail learning stream.",
+        ancestor: "Useful skills-transfer marker because it frames island storytelling through practical image-making rather than exhibition alone."
+      }
+    },
+    {
+      id: "delvene-creative-process-workshop-2026",
+      name: "Delvene Cockatoo-Collins Creative Process Hands-on Workshop",
+      dateLabel: "16 August 2026",
+      dateSort: "2026-08-16",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "North Stradbroke Island Museum on Minjerribah",
+      village: "Goompi / Dunwich",
+      sector: "Museum workshop and visual arts",
+      scale: "small booked workshop",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/delvene-cockatoo-collins-creative-process-hands-on-workshop",
+      concise: "Hands-on museum workshop with Delvene Cockatoo-Collins, including materials, morning tea and a closer look at her creative process.",
+      loadTags: ["Straddie Arts Trail", "museum", "workshop", "Dunwich", "bookings required"],
+      simulation: {
+        movement: "A tightly capped museum workshop adds a concentrated late-morning group to Dunwich arts-trail traffic, with longer dwell time than a standard exhibition visit.",
+        permissions: "Museum hosting, workshop capacity, morning-tea handling, accessibility wording and email-booking accuracy are the key public controls.",
+        aftercare: "Booking demand, museum crossover, participant feedback and whether artist-led process workshops strengthen future trail programming.",
+        ancestor: "Useful process-and-memory marker because it extends the exhibition into a guided making session inside the island museum context."
       }
     },
     {
