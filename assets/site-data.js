@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "31 July 2026",
-    lastUpdated: "31 July 2026",
+    lastPublicSearch: "4 August 2026",
+    lastUpdated: "4 August 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "31 July 2026, 1:51pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-07-31",
+    lastRunLabel: "4 August 2026, 2:30pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-08-04",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -647,6 +647,28 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "international-beer-day-grand-view-2026",
+      name: "International Beer Day Dinner",
+      dateLabel: "7 August 2026",
+      dateSort: "2026-08-07",
+      status: "confirmed",
+      season: "Winter",
+      place: "Grand View Hotel, Cleveland",
+      village: "Cleveland",
+      sector: "Food, drink and island-mainland collaboration",
+      scale: "ticketed beer-pairing dinner",
+      source: "Straddie Brewing Co",
+      sourceUrl: "https://straddiebrewing.com.au/news/international-beer-day/",
+      concise: "One-night four-course dinner at the Grand View Hotel with matched Straddie Brewing beers and brewer-led pairing notes.",
+      loadTags: ["Straddie Brewing", "ticketed", "beer dinner", "Cleveland", "four-course"],
+      simulation: {
+        movement: "Mainland dinner arrivals build through early evening, with a stronger Cleveland hospitality draw than a standard island afternoon session.",
+        permissions: "Ticketing accuracy, dietary handling, responsible service and clear collaboration wording between the hotel and brewery are the main public checks.",
+        aftercare: "Ticket uptake, pairing feedback, brewery visibility on the mainland and whether similar cross-bay dinners keep appearing in public listings.",
+        ancestor: "Useful nearby-ecosystem marker because it shows an island producer pulling attention into the wider Redlands hospitality circuit rather than staying island-only."
+      }
+    },
+    {
       id: "island-colours-soul-lodge-program-2026",
       name: "Island Colours at Soul Lodge",
       dateLabel: "9 and 16 August 2026",
@@ -988,17 +1010,17 @@ window.QCEE_DATA = {
     {
       id: "straddie-oyster-festival-next",
       name: "Straddie Oyster Festival",
-      dateLabel: "2026 date to confirm",
-      dateSort: "2026-11-01",
-      status: "tbc",
+      dateLabel: "21 November 2026",
+      dateSort: "2026-11-21",
+      status: "confirmed",
       season: "Late spring / summer lead-in",
-      place: "Ron Stark Oval, Dunwich",
+      place: "North Stradbroke Island Rugby League and Allsports Club",
       village: "Goompi / Dunwich",
       sector: "Food and community festival",
       scale: "community festival",
-      source: "SeaLink event page and Straddie Sharks link",
-      sourceUrl: "https://www.sealink.com.au/north-stradbroke-island/events/straddie-oyster-festival/",
-      concise: "Seafood, food vendors, mud crab races, oyster-shucking, live entertainment and market stalls.",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Straddie-Oyster-and-Seafood-Festival-634fc2b63cdd2b4004a8e648",
+      concise: "Free seafood-focused festival with local oysters and prawns, live entertainment, market stalls, oyster and prawn competitions, and mud crab races.",
       loadTags: ["food vendors", "oval", "markets", "music", "waste"],
       simulation: {
         movement: "Dunwich oval attendance, food-truck access, ferry arrival pulses and family flow.",
@@ -1027,6 +1049,28 @@ window.QCEE_DATA = {
         permissions: "Club host approval, stallholder coordination, food safety, public listing accuracy and wet-weather rules.",
         aftercare: "Stallholder attendance, visitor count, popular categories and public notice updates.",
         ancestor: "Good daily-life rhythm marker rather than a single spectacle."
+      }
+    },
+    {
+      id: "amity-point-trivia-pattern",
+      name: "Amity Point Community Club Trivia",
+      dateLabel: "Selected 2026 dates published: 13 August and 10 September, 7pm start",
+      dateSort: "2026-08-13",
+      status: "recurring",
+      season: "Late winter to early spring club rhythm",
+      place: "Amity Point Community Club",
+      village: "Pulan / Amity",
+      sector: "Community nights and club hospitality",
+      scale: "small recurring club trivia night",
+      source: "Amity Point Community Club",
+      sourceUrl: "https://amitypointcommunityclub.com.au/whats-on/",
+      concise: "Club trivia nights for locals and visitors with prizes, evening bistro trade and a small social crowd in Amity.",
+      loadTags: ["trivia", "Amity", "club night", "7pm", "locals and visitors"],
+      simulation: {
+        movement: "Small evening arrivals gather around dinner and trivia, with light local driving demand and modest courtesy-bus coordination.",
+        permissions: "Club host settings, bookings, food service flow, responsible service and accurate listed dates are the main public controls.",
+        aftercare: "Table demand, repeat attendance, kitchen pressure and whether the club keeps publishing trivia dates in regular batches.",
+        ancestor: "Useful village-rhythm marker because it captures recurring social life in Amity rather than only large visitor-facing events."
       }
     },
     {
