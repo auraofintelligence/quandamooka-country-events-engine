@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "4 August 2026",
-    lastUpdated: "4 August 2026",
+    lastPublicSearch: "11 August 2026",
+    lastUpdated: "11 August 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "4 August 2026, 2:30pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-08-04",
+    lastRunLabel: "11 August 2026, 12:52pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-08-11",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -828,6 +828,28 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "live-painting-kieron-anderson-dean-tyson-2026",
+      name: "Live Painting with Quandamooka Artist Kieron Anderson and Dean Tyson",
+      dateLabel: "14 August 2026",
+      dateSort: "2026-08-14",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Mitchell Crescent",
+      village: "Goompi / Dunwich",
+      sector: "Visual arts and live demonstration",
+      scale: "free drop-in live painting",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/live-painting-with-quandamooka-artist-kieron-anderson-dean-tyson",
+      concise: "Free live painting collaboration in Dunwich where Kieron Anderson and Dean Tyson rework a familiar roadside astronaut across the day.",
+      loadTags: ["Straddie Arts Trail", "free entry", "live painting", "Dunwich", "Quandamooka artist"],
+      simulation: {
+        movement: "Drop-in visitors can arrive steadily through the day with short roadside stops and light crossover into nearby Dunwich arts-trail venues.",
+        permissions: "Public safety around the roadside setting, artist approval, weather clarity and respectful photography expectations need to stay clear.",
+        aftercare: "Drop-in numbers, local response and whether live public painting becomes a stronger repeat trail format are worth tracking.",
+        ancestor: "Useful live-making marker because it centres a Quandamooka-led collaboration in a familiar public island setting."
+      }
+    },
+    {
       id: "plein-air-painting-meet-up-2026",
       name: "Plein Air Painting Meet Up on Minjerribah",
       dateLabel: "14 August 2026",
@@ -873,6 +895,28 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "before-sunset-reflections-2026",
+      name: "Before Sunset Reflections",
+      dateLabel: "14 August 2026",
+      dateSort: "2026-08-14",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Sojourns & Seascapes",
+      village: "Goompi / Dunwich",
+      sector: "Artist talks and creative conversation",
+      scale: "free small-group conversation session",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/before-sunset-reflections",
+      concise: "Free late-afternoon conversation at Sojourns & Seascapes where artists reflect on their creative lives, careers and island influences.",
+      loadTags: ["Straddie Arts Trail", "free entry", "artist talk", "Dunwich", "creative conversation"],
+      simulation: {
+        movement: "A small booked gathering settles into one Dunwich venue late in the day, with gentle crossover from nearby arts-trail stops.",
+        permissions: "Booking clarity, venue access, time changes and respectful photography expectations should stay clear in public updates.",
+        aftercare: "Attendance, audience questions and whether reflective talk formats deepen visitor engagement across the trail are worth noting.",
+        ancestor: "Useful story-and-process marker because it captures artists speaking about practice, place and evolving island creative life."
+      }
+    },
+    {
       id: "introduction-to-photography-tim-van-vuuren-2026",
       name: "Introduction to Photography with Tim Van Vuuren",
       dateLabel: "15 August 2026",
@@ -895,6 +939,95 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "nature-art-morning-workshop-saturday-2026",
+      name: "Nature Art Morning Workshop - Saturday 15 August",
+      dateLabel: "15 August 2026",
+      dateSort: "2026-08-15",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Soul Lodge Gallery & Studio",
+      village: "Pulan / Amity",
+      sector: "Creative workshop and nature connection",
+      scale: "small ticketed workshop",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/nature-art-morning-workshop-15aug",
+      concise: "Small ticketed morning workshop at Soul Lodge pairing art-making, lunch and island-inspired reflection with Robyn Olsen's exhibition setting.",
+      loadTags: ["Straddie Arts Trail", "workshop", "Amity", "ticketed", "nature art"],
+      simulation: {
+        movement: "A compact morning group arrives at Soul Lodge and stays through lunch, with low transport pressure and slow local movement.",
+        permissions: "Booking accuracy, accessibility wording, dietary notes and clear host timing need to remain current in public listings.",
+        aftercare: "Ticket uptake, repeat demand and whether short workshop formats convert into longer retreat interest are useful follow-up signals.",
+        ancestor: "Useful learning-and-restoration marker because it links creative practice, hosted care and island observation in one small-group format."
+      }
+    },
+    {
+      id: "exclusive-kotodama-workshop-2026",
+      name: "Exclusive Kotodama Workshop: Create your own Scent with Perfect Potion",
+      dateLabel: "15 August 2026",
+      dateSort: "2026-08-15",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Second Sand Studio",
+      village: "Mooloomba / Point Lookout",
+      sector: "Workshop, scent and botanical making",
+      scale: "small ticketed workshop",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/create-your-own-scent-with-perfect-potion",
+      sourceStatus: "The organiser page lists the workshop as sold out, which still confirms the public session details.",
+      concise: "Small hands-on scent workshop at Second Sand Studio where participants create a custom natural perfume inspired by the island setting.",
+      loadTags: ["Straddie Arts Trail", "workshop", "Point Lookout", "ticketed", "botanical making"],
+      simulation: {
+        movement: "A tightly timed morning workshop draws a small booked group upstairs at Second Sand Studio, with easy crossover into other Point Lookout trail stops.",
+        permissions: "Booking status, upstairs access, ingredient handling and clear public wording around participation limits should stay current.",
+        aftercare: "Sell-out demand, participant feedback and whether sensory workshops broaden the trail mix beyond visual arts are useful indicators.",
+        ancestor: "Useful cross-discipline marker because it brings scent, botanicals and creative making into the wider island arts-trail program."
+      }
+    },
+    {
+      id: "encore-wuthering-heights-day-straddie-2026",
+      name: "Encore Performance: The Most Wuthering Heights Day Ever - Straddie",
+      dateLabel: "15 August 2026",
+      dateSort: "2026-08-15",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Point Lookout Bowls Club",
+      village: "Mooloomba / Point Lookout",
+      sector: "Performance and community gathering",
+      scale: "free short-form community performance",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/encore-wuthering-heights-day-straddie-aes6n",
+      concise: "Free dusk encore of the Wuthering Heights community dance at Point Lookout Bowls Club, open to dancers and spectators.",
+      loadTags: ["Straddie Arts Trail", "free entry", "performance", "Point Lookout", "community fun"],
+      simulation: {
+        movement: "A compact early-evening crowd gathers at the bowls club with easy crossover from the afternoon arts-trail program and nearby hospitality.",
+        permissions: "Weather calls, participation safety, public filming expectations and club hosting details need to stay easy to read.",
+        aftercare: "Turnout, costume participation and whether playful short-form performances help broaden the trail audience are worth noting.",
+        ancestor: "Useful public-memory marker because it shows the trail spilling into shared, low-barrier community performance."
+      }
+    },
+    {
+      id: "artist-talk-island-colours-robyn-olsen-2026",
+      name: "Artist Talk: Island Colours with Robyn Olsen",
+      dateLabel: "16 August 2026",
+      dateSort: "2026-08-16",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "Soul Lodge Gallery & Studio",
+      village: "Pulan / Amity",
+      sector: "Artist talk and visual arts",
+      scale: "free small artist talk",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents/artist-talk-robyn-olsen",
+      concise: "Free artist talk at Soul Lodge where Robyn Olsen shares the stories, mentors and island influences behind her Island Colours exhibition.",
+      loadTags: ["Straddie Arts Trail", "artist talk", "Amity", "free entry", "Soul Lodge"],
+      simulation: {
+        movement: "A small morning gathering centres on Soul Lodge, with light local movement and likely crossover from other Amity arts-trail stops.",
+        permissions: "Venue access wording, host timing, photography expectations and honest capacity messaging should remain current.",
+        aftercare: "Attendance, audience questions and whether artist talks deepen exhibition engagement at Soul Lodge are useful follow-up signals.",
+        ancestor: "Useful oral-context marker because it adds spoken memory and artistic lineage to a visual exhibition setting."
+      }
+    },
+    {
       id: "delvene-creative-process-workshop-2026",
       name: "Delvene Cockatoo-Collins Creative Process Hands-on Workshop",
       dateLabel: "16 August 2026",
@@ -914,6 +1047,29 @@ window.QCEE_DATA = {
         permissions: "Museum hosting, workshop capacity, morning-tea handling, accessibility wording and email-booking accuracy are the key public controls.",
         aftercare: "Booking demand, museum crossover, participant feedback and whether artist-led process workshops strengthen future trail programming.",
         ancestor: "Useful process-and-memory marker because it extends the exhibition into a guided making session inside the island museum context."
+      }
+    },
+    {
+      id: "closing-event-straddie-hotel-salt-air-tunes-2026",
+      name: "Closing Event - Straddie Hotel Salt Air Tunes",
+      dateLabel: "16 August 2026",
+      dateSort: "2026-08-16",
+      status: "confirmed",
+      season: "Winter / Straddie Arts Trail",
+      place: "The Straddie Hotel",
+      village: "Mooloomba / Point Lookout",
+      sector: "Live music and community gathering",
+      scale: "free arts-trail closing event",
+      source: "iam Straddie Arts Trail",
+      sourceUrl: "https://iamstraddie.com.au/workshopsandevents",
+      sourceStatus: "Current 16 August closing-event details are published on the organiser's 2026 workshops and events page.",
+      concise: "Free closing gathering at the Straddie Hotel with Monday Music Band favourites encouraging locals and visitors to sing along.",
+      loadTags: ["Straddie Arts Trail", "live music", "Straddie Hotel", "free entry", "Point Lookout"],
+      simulation: {
+        movement: "Late-afternoon visitors cluster at one hospitality venue as the trail winds down, with easy walk-in access and longer social dwell time.",
+        permissions: "Venue hosting, music timing, responsible service and any weather or space adjustments need to stay clear in public notices.",
+        aftercare: "Turnout, sing-along energy and whether a simple hospitality-based closing event helps hold people on-island longer are worth noting.",
+        ancestor: "Useful closing marker because it turns the trail finish into a shared social handover rather than an abrupt stop."
       }
     },
     {
