@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "18 August 2026",
-    lastUpdated: "18 August 2026",
+    lastPublicSearch: "11 August 2026",
+    lastUpdated: "11 August 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "18 August 2026, 7:14pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-08-18",
+    lastRunLabel: "11 August 2026, 12:52pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-08-11",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -1119,74 +1119,6 @@ window.QCEE_DATA = {
       }
     },
     {
-      id: "coil-workshop-spring-2026",
-      name: "Coil Workshop",
-      dateLabel: "22 and 29 September 2026",
-      dateSort: "2026-09-22",
-      dateEndSort: "2026-09-29",
-      status: "confirmed",
-      season: "Spring",
-      place: "Paula Boo Studios",
-      village: "Point Lookout",
-      sector: "Workshops and making",
-      scale: "small guided creative workshop",
-      source: "Visit Redlands Coast and Queensland.com",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Coil-Workshop-Adventurefest-67e6260e64c9461c4042cb1a",
-      concise: "Two spring basketry sessions at Paula Boo Studios where participants make coiled baskets with natural fibres in a small Point Lookout studio setting.",
-      loadTags: ["workshop", "basketry", "Point Lookout", "small group", "spring"],
-      simulation: {
-        movement: "Small daytime arrivals cluster around booked studio sessions, with light parking demand and little spillover beyond the Midjimberry Road site.",
-        permissions: "Host capacity, booking accuracy, age guidance, accessibility wording and careful material handling notes need to stay clear in public listings.",
-        aftercare: "Session fill rates, repeat bookings and whether spring workshop dates keep surfacing through Paula Boo's public listings are the useful follow-up signals.",
-        ancestor: "Useful maker-economy marker because it shows Paula Boo Studios carrying hands-on fibre practice beyond the winter holiday workshop run."
-      }
-    },
-    {
-      id: "twist-weave-workshop-spring-2026",
-      name: "Twist Weave Workshop",
-      dateLabel: "23 and 30 September 2026",
-      dateSort: "2026-09-23",
-      dateEndSort: "2026-09-30",
-      status: "confirmed",
-      season: "Spring",
-      place: "Paula Boo Studios",
-      village: "Point Lookout",
-      sector: "Workshops and making",
-      scale: "small guided fibre workshop",
-      source: "Visit Redlands Coast and Queensland.com",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Twist-Weave-Workshop-Adventurefest-67e62a9ee64d2e334074736d",
-      concise: "Two spring weaving sessions focused on twist-weave basketry with locally gathered natural fibres in a small Point Lookout studio setting.",
-      loadTags: ["workshop", "weaving", "Point Lookout", "small group", "spring"],
-      simulation: {
-        movement: "Small booked daytime attendance produces low ferry pressure, light local car use and steady studio dwell time across the afternoon.",
-        permissions: "Host capacity, booking flow, minimum-age wording, accessibility guidance and careful public framing around materials and session length remain the main public controls.",
-        aftercare: "Participant turnout, repeat interest and whether Paula Boo keeps listing spring fibre workshops in paired date windows are worth tracking.",
-        ancestor: "Good creative-tourism marker because it extends the studio's repeatable basketry offer into the spring shoulder season."
-      }
-    },
-    {
-      id: "acoustic-amity-grant-owen-2026",
-      name: "Acoustic Amity with Grant Owen",
-      dateLabel: "26 September 2026, 4-8pm",
-      dateSort: "2026-09-26",
-      status: "confirmed",
-      season: "Spring",
-      place: "Amity Point Community Club",
-      village: "Pulan / Amity",
-      sector: "Community nights and live music",
-      scale: "small free club music session",
-      source: "Amity Point Community Club",
-      sourceUrl: "https://amitypointcommunityclub.com.au/whats-on/",
-      concise: "Free late-afternoon club session with live local music from Grant Owen, dinner trade and a relaxed community crowd in Amity.",
-      loadTags: ["live music", "Amity", "free entry", "club night", "local artist"],
-      simulation: {
-        movement: "Mostly local and holiday-house arrivals gather from late afternoon into dinner service, with light courtesy-bus and parking demand.",
-        permissions: "Club host approval, performer timing, food service flow, responsible service and accurate start-finish wording are the key public controls.",
-        aftercare: "Attendance, dinner trade, repeat live-music demand and whether the club keeps publishing named acoustic sessions are useful follow-up signals.",
-        ancestor: "Helpful village-rhythm record because it captures a named live-music night in Amity rather than only recurring trivia and bingo."
-      }
-    },
-    {
       id: "straddie-invitational-2026",
       name: "Straddie Invitational",
       dateLabel: "16-18 October 2026",
@@ -1251,52 +1183,6 @@ window.QCEE_DATA = {
         permissions: "Food safety, oval booking, music, waste, market stalls, insurance and public toilets.",
         aftercare: "Vendor sales, seafood waste, rubbish, community benefit and sponsor thanks.",
         ancestor: "Food culture and local club memory marker."
-      }
-    },
-    {
-      id: "straddie-salute-triathlon-festival-2027",
-      name: "Straddie Salute Triathlon Festival",
-      dateLabel: "14-16 May 2027",
-      dateSort: "2027-05-14",
-      dateEndSort: "2027-05-16",
-      status: "confirmed",
-      season: "Autumn",
-      place: "Point Lookout Oval",
-      village: "Point Lookout",
-      sector: "Triathlon and endurance sport",
-      scale: "major participant sport",
-      source: "SeaLink event listing",
-      sourceUrl: "https://www.sealink.com.au/north-stradbroke-island/events/straddie-salute-triathlon-festival/",
-      concise: "Three-day destination triathlon weekend with island race courses, spectator viewing and post-race village activity centred on Point Lookout.",
-      loadTags: ["triathlon", "spectators", "Point Lookout Oval", "multi-day", "sport"],
-      simulation: {
-        movement: "Strong ferry load, early-morning athlete movement, bikes, race-marshalling pressure and concentrated spectator flow around Point Lookout and island course links.",
-        permissions: "Course approvals, traffic control, surf and water safety, first aid, volunteer rosters, public route notices and event-area management all need clear lead owners.",
-        aftercare: "Race numbers, incidents, volunteer load, local trade impact and course-condition feedback remain the main review points.",
-        ancestor: "Important annual sport-load marker because it shows the next confirmed iteration of one of the island's biggest organised endurance weekends."
-      }
-    },
-    {
-      id: "stradbroke-chamber-music-2027",
-      name: "Stradbroke Chamber Music Festival",
-      dateLabel: "23-25 July 2027",
-      dateSort: "2027-07-23",
-      dateEndSort: "2027-07-25",
-      status: "confirmed",
-      season: "Winter",
-      place: "Point Lookout Community Hall",
-      village: "Point Lookout",
-      sector: "Music and arts",
-      scale: "destination cultural festival",
-      source: "SeaLink event listing",
-      sourceUrl: "https://www.sealink.com.au/north-stradbroke-island/events/stradbroke-chamber-music-festival/",
-      concise: "Three-day chamber music festival bringing world-class musicians to Point Lookout Community Hall for six concerts across a winter island weekend.",
-      loadTags: ["concerts", "Point Lookout Community Hall", "winter culture", "ticketed", "multi-day"],
-      simulation: {
-        movement: "Small but high-intent audiences align with ferry arrivals, accommodation stays and concentrated evening hall attendance.",
-        permissions: "Venue hire, ticketing, accessibility, acoustic setup, performer logistics and accurate program wording are the key public controls.",
-        aftercare: "Audience origin, ferry use, accommodation demand, repeat patron interest and artist feedback are the main follow-up signals.",
-        ancestor: "Strong cultural-memory marker because it confirms the next published return of a repeat island chamber-music gathering."
       }
     },
     {
@@ -2041,7 +1927,11 @@ window.QCEE_DATA = {
       role: "Beach activity, camping, visitor movement and environmental sensitivity",
       checks: "Tides, vehicles, camping permits, waste, dunes, toilets, emergency access.",
       source: "Minjerribah Camping public information",
-      url: "https://minjerribahcamping.com.au/"
+      url: "https://minjerribahcamping.com.au/camp-grounds/flinders-beach/",
+      coordinatePrecision: "Representative centre of the mapped Flinders Beach campground footprint, 25 metres from the earlier point; checked against the current operator page and Queensland recreation-area sources on 23 July 2026.",
+      coordinatePointType: "campground footprint",
+      coordinateConfidence: "high",
+      coordinateChecked: "2026-07-23"
     },
     {
       name: "Cylinder Beach and campground",
@@ -2052,7 +1942,11 @@ window.QCEE_DATA = {
       role: "Beach recreation, camping, school holiday pressure and visitor safety notices.",
       checks: "Camping permits, surf and weather, parking, toilets, dunes, waste and emergency access.",
       source: "Minjerribah Camping public information",
-      url: "https://minjerribahcamping.com.au/"
+      url: "https://minjerribahcamping.com.au/camp-grounds/cylinder-beach/",
+      coordinatePrecision: "Representative centre of the Cylinder Beach campground footprint; current mapped footprint is within five metres and the operator confirms 300 Dickson Way.",
+      coordinatePointType: "campground footprint",
+      coordinateConfidence: "high",
+      coordinateChecked: "2026-07-23"
     },
     {
       name: "Adder Rock campground",
@@ -2063,7 +1957,11 @@ window.QCEE_DATA = {
       role: "Camping, visitor overflow, small group gatherings and event accommodation load.",
       checks: "Camping permits, vehicle access, quiet hours, waste, showers, powered sites and peak-season pressure.",
       source: "Minjerribah Camping public information",
-      url: "https://minjerribahcamping.com.au/"
+      url: "https://minjerribahcamping.com.au/camp-grounds/adderrock/",
+      coordinatePrecision: "Representative centre of the mapped Adder Rock campground footprint; current footprint agrees within two metres and the operator confirms the Point Lookout site.",
+      coordinatePointType: "campground footprint",
+      coordinateConfidence: "high",
+      coordinateChecked: "2026-07-23"
     },
     {
       name: "Main Beach, Point Lookout",
@@ -2085,20 +1983,25 @@ window.QCEE_DATA = {
       role: "Camping, fishing, small gatherings and western-side sunset visitor movement.",
       checks: "Camping permits, marine safety, foreshore care, waste, quiet hours and local traffic.",
       source: "Minjerribah Camping public information",
-      url: "https://minjerribahcamping.com.au/"
+      url: "https://minjerribahcamping.com.au/camp-grounds/amity-point/",
+      coordinatePrecision: "Representative centre of the mapped Amity Point campground footprint, 13 metres from the earlier point; checked against the current operator listing.",
+      coordinatePointType: "campground footprint",
+      coordinateConfidence: "high",
+      coordinateChecked: "2026-07-23"
     },
     {
       name: "Bradbury's Beach campground",
       area: "Goompi / Dunwich",
       category: "Beach and camping",
-      lat: -27.4959391,
-      lng: 153.4020046,
+      lat: -27.494708,
+      lng: 153.4023482,
       role: "Arrival-side camping, family gatherings and ferry-linked accommodation load.",
       checks: "Camping permits, ferry arrivals, parking, beach access, waste, toilets and quiet hours.",
       source: "Minjerribah Camping public information",
       url: "https://minjerribahcamping.com.au/camp-grounds/bradburys-beach/",
-      coordinatePrecision: "Pin withheld 23 July 2026 after a local report that the stored campground position is wrong. Retained only as an audit candidate pending an on-site or authoritative asset point.",
-      coordinateConfidence: "withheld",
+      coordinatePrecision: "Corrected 141 metres to the centre of the mapped campground footprint after a local report identified the earlier southern point as wrong. The footprint aligns with the operator's Bradbury's Beach holiday-park plan and current aerial imagery.",
+      coordinatePointType: "campground footprint",
+      coordinateConfidence: "high",
       coordinateChecked: "2026-07-23"
     },
     {
