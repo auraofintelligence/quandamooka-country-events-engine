@@ -242,7 +242,7 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "25 August 2026, 11:12am GMT+10 Brisbane / AEST.",
+    lastRunLabel: "25 August 2026, 11:15am GMT+10 Brisbane / AEST.",
     sortAnchorDate: "2026-08-25",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
