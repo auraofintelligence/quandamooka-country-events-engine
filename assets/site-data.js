@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "21 August 2026",
-    lastUpdated: "21 August 2026",
+    lastPublicSearch: "25 August 2026",
+    lastUpdated: "25 August 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "21 August 2026, 11:34am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-08-21",
+    lastRunLabel: "25 August 2026, 11:12am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-08-25",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -425,24 +425,47 @@ window.QCEE_DATA = {
     {
       id: "open-studio-days-pattern",
       name: "Open Studio Days",
-      dateLabel: "8-10 July and 14-16 August 2026",
-      dateSort: "2026-07-08",
-      dateEndSort: "2026-08-16",
+      dateLabel: "22-23 and 29-30 September 2026",
+      dateSort: "2026-09-22",
+      dateEndSort: "2026-09-30",
       status: "confirmed",
-      season: "Winter and early spring",
+      season: "Spring school holidays",
       place: "Paula Boo Studios, Point Lookout",
       village: "Point Lookout",
       sector: "Artists and studios",
       scale: "open studio",
       source: "Visit Redlands Coast",
       sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Open-Studio-Days-68620e3918385d5b3d24aafa",
-      concise: "Paula Boo Studios opens across two 2026 date windows for local fibre art, printmaking, silversmithing, biochrome work and studio visits.",
+      concise: "Paula Boo Studios opens for four September studio days featuring local fibre art, printmaking, silversmithing, biochrome work and studio visits.",
       loadTags: ["open studio", "artists", "Point Lookout", "free entry", "creative tourism"],
       simulation: {
         movement: "Low-to-moderate studio visits spread across holiday and arts-trail windows, with short dwell times and small bursts around midday.",
         permissions: "Artist consent, opening hours, sales handling, image use, accessibility wording and accurate public date windows.",
         aftercare: "Visitor numbers, sales, workshop follow-ups and whether later studio dates should be split into their own records in future scans.",
         ancestor: "Maps living artist lineages and studios."
+      }
+    },
+    {
+      id: "paula-boo-coil-workshop-spring-2026",
+      name: "Coil Workshop",
+      dateLabel: "22 and 29 September 2026, 10am-2pm",
+      dateSort: "2026-09-22",
+      dateEndSort: "2026-09-29",
+      status: "confirmed",
+      season: "Spring school holidays",
+      place: "Paula Boo Studios",
+      village: "Point Lookout",
+      sector: "Workshops and making",
+      scale: "small ticketed fibre-art workshop",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Coil-Workshop-Adventurefest-67e6260e64c9461c4042cb1a",
+      concise: "A hands-on basketry workshop using sustainably harvested Bangalow palm and hand-dyed raffia, with a shared weaving circle for ages 11 and over.",
+      loadTags: ["basketry", "weaving", "Paula Boo Studios", "Point Lookout", "school holidays"],
+      simulation: {
+        movement: "Small booked groups arrive through the late-morning ferry and village rhythm, with a steady studio dwell time rather than a crowd surge.",
+        permissions: "Workshop capacity, age guidance, materials, bookings, accessibility wording and artist-host details need to remain aligned with the organiser listing.",
+        aftercare: "Track booking interest, material use and whether the school-holiday sessions lead to later studio visits or repeat fibre-art workshops.",
+        ancestor: "Useful making marker because it holds contemporary island fibre practice in a small shared learning setting."
       }
     },
     {
@@ -1093,6 +1116,28 @@ window.QCEE_DATA = {
         permissions: "Ticketing, responsible service, dietary handling, rooftop capacity and accurate host-date wording are the critical public controls.",
         aftercare: "Ticket uptake, ferry use, food-and-drink demand and whether the series returns as a stronger shoulder-season drawcard.",
         ancestor: "Useful food-tourism marker because it links island brewing, visiting winemakers and timed ferry access into one source-backed hospitality format."
+      }
+    },
+    {
+      id: "bands-by-the-bay-barnes-storm-2026",
+      name: "Bands by the Bay: Barnes Storm",
+      dateLabel: "31 October 2026, 11am-5pm",
+      dateSort: "2026-10-31",
+      status: "confirmed",
+      season: "Late spring",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Live music and community gathering",
+      scale: "free waterfront live-music day",
+      source: "Visit Redlands Coast / Little Ship Club",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Bands-by-the-Bay-%E2%80%94-Barnes-Storm-Live-at-Little-Ship-Cluv-6a6d2e1efba74d517f9f7340",
+      concise: "Free waterfront day of classic Australian rock with Barnes Storm, food and drinks at the Little Ship Club.",
+      loadTags: ["live music", "Little Ship Club", "free entry", "waterfront", "Dunwich"],
+      simulation: {
+        movement: "Day visitors and locals can gather across a long waterfront afternoon, with ferry-linked arrivals, meal trade and a later-afternoon peak around the performance.",
+        permissions: "Venue operations, performance timing, responsible service, waterfront safety, food service and accurate supporting-act updates remain organiser-led.",
+        aftercare: "Attendance, meal trade, ferry timing and waterfront noise feedback can guide future club music-day planning.",
+        ancestor: "Useful hospitality-and-music marker because it joins a public club waterfront with a long, low-barrier community day."
       }
     },
     {
