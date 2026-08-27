@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "25 August 2026",
-    lastUpdated: "25 August 2026",
+    lastPublicSearch: "28 August 2026",
+    lastUpdated: "28 August 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "25 August 2026, 11:15am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-08-25",
+    lastRunLabel: "28 August 2026, 9:57am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-08-28",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -667,6 +667,28 @@ window.QCEE_DATA = {
         permissions: "Club host settings, performer booking, visitor/member messaging, responsible service and accurate public wording if access rules change.",
         aftercare: "Member turnout, casual visitor demand, lunch trade and whether member-day programming starts appearing more regularly in public listings.",
         ancestor: "Useful club-life marker because it captures a smaller social rhythm that still shapes Dunwich hospitality activity and public calendar texture."
+      }
+    },
+    {
+      id: "the-mjayz-little-ship-club-2026",
+      name: "The MJayz Live at Little Ship Club",
+      dateLabel: "22 August 2026, 12pm-4pm",
+      dateSort: "2026-08-22",
+      status: "confirmed",
+      season: "Late winter",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Club social and live music",
+      scale: "free waterfront afternoon set",
+      source: "Little Ship Club",
+      sourceUrl: "https://littleshipclub.com.au/news/live-music-the-mjayz-22-08-2026/",
+      concise: "Free Saturday bayfront set with The MJayz bringing pop-rock covers, lunch trade and a relaxed afternoon crowd at the club.",
+      loadTags: ["live music", "Little Ship Club", "free entry", "waterfront", "Dunwich"],
+      simulation: {
+        movement: "Lunch and early-afternoon arrivals build into a steady waterfront dwell time, with locals, day-trippers and ferry-linked visitors mixing through the set.",
+        permissions: "Club host settings, performer timing, responsible service, seating capacity and public wording about guest access need to stay current.",
+        aftercare: "Attendance, lunch trade, repeat demand for named Saturday acts and whether the club keeps publishing one-off music pages are the useful follow-up signals.",
+        ancestor: "Useful Dunwich hospitality marker because it captures a named late-winter live-music afternoon rather than only the standing Friday and major-event patterns."
       }
     },
     {
@@ -1138,6 +1160,28 @@ window.QCEE_DATA = {
         permissions: "Venue operations, performance timing, responsible service, waterfront safety, food service and accurate supporting-act updates remain organiser-led.",
         aftercare: "Attendance, meal trade, ferry timing and waterfront noise feedback can guide future club music-day planning.",
         ancestor: "Useful hospitality-and-music marker because it joins a public club waterfront with a long, low-barrier community day."
+      }
+    },
+    {
+      id: "briscoe-sisters-amity-hall-2026",
+      name: "Briscoe Sisters in Concert",
+      dateLabel: "5 September 2026, 3pm-6pm",
+      dateSort: "2026-09-05",
+      status: "confirmed",
+      season: "Early spring",
+      place: "Amity Community Hall",
+      village: "Pulan / Amity",
+      sector: "Live music and community gathering",
+      scale: "ticketed seated concert",
+      source: "Humanitix / Peace Run Records",
+      sourceUrl: "https://events.humanitix.com/briscoe-sisters-in-concert-at-amity-point-hall-stradbroke-island",
+      concise: "Ticketed Amity hall concert with the Briscoe Sisters, local support to be confirmed and an afternoon seated audience on Minjerribah.",
+      loadTags: ["live music", "Amity Community Hall", "ticketed", "First Nations artists", "seated concert"],
+      simulation: {
+        movement: "A compact afternoon audience arrives ahead of the 3.15pm start, with light parking demand, walk-up hall access and some same-day visitor travel across the bay.",
+        permissions: "Hall booking, host ticketing, access wording, local-support updates, food and drink expectations and accurate start-time messaging remain organiser-led.",
+        aftercare: "Ticket uptake, turnout, hall suitability, local support response and whether more touring music events start using the Amity hall are the main follow-up signals.",
+        ancestor: "Useful Amity culture marker because it extends the public event mix beyond club nights into a clearly published community-hall concert."
       }
     },
     {
