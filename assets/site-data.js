@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "28 August 2026",
-    lastUpdated: "28 August 2026",
+    lastPublicSearch: "1 September 2026",
+    lastUpdated: "1 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "28 August 2026, 9:57am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-08-28",
+    lastRunLabel: "1 September 2026, 11:00am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-01",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -1251,6 +1251,29 @@ window.QCEE_DATA = {
         permissions: "Host capacity, booking flow, minimum-age wording, accessibility guidance and careful public framing around materials and session length remain the main public controls.",
         aftercare: "Participant turnout, repeat interest and whether Paula Boo keeps listing spring fibre workshops in paired date windows are worth tracking.",
         ancestor: "Good creative-tourism marker because it extends the studio's repeatable basketry offer into the spring shoulder season."
+      }
+    },
+    {
+      id: "alternate-weave-workshop-spring-2026",
+      name: "Alternate Weave Workshop",
+      dateLabel: "24 September and 1 October 2026, 1-3pm",
+      dateSort: "2026-09-24",
+      dateEndSort: "2026-10-01",
+      status: "confirmed",
+      season: "Spring",
+      place: "Paula Boo Studios",
+      village: "Point Lookout",
+      sector: "Workshops and making",
+      scale: "small guided fibre workshop",
+      source: "Visit Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Alternate-Weave-Workshop-Adventurefest-69325cb7605e275d5c8766b9",
+      concise: "Two spring fibre workshops where participants make small woven sea creatures from coccus palm and raffia in a Point Lookout studio setting.",
+      loadTags: ["workshop", "weaving", "Point Lookout", "small group", "spring"],
+      simulation: {
+        movement: "Small booked afternoon arrivals create low ferry pressure, light local driving demand and a short shared studio dwell time.",
+        permissions: "Host capacity, booking accuracy, age guidance, accessibility wording and careful public framing around materials and session length remain the main public controls.",
+        aftercare: "Session fill rates, family uptake, repeat workshop demand and whether Paula Boo keeps pairing playful fibre sessions into school-holiday runs are the useful follow-up signals.",
+        ancestor: "Useful maker-economy marker because it extends Paula Boo's playful fibre workshop offer into the spring holiday window."
       }
     },
     {
