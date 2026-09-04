@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "1 September 2026",
-    lastUpdated: "1 September 2026",
+    lastPublicSearch: "4 September 2026",
+    lastUpdated: "4 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "1 September 2026, 11:00am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-01",
+    lastRunLabel: "4 September 2026, 12:36pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-04",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -1208,6 +1208,28 @@ window.QCEE_DATA = {
       }
     },
     {
+      id: "koala-food-tree-planting-day-2026",
+      name: "Koala Food Tree Planting Day",
+      dateLabel: "13 September 2026, 2pm-5pm",
+      dateSort: "2026-09-13",
+      status: "confirmed",
+      season: "Early spring",
+      place: "Ganaba",
+      village: "Goompi / Dunwich",
+      sector: "Wildlife care and community planting",
+      scale: "free community conservation day",
+      source: "Minjerribah Wildlife Veterinary and Conservation Foundation",
+      sourceUrl: "https://www.mwvcf.org.au/whats-on/koala-food-free-planting-day",
+      concise: "Free community planting day at Ganaba to help grow future koala food trees, with MWVCF and QYAC inviting public participation.",
+      loadTags: ["community planting", "koalas", "Ganaba", "free entry", "conservation"],
+      simulation: {
+        movement: "Steady afternoon arrivals build around a hands-on planting window, with light parking demand and short on-site dwell times for some families and volunteers.",
+        permissions: "Site access, tool use, child supervision, public safety wording, planting-zone guidance and any photo or donation messaging need to stay organiser-led.",
+        aftercare: "Volunteer turnout, tree survival, return interest and whether MWVCF publishes more community care days are the main follow-up signals.",
+        ancestor: "Useful care-and-Country marker because it links public participation to long-term wildlife rehabilitation on Minjerribah."
+      }
+    },
+    {
       id: "coil-workshop-spring-2026",
       name: "Coil Workshop",
       dateLabel: "22 and 29 September 2026",
@@ -1274,6 +1296,29 @@ window.QCEE_DATA = {
         permissions: "Host capacity, booking accuracy, age guidance, accessibility wording and careful public framing around materials and session length remain the main public controls.",
         aftercare: "Session fill rates, family uptake, repeat workshop demand and whether Paula Boo keeps pairing playful fibre sessions into school-holiday runs are the useful follow-up signals.",
         ancestor: "Useful maker-economy marker because it extends Paula Boo's playful fibre workshop offer into the spring holiday window."
+      }
+    },
+    {
+      id: "little-ship-fishing-competition-september-2026",
+      name: "Little Ship Club Fishing Competition",
+      dateLabel: "25-27 September 2026",
+      dateSort: "2026-09-25",
+      dateEndSort: "2026-09-27",
+      status: "confirmed",
+      season: "Spring full moon",
+      place: "Little Ship Club",
+      village: "Goompi / Dunwich",
+      sector: "Fishing and club sport",
+      scale: "small multi-day fishing competition",
+      source: "Little Ship Club Fishing Section",
+      sourceUrl: "https://littleshipclub.com.au/on-the-water/lsc-fishing-section/",
+      concise: "Three-day fishing weekend for adult and junior enthusiasts, with lines down Friday evening and Sunday weigh-in back at Little Ship Club.",
+      loadTags: ["fishing", "Little Ship Club", "junior-friendly", "multi-day", "spring"],
+      simulation: {
+        movement: "Participants move between launch points, bay waters and the Dunwich club across the weekend, with the main public pulse around Friday setup and Sunday weigh-in.",
+        permissions: "Fishing rules, weather decisions, marine safety, junior supervision, weigh-in logistics and club-host public wording need to stay current.",
+        aftercare: "Competitor numbers, junior participation, weather impacts and whether future 2026 club fishing dates remain publicly listed are worth tracking.",
+        ancestor: "Useful club-sport marker because it shows a public-facing island fishing weekend rather than only hospitality or music programming."
       }
     },
     {
