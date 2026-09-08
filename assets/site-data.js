@@ -3,8 +3,8 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "4 September 2026",
-    lastUpdated: "4 September 2026",
+    lastPublicSearch: "8 September 2026, 11:45:41am GMT+10 Brisbane / AEST",
+    lastUpdated: "8 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "4 September 2026, 12:36pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-04",
+    lastRunLabel: "8 September 2026, 11:45:41am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-08",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -257,6 +257,120 @@ window.QCEE_DATA = {
     ]
   },
   events: [
+    {
+      id: "bay-islands-fusion-festival-2026",
+      name: "Bay Islands Fusion Festival 2026",
+      dateLabel: "12 September 2026",
+      dateSort: "2026-09-12",
+      status: "confirmed",
+      season: "Spring",
+      place: "Russell Island Parklands and Bay Islands Sport and Resilience Hub, 2 Union Street",
+      village: "Russell Island",
+      sector: "Community festivals",
+      scale: "free community festival",
+      source: "Redlands Coast public events calendar",
+      sourceUrl: "https://www.redlandscoast.com.au/Whats-on",
+      concise: "A free community festival presented by BIMSARA, with cultural performances, music, art, food and family activities on Russell Island.",
+      loadTags: [
+        "community",
+        "music",
+        "family",
+        "Russell Island",
+        "ferry"
+      ],
+      simulation: {
+        movement: "Planning note: check ferry arrivals, the walk to the hub and return-service capacity.",
+        permissions: "Planning note: confirm the current programme, stall permissions and accessibility with the organiser.",
+        aftercare: "Planning note: review volunteer workload, waste collection and visitor transport feedback.",
+        ancestor: "A nearby island community event for comparing volunteer and transport needs."
+      }
+    },
+    {
+      id: "cleveland-caravan-camping-boating-expo-2026",
+      name: "Cleveland Caravan, Camping, Boating and 4x4 Expo",
+      dateLabel: "18-20 September 2026",
+      dateSort: "2026-09-18",
+      dateEndSort: "2026-09-20",
+      status: "confirmed",
+      season: "Spring school holidays",
+      place: "Redland Showgrounds, Norm Price Park",
+      village: "Cleveland",
+      sector: "Exhibitions and outdoor recreation",
+      scale: "three-day mainland expo",
+      source: "Cleveland Expo organiser",
+      sourceUrl: "https://clevelandexpo.com.au/",
+      concise: "Outdoor recreation expo with caravans, camping and boating displays, demonstrations and family entertainment at Redland Showgrounds.",
+      loadTags: [
+        "expo",
+        "Cleveland",
+        "parking",
+        "family",
+        "school holidays"
+      ],
+      simulation: {
+        movement: "Planning note: assess showground traffic and parking alongside other Cleveland visitor movements.",
+        permissions: "Planning note: confirm exhibitor access, demonstration areas and public accessibility arrangements.",
+        aftercare: "Planning note: review parking demand, waste recovery and exhibitor pack-down.",
+        ancestor: "A mainland event useful for understanding shared visitor and supplier demand around the island gateway."
+      }
+    },
+    {
+      id: "island-storytellers-festival-2026",
+      name: "Island Storytellers Festival 2026",
+      dateLabel: "3-5 October 2026",
+      dateSort: "2026-10-03",
+      dateEndSort: "2026-10-05",
+      status: "confirmed",
+      season: "Spring",
+      place: "Pioneer Hall, Lamb Island, and venues on the islands and waters of southern Moreton Bay",
+      village: "Lamb Island / southern Moreton Bay",
+      sector: "Literature and storytelling",
+      scale: "three-day island festival",
+      source: "Island Storytellers Festival organiser",
+      sourceUrl: "https://www.islandstorytellersfestival.com/",
+      concise: "Writers, readers and storytellers gather for talks, workshops and events across island venues and boats on the bay. The Minjerribah excursion has its own calendar record.",
+      loadTags: [
+        "storytelling",
+        "workshops",
+        "Lamb Island",
+        "ferry",
+        "multi-venue"
+      ],
+      simulation: {
+        movement: "Planning note: match session bookings to inter-island travel and allow transfer time.",
+        permissions: "Planning note: confirm venue and vessel access, session bookings and permissions for any recording.",
+        aftercare: "Planning note: review missed connections, session feedback and host workload.",
+        ancestor: "A regional storytelling programme connecting island venues and water-based events."
+      }
+    },
+    {
+      id: "minjerribah-adventure-mv-kurrowera-2026",
+      name: "Minjerribah Adventure on MV Kurrowera",
+      dateLabel: "5 October 2026, 9:15am-5:15pm AEST",
+      dateSort: "2026-10-05",
+      status: "confirmed",
+      season: "Spring",
+      place: "MV Kurrowera, Junner Street jetty and QUAMPI",
+      village: "Goompi / Dunwich, via Lamb and Coochiemudlo islands",
+      sector: "Arts and heritage",
+      scale: "booked day excursion",
+      source: "Island Storytellers Festival on Humanitix",
+      sourceUrl: "https://events.humanitix.com/minjerribah-adventure-on-mv-kurrowera",
+      concise: "Festival excursion from Lamb and Coochiemudlo islands to Dunwich, with onboard entertainment, a QUAMPI visit and a museum-coordinated walking tour. Check the ticket page for boarding times.",
+      loadTags: [
+        "storytelling",
+        "heritage",
+        "Dunwich",
+        "ferry",
+        "bookings"
+      ],
+      simulation: {
+        movement: "Planning note: allow jetty transfers and return boarding time; the organiser says sailing times may vary with conditions.",
+        permissions: "Planning note: confirm vessel accessibility, walking-tour arrangements and any cultural or recording permissions.",
+        aftercare: "Planning note: review boarding reliability, accessibility feedback and the timing of venue visits.",
+        ancestor: "A separately booked Minjerribah component of the Island Storytellers Festival."
+      }
+    },
     {
       id: "paula-boo-coil-workshop-winter-2026",
       name: "Coil Workshop",
