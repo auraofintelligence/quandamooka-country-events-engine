@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "8 September 2026, 11:45:41am GMT+10 Brisbane / AEST",
+    lastPublicSearch: "11 September 2026, 9:44:47am GMT+10 Brisbane / AEST.",
     lastUpdated: "8 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "8 September 2026, 11:45:41am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-08",
+    lastRunLabel: "11 September 2026, 9:44:47am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-11",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -257,6 +257,170 @@ window.QCEE_DATA = {
     ]
   },
   events: [
+    {
+      "id": "bowlsie-backyard-cricket-2026",
+      "name": "Backyard Cricket on the Greens",
+      "dateLabel": "19 September 2026",
+      "dateSort": "2026-09-19",
+      "place": "Point Lookout Bowls Club",
+      "village": "Point Lookout",
+      "sector": "Sport and community",
+      "scale": "community cricket day",
+      "source": "Point Lookout Bowls Club",
+      "sourceUrl": "https://www.pointlookoutbowlsclub.com.au/",
+      "concise": "The Dunwich Sharks and Point Lookout Wax Heads meet for a family-friendly backyard cricket day at the Bowlsie.",
+      "loadTags": [
+        "sport",
+        "family",
+        "Point Lookout"
+      ],
+      "simulation": {
+        "movement": "Planning note: Allow for family arrivals and shared club parking.",
+        "permissions": "Planning note: Confirm start time, participation arrangements and spectator access with the club.",
+        "aftercare": "Planning note: Review turnout, ground condition and volunteer workload.",
+        "ancestor": "A local community programme for comparing attendance, access and volunteer needs."
+      },
+      "status": "confirmed",
+      "season": "Spring"
+    },
+    {
+      "id": "bowlsie-bingo-spring-2026",
+      "name": "Bingo at the Bowlsie",
+      "dateLabel": "24 September and 1 October 2026, from 6pm",
+      "dateSort": "2026-09-24",
+      "dateEndSort": "2026-10-01",
+      "place": "Point Lookout Bowls Club",
+      "village": "Point Lookout",
+      "sector": "Community entertainment",
+      "scale": "two evening sessions",
+      "source": "Point Lookout Bowls Club",
+      "sourceUrl": "https://www.pointlookoutbowlsclub.com.au/",
+      "concise": "Two school-holiday bingo evenings hosted by Spike, with raffles, prizes and giveaways.",
+      "loadTags": [
+        "bingo",
+        "Point Lookout",
+        "school holidays"
+      ],
+      "simulation": {
+        "movement": "Planning note: Check evening transport and club dining overlap.",
+        "permissions": "Planning note: Confirm entry conditions, bookings and session finish times.",
+        "aftercare": "Planning note: Review attendance and return-transport feedback.",
+        "ancestor": "A local community programme for comparing attendance, access and volunteer needs."
+      },
+      "status": "confirmed",
+      "season": "Spring"
+    },
+    {
+      "id": "hidden-sea-beach-clean-2026",
+      "name": "The Hidden Sea Beach Clean",
+      "dateLabel": "26 September 2026, 9am-1pm",
+      "dateSort": "2026-09-26",
+      "place": "Point Lookout beaches; meeting point to confirm with Point Lookout Bowls Club",
+      "village": "Point Lookout",
+      "sector": "Environment and community",
+      "scale": "community beach clean-up",
+      "source": "Point Lookout Bowls Club",
+      "sourceUrl": "https://www.pointlookoutbowlsclub.com.au/whats-on/protect-the-magic-hidden-sea-beach-clean",
+      "concise": "Community beach clean-up supporting Wildlife Rescue Minjerribah. Contact the Bowlsie for the meeting point and participation details.",
+      "loadTags": [
+        "beach clean",
+        "volunteers",
+        "wildlife",
+        "Point Lookout"
+      ],
+      "simulation": {
+        "movement": "Planning note: Confirm the meeting point and access to the clean-up area.",
+        "permissions": "Planning note: Check equipment, child supervision and rubbish-handling arrangements.",
+        "aftercare": "Planning note: Record collected waste and volunteer feedback.",
+        "ancestor": "A local community programme for comparing attendance, access and volunteer needs."
+      },
+      "status": "confirmed",
+      "season": "Spring"
+    },
+    {
+      "id": "rag-explore-and-draw-2026",
+      "name": "Explore and Draw",
+      "dateLabel": "24 August-6 November 2026, during gallery hours",
+      "dateSort": "2026-08-24",
+      "dateEndSort": "2026-11-06",
+      "place": "Redland Art Gallery, The Mezz at RPAC",
+      "village": "Cleveland",
+      "sector": "Arts and creative activities",
+      "scale": "free drop-in programme",
+      "source": "Redland Art Gallery",
+      "sourceUrl": "https://artgallery.redland.qld.gov.au/drop-in-activities/",
+      "concise": "Explore artworks through clues in a free activity accompanying Visualising the Written Word at The Mezz.",
+      "loadTags": [
+        "art",
+        "drop-in",
+        "Cleveland",
+        "family"
+      ],
+      "simulation": {
+        "movement": "Planning note: Check gallery opening hours before planning a visit.",
+        "permissions": "Planning note: Parents and carers stay with children; check venue accessibility.",
+        "aftercare": "Planning note: Review materials use and visitor feedback.",
+        "ancestor": "A local community programme for comparing attendance, access and volunteer needs."
+      },
+      "status": "confirmed",
+      "season": "Spring"
+    },
+    {
+      "id": "rag-cast-your-line-drawing-2026",
+      "name": "Cast Your Line Drawing Game",
+      "dateLabel": "7 September-17 November 2026, during gallery hours",
+      "dateSort": "2026-09-07",
+      "dateEndSort": "2026-11-17",
+      "place": "Redland Art Gallery, Cleveland",
+      "village": "Cleveland",
+      "sector": "Arts and creative activities",
+      "scale": "free drop-in programme",
+      "source": "Redland Art Gallery",
+      "sourceUrl": "https://artgallery.redland.qld.gov.au/drop-in-activities/",
+      "concise": "Use a drawing wheel and surprise prompts to make an artwork in this free gallery activity.",
+      "loadTags": [
+        "art",
+        "drop-in",
+        "Cleveland",
+        "family"
+      ],
+      "simulation": {
+        "movement": "Planning note: Allow for casual visits during gallery opening hours.",
+        "permissions": "Planning note: Parents and carers stay with children; check accessible workspace.",
+        "aftercare": "Planning note: Review material demand and visitor participation.",
+        "ancestor": "A local community programme for comparing attendance, access and volunteer needs."
+      },
+      "status": "confirmed",
+      "season": "Spring"
+    },
+    {
+      "id": "rag-fish-tale-fridays-2026",
+      "name": "Fish Tale Fridays at the Gallery",
+      "dateLabel": "Fridays in October 2026, 10am-midday",
+      "dateSort": "2026-10-02",
+      "dateEndSort": "2026-10-30",
+      "place": "Redland Art Gallery, Cleveland",
+      "village": "Cleveland",
+      "sector": "Community storytelling",
+      "scale": "free Seniors Month drop-in series",
+      "source": "Redland Art Gallery",
+      "sourceUrl": "https://artgallery.redland.qld.gov.au/drop-in-activities/",
+      "concise": "Drop in for a cuppa, conversation and exhibition browsing during Seniors Month, and share fishing memories on a community wall.",
+      "loadTags": [
+        "storytelling",
+        "seniors",
+        "Cleveland",
+        "drop-in"
+      ],
+      "simulation": {
+        "movement": "Planning note: Check accessible transport and gallery arrival arrangements.",
+        "permissions": "Planning note: Confirm session access and consent before sharing or recording personal stories.",
+        "aftercare": "Planning note: Review participation and visitor feedback.",
+        "ancestor": "A local community programme for comparing attendance, access and volunteer needs."
+      },
+      "status": "confirmed",
+      "season": "Spring"
+    },
     {
       id: "bay-islands-fusion-festival-2026",
       name: "Bay Islands Fusion Festival 2026",
@@ -1481,26 +1645,32 @@ window.QCEE_DATA = {
       }
     },
     {
-      id: "island-vibe-pattern",
-      name: "Island Vibe Festival",
-      dateLabel: "Annual last weekend of October; 2026 date to confirm",
-      dateSort: "2026-10-30",
-      status: "tbc",
-      season: "Late spring / whale migration end",
-      place: "Point Lookout Oval / Home Beach precinct",
-      village: "Point Lookout",
-      sector: "Music, arts and island culture",
-      scale: "major music festival pattern",
-      source: "Island Vibe official site",
-      sourceUrl: "https://www.islandvibe.com.au/about",
-      concise: "Reggae, roots, soul, electronic music, art exhibitions, workshops, stalls, circus, eco-food and craft markets.",
-      loadTags: ["music", "multi-day", "camping", "markets", "eco-event"],
-      simulation: {
-        movement: "Large multi-day visitor load, camping, shuttles, ferry transfers and late-night movement.",
-        permissions: "Entertainment event licence, oval use, noise, waste, camping, alcohol/drug settings and cultural protocol.",
-        aftercare: "Waste diversion, campground pressure, noise, neighbour feedback, artist records and community benefit.",
-        ancestor: "Important historical event-memory layer for music, youth culture and island visitor scale."
-      }
+      "id": "island-vibe-pattern",
+      "name": "Island Vibe Festival",
+      "dateLabel": "Minjerribah return date to confirm; 2026 campout is off-island",
+      "status": "tbc",
+      "season": "Late spring / whale migration end",
+      "place": "Historical Minjerribah venues; no current island venue confirmed",
+      "village": "Point Lookout",
+      "sector": "Music, arts and island culture",
+      "scale": "major music festival pattern",
+      "source": "Island Vibe official site",
+      "sourceUrl": "https://www.islandvibe.com.au/",
+      "concise": "Historical island festival watchlist. The organiser advertises the 2026 campout for 13-15 November at Borumba Deer Farm on Gubbi Gubbi Country, outside this atlas area. A Minjerribah return is unconfirmed.",
+      "loadTags": [
+        "music",
+        "multi-day",
+        "camping",
+        "markets",
+        "eco-event"
+      ],
+      "simulation": {
+        "movement": "Large multi-day visitor load, camping, shuttles, ferry transfers and late-night movement.",
+        "permissions": "Entertainment event licence, oval use, noise, waste, camping, alcohol/drug settings and cultural protocol.",
+        "aftercare": "Waste diversion, campground pressure, noise, neighbour feedback, artist records and community benefit.",
+        "ancestor": "Important historical event-memory layer for music, youth culture and island visitor scale."
+      },
+      "sourceStatus": "2026 campout is off-island; do not plan island travel for it."
     },
     {
       id: "straddie-oyster-festival-next",
