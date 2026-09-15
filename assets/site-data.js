@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "11 September 2026, 9:44:47am GMT+10 Brisbane / AEST.",
+    lastPublicSearch: "15 September 2026, 2:00:09pm GMT+10 Brisbane / AEST.",
     lastUpdated: "8 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "11 September 2026, 9:44:47am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-11",
+    lastRunLabel: "15 September 2026, 2:00:09pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-15",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -257,6 +257,61 @@ window.QCEE_DATA = {
     ]
   },
   events: [
+    {
+      "id": "coochiemudlo-pirate-day-markets-2026",
+      "name": "Coochiemudlo Island Pirate Day Markets",
+      "dateLabel": "19 September 2026, 9am-1:30pm",
+      "dateSort": "2026-09-19",
+      "status": "confirmed",
+      "season": "Spring",
+      "place": "Main Beach, Coochiemudlo Island",
+      "village": "Coochiemudlo Island",
+      "sector": "Markets and family activities",
+      "scale": "public community event",
+      "source": "Life on Coochiemudlo Island",
+      "sourceUrl": "https://coochiemudloisland.com.au/events-collection",
+      "concise": "Pirate-themed community markets at Main Beach, with family activities, costumes and a treasure hunt.",
+      "loadTags": [
+        "markets",
+        "family",
+        "Coochiemudlo",
+        "ferry"
+      ],
+      "simulation": {
+        "movement": "Planning note: Check Victoria Point ferry times and foreshore access.",
+        "permissions": "Planning note: Confirm stallholder arrangements, weather updates and child supervision with the host.",
+        "aftercare": "Planning note: Review ferry queues, foreshore waste and stallholder feedback.",
+        "ancestor": "A source-backed community event for comparing future access, participation and volunteer needs."
+      }
+    },
+    {
+      "id": "redfest-redlands-coast-2026",
+      "name": "RedFest Redlands Coast Festival",
+      "dateLabel": "26-27 September 2026; Saturday 9am-9pm, Sunday 9am-5pm",
+      "dateSort": "2026-09-26",
+      "status": "confirmed",
+      "season": "Spring",
+      "place": "Cleveland Showgrounds",
+      "village": "Cleveland",
+      "sector": "Festival and community",
+      "scale": "public community event",
+      "source": "RedFest organiser ticket page on Humanitix",
+      "sourceUrl": "https://events.humanitix.com/festival-tickets-redfest-2026",
+      "concise": "Two days of live music, local performers, market stalls, family entertainment and community activities at Cleveland Showgrounds.",
+      "loadTags": [
+        "festival",
+        "markets",
+        "family",
+        "Cleveland"
+      ],
+      "simulation": {
+        "movement": "Planning note: Plan showground entry, parking and evening return travel, including island ferry connections.",
+        "permissions": "Planning note: Check admission, accessibility and daily programme details with the organiser.",
+        "aftercare": "Planning note: Review crowd flow, waste, volunteer workload and local participation.",
+        "ancestor": "A source-backed community event for comparing future access, participation and volunteer needs."
+      },
+      "dateEndSort": "2026-09-27"
+    },
     {
       "id": "bowlsie-backyard-cricket-2026",
       "name": "Backyard Cricket on the Greens",
@@ -1743,7 +1798,7 @@ window.QCEE_DATA = {
     {
       id: "point-lookout-markets-pattern",
       name: "Point Lookout Markets",
-      dateLabel: "Every second Sunday, about 8am-midday",
+      dateLabel: "Every second Sunday; weekly during school holidays. Check current club dates",
       dateSort: "2026-01-01",
       status: "recurring",
       season: "Year-round / visitor peaks",
@@ -1752,8 +1807,8 @@ window.QCEE_DATA = {
       sector: "Markets and stallholders",
       scale: "regular local market",
       source: "SeaLink and Point Lookout Bowls Club",
-      sourceUrl: "https://www.sealink.com.au/north-stradbroke-island/events/point-lookout-markets/",
-      concise: "Regular island market with local makers, food, breakfast trade and a relaxed Sunday community rhythm at the Bowls Club.",
+      sourceUrl: "https://www.pointlookoutbowlsclub.com.au/",
+      concise: "Island markets with local art, craft, food and gifts. The club lists school-holiday markets and breakfast on 20 and 27 September and 4 October 2026.",
       loadTags: ["stallholders", "second Sunday", "local artists", "food", "visitor rhythm"],
       simulation: {
         movement: "Small recurring market flow with parking, breakfast overlap, bus stop use and weather-sensitive stall layout.",
