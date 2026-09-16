@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "15 September 2026, 2:00:09pm GMT+10 Brisbane / AEST.",
+    lastPublicSearch: "16 September 2026, 3:04:05pm GMT+10 Brisbane / AEST.",
     lastUpdated: "8 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "15 September 2026, 2:00:09pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-15",
+    lastRunLabel: "16 September 2026, 3:04:05pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-16",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -257,6 +257,51 @@ window.QCEE_DATA = {
     ]
   },
   events: [
+    {
+      id: "redlands-christmas-tree-lighting-2026",
+      name: "Redlands Coast Lighting of the Christmas Tree",
+      dateLabel: "27-28 November 2026, 4:30pm-8:30pm",
+      dateSort: "2026-11-27",
+      dateEndSort: "2026-11-28",
+      status: "confirmed",
+      season: "Early summer",
+      place: "Raby Bay Harbour Park",
+      village: "Cleveland",
+      sector: "Community celebrations",
+      scale: "two-night free public event",
+      source: "Redland City Council",
+      sourceUrl: "https://www.redland.qld.gov.au/News-events-and-have-your-say/Council-events/Redlands-Coast-Lighting-of-the-Christmas-Tree",
+      concise: "Two free community evenings with carols, performers, children's activities, food trucks, Santa photos and the city Christmas tree lighting.",
+      loadTags: ["Christmas", "family", "free entry", "Cleveland", "evening event"],
+      simulation: {
+        movement: "Planning note: Allow for evening arrivals, Raby Bay parking pressure and return travel toward island ferry connections.",
+        permissions: "Planning note: Check accessibility, programme timing and weather updates with Council before travel.",
+        aftercare: "Planning note: Review crowd flow, transport demand, waste and family access across both nights.",
+        ancestor: "A major mainland community gathering that can affect shared transport and visitor movement around the island gateway."
+      }
+    },
+    {
+      id: "coochiemudlo-christmas-markets-2026",
+      name: "Coochiemudlo Island Christmas Markets",
+      dateLabel: "28 November 2026, 9am-1pm",
+      dateSort: "2026-11-28",
+      status: "confirmed",
+      season: "Early summer",
+      place: "Main Beach foreshore near the ferry terminal",
+      village: "Coochiemudlo Island",
+      sector: "Markets and family activities",
+      scale: "public island market",
+      source: "Life on Coochiemudlo Island",
+      sourceUrl: "https://coochiemudloisland.com.au/events-collection",
+      concise: "Island Christmas markets with food, arts, crafts, clothing and homewares, plus Santa photos and Christmas card making.",
+      loadTags: ["Christmas", "markets", "family", "Coochiemudlo", "ferry"],
+      simulation: {
+        movement: "Planning note: Check Victoria Point ferry capacity and foreshore access for the Saturday market window.",
+        permissions: "Planning note: Confirm stallholder details, weather updates and child activity arrangements with the organiser.",
+        aftercare: "Planning note: Review ferry queues, foreshore waste, stallholder outcomes and family participation.",
+        ancestor: "A source-backed island market for comparing seasonal ferry, visitor and volunteer demand."
+      }
+    },
     {
       "id": "coochiemudlo-pirate-day-markets-2026",
       "name": "Coochiemudlo Island Pirate Day Markets",
@@ -938,8 +983,8 @@ window.QCEE_DATA = {
     {
       id: "straddie-brewing-rooftop-live-music-2026",
       name: "Straddie Brewing Rooftop Live Music",
-      dateLabel: "26 July, 1 August, 30 August, 5 September, 19 September, 27 September, 3 October, 4 October, 24 October, 7 November, 29 November, 5 December and 20 December 2026",
-      dateSort: "2026-07-26",
+      dateLabel: "1 and 30 August; 5, 6, 19 and 27 September; 3, 4 and 24 October; 7 and 29 November; 5 and 20 December 2026",
+      dateSort: "2026-08-01",
       dateEndSort: "2026-12-20",
       status: "confirmed",
       season: "Winter to summer",
@@ -949,7 +994,7 @@ window.QCEE_DATA = {
       scale: "multi-date rooftop music series",
       source: "Straddie Brewing Co",
       sourceUrl: "https://straddiebrewing.com.au/news/live-music-saturday-sunday/",
-      concise: "Weekend rooftop music series adding Sunday sessions, with Vibe Train, Lee Griffin, Kyle Bryant, Chris Palmer, Bentley and Gavin Roche across late 2026.",
+      concise: "Weekend rooftop music series with Lee Griffin, Kyle Bryant, Chris Palmer, the Bentley duo, Grant Owens and Gavin Roche, followed by later spring and summer sessions.",
       loadTags: ["live music", "Straddie Brewing", "Dunwich", "Sunday sessions", "rooftop"],
       simulation: {
         movement: "Small-to-moderate hospitality arrivals build around lunch, afternoon drinks and ferry-linked day trips rather than one sharp event peak.",
@@ -1560,29 +1605,6 @@ window.QCEE_DATA = {
         permissions: "Site access, tool use, child supervision, public safety wording, planting-zone guidance and any photo or donation messaging need to stay organiser-led.",
         aftercare: "Volunteer turnout, tree survival, return interest and whether MWVCF publishes more community care days are the main follow-up signals.",
         ancestor: "Useful care-and-Country marker because it links public participation to long-term wildlife rehabilitation on Minjerribah."
-      }
-    },
-    {
-      id: "coil-workshop-spring-2026",
-      name: "Coil Workshop",
-      dateLabel: "22 and 29 September 2026",
-      dateSort: "2026-09-22",
-      dateEndSort: "2026-09-29",
-      status: "confirmed",
-      season: "Spring",
-      place: "Paula Boo Studios",
-      village: "Point Lookout",
-      sector: "Workshops and making",
-      scale: "small guided creative workshop",
-      source: "Visit Redlands Coast and Queensland.com",
-      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Coil-Workshop-Adventurefest-67e6260e64c9461c4042cb1a",
-      concise: "Two spring basketry sessions at Paula Boo Studios where participants make coiled baskets with natural fibres in a small Point Lookout studio setting.",
-      loadTags: ["workshop", "basketry", "Point Lookout", "small group", "spring"],
-      simulation: {
-        movement: "Small daytime arrivals cluster around booked studio sessions, with light parking demand and little spillover beyond the Midjimberry Road site.",
-        permissions: "Host capacity, booking accuracy, age guidance, accessibility wording and careful material handling notes need to stay clear in public listings.",
-        aftercare: "Session fill rates, repeat bookings and whether spring workshop dates keep surfacing through Paula Boo's public listings are the useful follow-up signals.",
-        ancestor: "Useful maker-economy marker because it shows Paula Boo Studios carrying hands-on fibre practice beyond the winter holiday workshop run."
       }
     },
     {
