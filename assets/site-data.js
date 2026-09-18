@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "16 September 2026, 3:04:05pm GMT+10 Brisbane / AEST.",
+    lastPublicSearch: "18 September 2026, 2:33:08pm GMT+10 Brisbane / AEST.",
     lastUpdated: "8 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "16 September 2026, 3:04:05pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-16",
+    lastRunLabel: "18 September 2026, 2:33:08pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-18",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -257,6 +257,87 @@ window.QCEE_DATA = {
     ]
   },
   events: [
+    {
+      "id": "rag-sea-plastic-mosaics-2026",
+      "name": "Sea Plastic Mosaics with Amber Vicum",
+      "dateLabel": "23 September 2026, 10am-12:30pm",
+      "dateSort": "2026-09-23",
+      "status": "confirmed",
+      "season": "Spring",
+      "place": "Redland Art Gallery, Cleveland",
+      "village": "Cleveland",
+      "sector": "Arts and creative workshops",
+      "scale": "public gallery activity",
+      "source": "Redland Art Gallery / Redlands Coast",
+      "sourceUrl": "https://www.redlandscoast.com.au/ATDW/Events/School-Holiday-Fun-Sea-Plastic-Mosaics-with-Amber-Vicum-6aa5f7244b61b9690ef3050b",
+      "concise": "Make a mosaic artwork from recovered beach plastics. Materials supplied; bookings required.",
+      "loadTags": [
+        "workshop",
+        "family",
+        "Cleveland",
+        "reuse"
+      ],
+      "simulation": {
+        "movement": "Planning note: Check mainland travel and gallery access before attending.",
+        "permissions": "Planning note: Confirm availability with the gallery. Children need a parent or carer present. The gallery workshop page has an inconsistent weekday; the Council listing confirms Wednesday 23 September.",
+        "aftercare": "Planning note: Review material reuse, accessibility and family participation.",
+        "ancestor": "A mainland creative activity within the Redlands Coast event ecosystem."
+      }
+    },
+    {
+      "id": "rag-lines-of-memory-2026",
+      "name": "Lines of Memory with Nicole Crosswell",
+      "dateLabel": "27 September 2026, 10am-1pm",
+      "dateSort": "2026-09-27",
+      "status": "confirmed",
+      "season": "Spring",
+      "place": "Redland Art Gallery, Cleveland",
+      "village": "Cleveland",
+      "sector": "Arts and creative workshops",
+      "scale": "public gallery activity",
+      "source": "Redland Art Gallery / Redlands Coast",
+      "sourceUrl": "https://artgallery.redland.qld.gov.au/family-fun-days/",
+      "concise": "Free family drawing session inspired by plants and personal memories. Confirm the room with the gallery: public listings differ between Cleveland gallery and The Mezz at RPAC.",
+      "loadTags": [
+        "drawing",
+        "family",
+        "free entry",
+        "Cleveland"
+      ],
+      "simulation": {
+        "movement": "Planning note: Check mainland travel and gallery access before attending.",
+        "permissions": "Planning note: Confirm venue before travel. Parents and carers stay with children; no booking required.",
+        "aftercare": "Planning note: Review material reuse, accessibility and family participation.",
+        "ancestor": "A mainland creative activity within the Redlands Coast event ecosystem."
+      }
+    },
+    {
+      "id": "rag-hooked-on-drawing-2026",
+      "name": "Hooked on Drawing with Jack Rodgers",
+      "dateLabel": "1 November 2026, 10am-1pm",
+      "dateSort": "2026-11-01",
+      "status": "confirmed",
+      "season": "Spring",
+      "place": "Redland Art Gallery, Cleveland",
+      "village": "Cleveland",
+      "sector": "Arts and creative workshops",
+      "scale": "public gallery activity",
+      "source": "Redland Art Gallery / Redlands Coast",
+      "sourceUrl": "https://artgallery.redland.qld.gov.au/family-fun-days/",
+      "concise": "Free family drawing activity with artist Jack Rodgers, exploring memory, imagery and drawing materials.",
+      "loadTags": [
+        "drawing",
+        "family",
+        "free entry",
+        "Cleveland"
+      ],
+      "simulation": {
+        "movement": "Planning note: Check mainland travel and gallery access before attending.",
+        "permissions": "Planning note: Parents and carers stay with children; no booking required.",
+        "aftercare": "Planning note: Review material reuse, accessibility and family participation.",
+        "ancestor": "A mainland creative activity within the Redlands Coast event ecosystem."
+      }
+    },
     {
       id: "redlands-christmas-tree-lighting-2026",
       name: "Redlands Coast Lighting of the Christmas Tree",
