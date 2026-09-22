@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "18 September 2026, 2:33:08pm GMT+10 Brisbane / AEST.",
+    lastPublicSearch: "22 September 2026, 10:56:39am GMT+10 Brisbane / AEST.",
     lastUpdated: "8 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "18 September 2026, 2:33:08pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-18",
+    lastRunLabel: "22 September 2026, 10:56:39am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-22",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -1619,6 +1619,50 @@ window.QCEE_DATA = {
         permissions: "Venue operations, performance timing, responsible service, waterfront safety, food service and accurate supporting-act updates remain organiser-led.",
         aftercare: "Attendance, meal trade, ferry timing and waterfront noise feedback can guide future club music-day planning.",
         ancestor: "Useful hospitality-and-music marker because it joins a public club waterfront with a long, low-barrier community day."
+      }
+    },
+    {
+      id: "festival-of-small-halls-macleay-island-2026",
+      name: "Festival of Small Halls: Macleay Island",
+      dateLabel: "17 October 2026, 3:30pm-7:30pm",
+      dateSort: "2026-10-17",
+      status: "confirmed",
+      season: "Spring",
+      place: "Macleay Island Community Hall",
+      village: "Macleay Island",
+      sector: "Live music and community gathering",
+      scale: "small island hall concert",
+      source: "Visit Redlands Coast / Festival of Small Halls",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Festival-of-Small-Halls-Spring-Tour-2026-Macleay-Island-6aa78a76fe3ad95b0817bb9f",
+      concise: "Spring touring concert with Nicole Murray and Old Man Luedecke at the Macleay Island Community Hall.",
+      loadTags: ["live music", "Macleay Island", "community hall", "southern Moreton Bay", "ticket details to confirm"],
+      simulation: {
+        movement: "Island and mainland attendees converge on an afternoon community-hall set, with ferry timing and local transport shaping arrival and departure.",
+        permissions: "The organiser controls ticket release, performer timing, hall capacity, accessibility and transport information.",
+        aftercare: "Ticket uptake, ferry use, venue feedback and future touring demand are the useful follow-up signals.",
+        ancestor: "Useful nearby-island culture marker because it connects the southern Moreton Bay event circuit to the wider Minjerribah and Redlands ecosystem."
+      }
+    },
+    {
+      id: "redlands-diwali-2026",
+      name: "Redlands Diwali",
+      dateLabel: "31 October 2026, 3pm-9pm",
+      dateSort: "2026-10-31",
+      status: "confirmed",
+      season: "Late spring",
+      place: "John Frederick Park, Capalaba",
+      village: "Capalaba",
+      sector: "Multicultural community celebration",
+      scale: "free regional community festival",
+      source: "Visit Redlands Coast / Brisbane Bayside South Indian Association",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Redlands-Diwali-2026-6a9f78770c1d27a8284f6cd2",
+      concise: "Free Festival of Lights celebration with music, dance, food stalls, family activities and fireworks in Capalaba.",
+      loadTags: ["Diwali", "multicultural", "free entry", "family activities", "fireworks"],
+      simulation: {
+        movement: "Families and visitors arrive through the afternoon, with food stalls and performances building toward an evening fireworks peak.",
+        permissions: "The host and Council manage site operations, fireworks, vendors, traffic, accessibility and programme timing.",
+        aftercare: "Attendance, transport demand, vendor outcomes, noise feedback and organiser updates should guide future listings.",
+        ancestor: "Useful regional-community marker because it makes a major public cultural gathering visible within the nearby Redlands event ecosystem."
       }
     },
     {
