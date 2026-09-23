@@ -4,7 +4,7 @@ window.QCEE_DATA = {
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
     lastPublicSearch: "22 September 2026, 10:56:39am GMT+10 Brisbane / AEST.",
-    lastUpdated: "8 September 2026",
+    lastUpdated: "24 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
     boundary: "This site is not an official permission, cultural authority, council permit, safety approval or live emergency source. It helps organisers ask clearer questions before they approach the right authority.",
@@ -61,7 +61,7 @@ window.QCEE_DATA = {
       title: "Calendar",
       eyebrow: "Past and upcoming",
       heading: "A rolling event memory, not just a date list.",
-      deck: "Find confirmed, recurring, past and watchlist event records with source links.",
+      deck: "Start with Straddie / Minjerribah events, or explore other islands and the mainland. Filter confirmed, recurring, past and watchlist records with source links.",
       image: "assets/images/hero-calendar.webp",
       alt: "Dusk island festival layout with beach, bushland, ferry lights and small crowd clusters.",
       actions: [
@@ -661,6 +661,7 @@ window.QCEE_DATA = {
     },
     {
       id: "island-storytellers-festival-2026",
+      locations: ["lamb", "straddie", "coochiemudlo"],
       name: "Island Storytellers Festival 2026",
       dateLabel: "3-5 October 2026",
       dateSort: "2026-10-03",
@@ -690,6 +691,7 @@ window.QCEE_DATA = {
     },
     {
       id: "minjerribah-adventure-mv-kurrowera-2026",
+      locations: ["straddie", "lamb", "coochiemudlo"],
       name: "Minjerribah Adventure on MV Kurrowera",
       dateLabel: "5 October 2026, 9:15am-5:15pm AEST",
       dateSort: "2026-10-05",
@@ -1286,6 +1288,7 @@ window.QCEE_DATA = {
     },
     {
       id: "straddie-arts-trail-next",
+      locations: ["straddie"],
       name: "Straddie Arts Trail",
       dateLabel: "13-16 August 2026",
       dateSort: "2026-08-13",
@@ -2281,6 +2284,7 @@ window.QCEE_DATA = {
     },
     {
       id: "gallery-museum-hop-2026",
+      locations: ["straddie", "mainland"],
       name: "Redlands Coast Gallery and Museum Hop",
       dateLabel: "23-24 May 2026",
       dateSort: "2026-05-23",
@@ -2464,6 +2468,7 @@ window.QCEE_DATA = {
     },
     {
       id: "clean-up-straddie-2026",
+      locations: ["straddie"],
       name: "Clean Up Straddie",
       dateLabel: "1 March 2026",
       dateSort: "2026-03-01",

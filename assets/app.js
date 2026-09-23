@@ -287,6 +287,35 @@
     ].join("");
   }
 
+  // Geography uses the event's location, never its title or promotional copy.
+  // Optional event.locations handles itineraries and ambiguous venue descriptions.
+  const EVENT_LOCATIONS = [
+    { id: "straddie", label: "Straddie / Minjerribah", pattern: /\b(minjerribah|north stradbroke|straddie|dunwich|goompi|gumpi|point lookout|mooloomba|amity|pulan)\b/i },
+    { id: "coochiemudlo", label: "Coochiemudlo Island", pattern: /\bcoochiemudlo\b/i },
+    { id: "macleay", label: "Macleay Island", pattern: /\bmacleay\b/i },
+    { id: "russell", label: "Russell Island", pattern: /\brussell\b/i },
+    { id: "lamb", label: "Lamb Island", pattern: /\blamb\b/i },
+    { id: "karragarra", label: "Karragarra Island", pattern: /\bkarragarra\b/i },
+    { id: "moreton", label: "Moreton Island / Moorgumpin", pattern: /\b(moreton island|moorgumpin)\b/i },
+    { id: "mainland", label: "Mainland", pattern: /\b(mainland|cleveland|raby bay|capalaba|redland bay|wellington point|victoria point|ormiston|thornlands|birkdale|alexandra hills|mount cotton|sheldon)\b/i }
+  ];
+
+  function eventLocations(event) {
+    const explicit = Array.isArray(event.locations)
+      ? event.locations.filter((id) => EVENT_LOCATIONS.some((location) => location.id === id))
+      : [];
+    if (explicit.length) return [...new Set(explicit)];
+    const locationText = event.village || event.place || "";
+    const matched = EVENT_LOCATIONS.filter((location) => location.pattern.test(locationText)).map((location) => location.id);
+    return matched.length ? matched : ["unassigned"];
+  }
+
+  function matchesEventLocation(locations, selected) {
+    if (selected === "all") return true;
+    if (selected === "islands") return locations.some((id) => EVENT_LOCATIONS.some((location) => location.id === id && id !== "mainland"));
+    return locations.includes(selected);
+  }
+
   function renderCalendar() {
     const statusOrder = ["confirmed", "tbc", "recurring", "past", "historical"];
     const automation = DATA.eventAutomation || {};
@@ -310,7 +339,9 @@
     const statusFilters = ["all", ...statusOrder.filter((status) => DATA.events.some((event) => effectiveStatus(event) === status))];
     const sectors = [...new Set(DATA.events.map((event) => event.sector).filter(Boolean))].sort();
     const loadTags = [...new Set(DATA.events.flatMap((event) => event.loadTags || []))].sort();
-    const statusCount = (status) => DATA.events.filter((event) => effectiveStatus(event) === status).length;
+    const defaultEvents = DATA.events.filter((event) => matchesEventLocation(eventLocations(event), "straddie"));
+    const statusCount = (status) => defaultEvents.filter((event) => effectiveStatus(event) === status).length;
+    const availableLocations = new Set(DATA.events.flatMap(eventLocations));
     const sourceState = (event) => {
       if (event.sourceStatus) return event.sourceStatus;
       const status = effectiveStatus(event);
@@ -355,7 +386,8 @@
         const href = event.sourceUrl || "#";
         const external = href.startsWith("http");
         return `
-          <article class="event-card event-atlas-card"
+          <article class="event-card event-atlas-card" ${matchesEventLocation(eventLocations(event), "straddie") ? "" : "hidden"}
+            data-event-locations="${esc(eventLocations(event).join(" "))}"
             data-event-status="${esc(status)}"
             data-event-sector="${esc(slug(event.sector))}"
             data-event-tags="${esc((event.loadTags || []).map(slug).join(" "))}"
@@ -389,12 +421,23 @@
     return [
       section({ eyebrow: "Event atlas", heading: "Search the event records.", id: "event-atlas" }, "", `
         <div class="calendar-summary" aria-label="Calendar summary">
-          <article><strong>${DATA.events.length}</strong><span>mapped records</span></article>
-          <article><strong>${statusCount("confirmed")}</strong><span>confirmed dates</span></article>
-          <article><strong>${statusCount("tbc") + statusCount("recurring")}</strong><span>watchlist patterns</span></article>
+          <article><strong data-event-count="all">${defaultEvents.length}</strong><span>matching records</span></article>
+          <article><strong data-event-count="confirmed">${statusCount("confirmed")}</strong><span>confirmed dates</span></article>
+          <article><strong data-event-count="watchlist">${statusCount("tbc") + statusCount("recurring")}</strong><span>watchlist patterns</span></article>
           <article><strong>${DATA.externalSources.length}</strong><span>source links</span></article>
         </div>
+        <p>Start with Straddie / Minjerribah, or choose another island or the mainland. Events visiting several locations can appear in more than one view.</p>
         <div class="control-bar calendar-controls" aria-label="Event filters">
+          <select class="select-input" data-event-location-filter aria-label="Filter events by location">
+            <option value="straddie" selected>Straddie / Minjerribah</option>
+            <option value="all">All locations</option>
+            <option value="islands">All islands</option>
+            <option value="mainland">Mainland</option>
+            <optgroup label="Other islands">
+              ${EVENT_LOCATIONS.filter((location) => !["straddie", "mainland"].includes(location.id) && availableLocations.has(location.id)).map((location) => `<option value="${location.id}">${esc(location.label)}</option>`).join("")}
+            </optgroup>
+            ${availableLocations.has("unassigned") ? '<option value="unassigned">Location to confirm</option>' : ""}
+          </select>
           <input class="search-input" type="search" placeholder="Search events, places, tags or source notes" data-calendar-search>
           <select class="select-input" data-sector-filter aria-label="Filter by event sector">
             <option value="all">All sectors</option>
@@ -409,6 +452,7 @@
             <button class="builder-tab reset-filter" type="button" data-event-clear>Reset filters</button>
           </div>
         </div>
+        <p data-event-results role="status" aria-live="polite"></p>
         <p class="empty-note" data-event-empty hidden>No matching event records yet. Clear a filter or search another term.</p>
         <div class="grid two" data-event-grid>${eventCards}</div>
       `),
@@ -862,6 +906,9 @@
     const search = document.querySelector("[data-calendar-search]");
     const sectorFilter = document.querySelector("[data-sector-filter]");
     const loadFilter = document.querySelector("[data-load-filter]");
+    const locationFilter = document.querySelector("[data-event-location-filter]");
+    const results = document.querySelector("[data-event-results]");
+    const counts = [...document.querySelectorAll("[data-event-count]")];
     const empty = document.querySelector("[data-event-empty]");
     const clearButton = document.querySelector("[data-event-clear]");
     let activeStatus = "all";
@@ -869,16 +916,29 @@
       const query = (search && search.value || "").trim().toLowerCase();
       const selectedSector = sectorFilter && sectorFilter.value || "all";
       const selectedLoad = loadFilter && loadFilter.value || "all";
+      const selectedLocation = locationFilter && locationFilter.value || "straddie";
       let visibleCount = 0;
+      let confirmedCount = 0;
+      let watchlistCount = 0;
       cards.forEach((cardEl) => {
         const statusOk = activeStatus === "all" || cardEl.dataset.eventStatus === activeStatus;
         const sectorOk = selectedSector === "all" || cardEl.dataset.eventSector === selectedSector;
         const loadOk = selectedLoad === "all" || (cardEl.dataset.eventTags || "").split(" ").includes(selectedLoad);
         const textOk = !query || (cardEl.dataset.eventText || "").includes(query);
-        const visible = statusOk && sectorOk && loadOk && textOk;
+        const locationOk = matchesEventLocation((cardEl.dataset.eventLocations || "").split(" "), selectedLocation);
+        const visible = locationOk && statusOk && sectorOk && loadOk && textOk;
         cardEl.hidden = !visible;
-        if (visible) visibleCount += 1;
+        if (visible) {
+          visibleCount += 1;
+          if (cardEl.dataset.eventStatus === "confirmed") confirmedCount += 1;
+          if (["tbc", "recurring"].includes(cardEl.dataset.eventStatus)) watchlistCount += 1;
+        }
       });
+      counts.forEach((element) => {
+        element.textContent = String({ all: visibleCount, confirmed: confirmedCount, watchlist: watchlistCount }[element.dataset.eventCount]);
+      });
+      const locationLabel = locationFilter ? locationFilter.selectedOptions[0].textContent : "Straddie / Minjerribah";
+      if (results) results.textContent = `${visibleCount} matching ${visibleCount === 1 ? "record" : "records"} for ${locationLabel}. Upcoming confirmed dates appear first, followed by dates to confirm, recurring events and past records.`;
       if (empty) empty.hidden = visibleCount > 0;
     };
     buttons.forEach((buttonEl) => {
@@ -891,12 +951,14 @@
     if (search) search.addEventListener("input", sync);
     if (sectorFilter) sectorFilter.addEventListener("change", sync);
     if (loadFilter) loadFilter.addEventListener("change", sync);
+    if (locationFilter) locationFilter.addEventListener("change", sync);
     if (clearButton) {
       clearButton.addEventListener("click", () => {
         activeStatus = "all";
         if (search) search.value = "";
         if (sectorFilter) sectorFilter.value = "all";
         if (loadFilter) loadFilter.value = "all";
+        if (locationFilter) locationFilter.value = "straddie";
         buttons.forEach((item) => item.setAttribute("aria-selected", String(item.dataset.eventFilter === "all")));
         sync();
       });
