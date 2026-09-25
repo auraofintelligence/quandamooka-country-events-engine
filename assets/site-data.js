@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "22 September 2026, 10:56:39am GMT+10 Brisbane / AEST.",
+    lastPublicSearch: "25 September 2026, 4:51:12pm GMT+10 Brisbane / AEST.",
     lastUpdated: "24 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "22 September 2026, 10:56:39am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-22",
+    lastRunLabel: "25 September 2026, 4:51:12pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-25",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -257,6 +257,28 @@ window.QCEE_DATA = {
     ]
   },
   events: [
+    {
+      id: "redlands-grass-roots-bull-ride-2026",
+      name: "Redlands Grass Roots Bull Ride",
+      dateLabel: "10 October 2026, 12pm-11:45pm",
+      dateSort: "2026-10-10",
+      status: "confirmed",
+      season: "Spring",
+      place: "Pinklands Sporting Complex, Thornlands",
+      village: "Thornlands",
+      sector: "Sport and community events",
+      scale: "regional public sport event",
+      source: "Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Redlands-Grass-Roots-Bull-Ride-66de927254fb444a07b57039",
+      concise: "A family-friendly bull-riding event with food trucks, market stalls, a mechanical bull and an after-party.",
+      loadTags: ["sport", "family", "Thornlands", "food trucks", "evening event"],
+      simulation: {
+        movement: "Planning note: Allow extra mainland travel time for a large afternoon and evening event.",
+        permissions: "Planning note: Check tickets, access needs, weather arrangements and final programme details with the organiser before travel.",
+        aftercare: "Planning note: Review crowd flow, transport demand, noise and waste after the event.",
+        ancestor: "A nearby regional gathering that can affect mainland transport and visitor movement through the Redlands gateway."
+      }
+    },
     {
       "id": "rag-sea-plastic-mosaics-2026",
       "name": "Sea Plastic Mosaics with Amber Vicum",
