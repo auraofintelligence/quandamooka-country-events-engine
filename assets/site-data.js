@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "25 September 2026, 4:51:12pm GMT+10 Brisbane / AEST.",
+    lastPublicSearch: "30 September 2026, 10:31:22am GMT+10 Brisbane / AEST.",
     lastUpdated: "24 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "25 September 2026, 4:51:12pm GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-25",
+    lastRunLabel: "30 September 2026, 10:31:22am GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-09-30",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -257,6 +257,52 @@ window.QCEE_DATA = {
     ]
   },
   events: [
+    {
+      id: "fishing-exhibition-fisho-jack-rodgers-2026",
+      name: "FISHO exhibition by Jack Rodgers",
+      dateLabel: "6 September-17 November 2026, during gallery hours",
+      dateSort: "2026-09-06",
+      dateEndSort: "2026-11-17",
+      status: "confirmed",
+      season: "Spring",
+      place: "Redland Art Gallery, Cleveland",
+      village: "Cleveland",
+      sector: "Arts and creative activities",
+      scale: "free public exhibition",
+      source: "Redlands Coast / Redland Art Gallery",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Exhibtion-FISHO-by-Jack-Rodgers-6a8e8b9e3d8af3520ac28b65",
+      concise: "Free exhibition by Jack Rodgers exploring fishing culture, familiar places and the community stories held around a catch.",
+      loadTags: ["art", "fishing culture", "Cleveland", "free entry", "exhibition"],
+      simulation: {
+        movement: "Planning note: Check current gallery opening hours before travelling, especially on Sundays and public holidays.",
+        permissions: "Planning note: The gallery manages display access, photography and any public-programme details.",
+        aftercare: "Planning note: Record visitor interest in fishing stories and any useful links to related public activities.",
+        ancestor: "A nearby cultural record that connects the Redlands fishing story with a public gallery programme."
+      }
+    },
+    {
+      id: "gavin-roche-straddie-brewing-rooftop-2026",
+      name: "Gavin Roche at Straddie Brewing rooftop",
+      dateLabel: "3-4 October 2026: Saturday 3pm-6pm and Sunday 2pm-5pm",
+      dateSort: "2026-10-03",
+      dateEndSort: "2026-10-04",
+      status: "confirmed",
+      season: "Spring school holidays",
+      place: "Straddie Brewing Co rooftop, Goompi / Dunwich",
+      village: "Goompi / Dunwich",
+      sector: "Live music and hospitality",
+      scale: "two public rooftop music sessions",
+      source: "Straddie Brewing Co",
+      sourceUrl: "https://straddiebrewing.com.au/news/spring-has-sprung/",
+      concise: "Gavin Roche plays two live rooftop sessions over the Labour Day long weekend, alongside the brewery's spring food and drinks programme.",
+      loadTags: ["live music", "Straddie Brewing", "Goompi / Dunwich", "school holidays", "rooftop"],
+      simulation: {
+        movement: "Planning note: Ferry-linked day visitors may cluster for the afternoon sessions, especially across the long weekend.",
+        permissions: "Planning note: Confirm current performance times, table bookings, responsible service and weather arrangements with the venue.",
+        aftercare: "Planning note: Review session attendance, ferry timing and venue noise feedback after the weekend.",
+        ancestor: "A small source-backed island hospitality programme that helps track public live-music demand across holiday periods."
+      }
+    },
     {
       id: "redlands-grass-roots-bull-ride-2026",
       name: "Redlands Grass Roots Bull Ride",
