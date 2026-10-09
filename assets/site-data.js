@@ -3,7 +3,7 @@ window.QCEE_DATA = {
     name: "Quandamooka Country Events Engine",
     shortName: "Events Engine",
     deck: "A public-facing hub for shaping event ideas into clear Markdown records, approval checks, simulation briefs, noticeboard updates and post-event learning.",
-    lastPublicSearch: "30 September 2026, 10:31:22am GMT+10 Brisbane / AEST.",
+    lastPublicSearch: "09 October 2026, 2:42:53pm GMT+10 Brisbane / AEST.",
     lastUpdated: "24 September 2026",
     builtBy: "Luke Nathan Hayes with Codex",
     dataStatus: "Draft event atlas. Confirm dates, permissions and contacts with the responsible source before use.",
@@ -242,8 +242,8 @@ window.QCEE_DATA = {
   eventAutomation: {
     label: "Automated source watch",
     schedule: "Twice weekly: Tuesday and Friday at 9:00am GMT+10 Brisbane / AEST.",
-    lastRunLabel: "30 September 2026, 10:31:22am GMT+10 Brisbane / AEST.",
-    sortAnchorDate: "2026-09-30",
+    lastRunLabel: "09 October 2026, 2:42:53pm GMT+10 Brisbane / AEST.",
+    sortAnchorDate: "2026-10-09",
     interimNote: "This is an interim public-search layer before the Straddie Noticeboard Network becomes functional.",
     sources: [
       "Redland City Council What's On",
@@ -257,6 +257,51 @@ window.QCEE_DATA = {
     ]
   },
   events: [
+    {
+      id: "adult-ballet-all-abilities-2026",
+      name: "Adult Ballet for All Abilities",
+      dateLabel: "21 October-11 November 2026, Wednesdays 10am-11am",
+      dateSort: "2026-10-21",
+      dateEndSort: "2026-11-11",
+      status: "confirmed",
+      season: "Spring",
+      place: "Redland Performing Arts Centre, Cleveland",
+      village: "Cleveland",
+      sector: "Arts, health and wellbeing",
+      scale: "four-session accessible movement series",
+      source: "Redlands Coast / Redland Performing Arts Centre",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Adult-Ballet-for-All-Abilities-6997c7cec0d5aa57394ed7f2",
+      concise: "A welcoming, adapted ballet series led by Queensland Ballet teaching artists, with seated and standing movement options.",
+      loadTags: ["dance", "accessible", "Cleveland", "adults", "wellbeing"],
+      simulation: {
+        movement: "Planning note: Allow time for accessible arrival and check the current venue entry arrangements.",
+        permissions: "Planning note: Confirm session bookings, access needs and participation requirements with the organiser before attending.",
+        aftercare: "Planning note: Review access feedback and demand for further inclusive movement sessions.",
+        ancestor: "A nearby accessible arts programme that broadens the public calendar beyond visitor-focused events."
+      }
+    },
+    {
+      id: "haunted-redlands-book-launch-2026",
+      name: "Haunted Redlands book launch",
+      dateLabel: "31 October 2026, 2pm-4pm",
+      dateSort: "2026-10-31",
+      status: "confirmed",
+      season: "Spring",
+      place: "Grand View Hotel, Cleveland",
+      village: "Cleveland",
+      sector: "Local history and storytelling",
+      scale: "public author talk and book launch",
+      source: "Redlands Coast",
+      sourceUrl: "https://www.redlandscoast.com.au/ATDW/Events/Book-Launch-Haunted-Redlands-by-Jack-Sim-6aac7a7df902dfc934f22407",
+      concise: "Author Jack Sim launches a local ghost-story collection, with a signing and a guided look at the book's Redlands locations.",
+      loadTags: ["local history", "author talk", "Cleveland", "storytelling", "Halloween"],
+      simulation: {
+        movement: "Planning note: Confirm parking, venue access and final booking arrangements before travelling.",
+        permissions: "Planning note: The organiser manages tickets, venue access and any walking-route information.",
+        aftercare: "Planning note: Record interest in locally researched storytelling and any useful public-history follow-ups.",
+        ancestor: "A nearby public-history gathering that connects local stories, research and place-based visitor interest."
+      }
+    },
     {
       id: "fishing-exhibition-fisho-jack-rodgers-2026",
       name: "FISHO exhibition by Jack Rodgers",
